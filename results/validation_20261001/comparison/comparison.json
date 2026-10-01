@@ -1,0 +1,33 @@
+{
+  "inputs": [
+    "outputs/validation_20261001/eval_baseline/summary.json",
+    "outputs/validation_20261001/eval_finetuned/summary.json"
+  ],
+  "columns": [
+    "Run",
+    "Variant",
+    "Recall",
+    "2D px",
+    "Root MPJPE mm",
+    "PA-MPJPE mm"
+  ],
+  "rows": [
+    [
+      "outputs/validation_20261001/eval_baseline/summary.json",
+      "raw",
+      0.85,
+      17.04155946961032,
+      null,
+      null
+    ],
+    [
+      "outputs/validation_20261001/eval_finetuned/summary.json",
+      "raw",
+      0.85,
+      8.212446631364966,
+      null,
+      null
+    ]
+  ],
+  "ground_truth_sha256": "d6352d913e18ded4c61acaab838fc64a5825fc0ba2cfc13fefe6cd79ae90f7b2"
+}

@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-01",
+  "unit_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "source_submission": {
+    "pages": 28,
+    "physical_lines": 1522,
+    "all_source_file_hashes_match": true,
+    "pdf_title_and_version_on_every_page": true
+  },
+  "archive": {
+    "files_verified_and_restored": 1322,
+    "archives": 4,
+    "crc_and_all_sha256_checked": true
+  },
+  "recomputed_from_restored_archive": {
+    "baseline": {
+      "all_fields_except_source_path_equal": true,
+      "mean_2d_px": 17.04155946961032,
+      "matched_hands": 85
+    },
+    "finetuned": {
+      "all_fields_except_source_path_equal": true,
+      "mean_2d_px": 8.212446631364966,
+      "matched_hands": 85
+    }
+  },
+  "entry_point_help_and_image_scan": "passed; all 3 repository images decode",
+  "reproduction_shell_syntax": "passed",
+  "python_syntax_errors": [],
+  "publication_scan": {
+    "text_items_scanned": 1299,
+    "credential_pattern_hits": [],
+    "files_at_least_100_MiB": [],
+    "limits": "Pattern scan, not a guarantee against every possible secret format."
+  }
+}

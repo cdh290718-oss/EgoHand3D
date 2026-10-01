@@ -1,0 +1,9 @@
+{
+  "command": "visualize",
+  "inputs": [
+    "sample_frame_kpts2d.json"
+  ],
+  "outputs": [
+    "sample_frame_overlay.png"
+  ]
+}

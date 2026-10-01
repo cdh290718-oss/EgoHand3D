@@ -1,0 +1,1547 @@
+# ===== FILE: egohand3d/storage.py =====
+"""Atomic artifacts and reproducible identities for application runs."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import tempfile
+from pathlib import Path
+
+
+def fingerprint(value: object) -> str:
+    payload = json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def file_hash(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def file_identity(path: Path, content_hash: bool = False) -> dict:
+    path = path.resolve(strict=True)
+    stat = path.stat()
+    result = {"path": str(path), "bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns}
+    if content_hash:
+        result["sha256"] = file_hash(path)
+    return result
+
+
+def atomic_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            stream.write(text)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
+
+
+def save_json(path: Path, value: object) -> None:
+    atomic_text(path, json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+
+
+def load_json(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+# ===== FILE: egohand3d/media.py =====
+"""Preflight images and videos without loading a neural network."""
+from __future__ import annotations
+
+from pathlib import Path
+import re
+
+import cv2
+import numpy as np
+
+from .storage import file_identity, fingerprint
+
+IMAGES = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
+VIDEOS = {".mp4", ".avi", ".mov", ".mkv", ".m4v", ".webm"}
+
+
+def natural_key(path: Path):
+    return tuple((0, int(x)) if x.isdigit() else (1, x.lower())
+                 for x in re.split(r"(\d+)", str(path)))
+
+
+def scan_media(source: Path, recursive: bool = False, hash_inputs: bool = False) -> dict:
+    source = source.resolve(strict=True)
+    candidates = ([source] if source.is_file() else
+                  sorted(source.rglob("*") if recursive else source.iterdir(), key=natural_key))
+    records = []
+    ignored = 0
+    for path in candidates:
+        if not path.is_file():
+            continue
+        suffix = path.suffix.lower()
+        if suffix not in IMAGES | VIDEOS:
+            ignored += 1
+            continue
+        record = {"identity": file_identity(path, hash_inputs), "kind": "image" if suffix in IMAGES else "video"}
+        record["id"] = fingerprint(record["identity"])[:20]
+        if record["kind"] == "image":
+            image = cv2.imread(str(path))
+            record["readable"] = image is not None
+            if image is not None:
+                record.update(width=int(image.shape[1]), height=int(image.shape[0]), frames=1)
+        else:
+            capture = cv2.VideoCapture(str(path))
+            try:
+                ok, image = capture.read()
+                fps = float(capture.get(cv2.CAP_PROP_FPS))
+                frames = float(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+                record["readable"] = bool(ok and np.isfinite(fps) and fps > 0)
+                if ok:
+                    record.update(width=int(image.shape[1]), height=int(image.shape[0]),
+                                  fps=fps if np.isfinite(fps) else None,
+                                  frames=int(frames) if np.isfinite(frames) and frames > 0 else None)
+            finally:
+                capture.release()
+        if not record["readable"]:
+            record["error"] = "Cannot decode media or determine a positive video frame rate"
+        records.append(record)
+    return {"schema": "egohand3d.media/1", "source": str(source), "recursive": recursive,
+            "files": records, "summary": {"files": len(records), "ignored_files": ignored,
+            "readable": sum(r["readable"] for r in records),
+            "unreadable": sum(not r["readable"] for r in records)}}
+
+
+def iter_frames(manifest: dict, stride: int = 1, limit: int = 0, sequence_fps: float | None = None):
+    """Yield decoded images and metadata; video timestamps assume constant frame rate.
+
+    A decode failure is yielded rather than silently counted as a success. For an
+    image sequence, users must explicitly supply its frame rate.
+    """
+    if stride < 1 or limit < 0 or (sequence_fps is not None and sequence_fps <= 0):
+        raise ValueError("stride/fps must be positive and limit must be nonnegative")
+    emitted = 0
+    image_index = 0
+    for item in manifest["files"]:
+        path = Path(item["identity"]["path"])
+        identity = file_identity(path, "sha256" in item["identity"])
+        if identity != item["identity"]:
+            raise ValueError(f"Input changed after preflight: {path}")
+        common = {"source_path": str(path), "media_id": item["id"], "image": path.name}
+        if item["kind"] == "image" or not item["readable"]:
+            metadata = {**common, "sample_id": item["id"], "frame_index": image_index,
+                        "sequence_id": fingerprint(manifest["source"])[:20] if sequence_fps else item["id"],
+                        "timestamp_s": image_index / sequence_fps if sequence_fps else None,
+                        "time_source": "user_frame_rate" if sequence_fps else "none"}
+            image_index += 1
+            yield metadata, cv2.imread(str(path)) if item["readable"] else None
+            emitted += 1
+        else:
+            capture = cv2.VideoCapture(str(path))
+            index = 0
+            try:
+                while not limit or emitted < limit:
+                    ok, image = capture.read()
+                    if not ok:
+                        if item.get("frames") and index < item["frames"]:
+                            yield {**common, "sample_id": f"{item['id']}_{index:08d}",
+                                   "sequence_id": item["id"], "frame_index": index,
+                                   "timestamp_s": index / item["fps"], "time_source": "container_fps",
+                                   "decode_error": "Video ended before reported frame count"}, None
+                        break
+                    if index % stride == 0:
+                        yield {**common, "sample_id": f"{item['id']}_{index:08d}",
+                               "sequence_id": item["id"], "frame_index": index,
+                               "timestamp_s": index / item["fps"], "time_source": "container_fps"}, image
+                        emitted += 1
+                    index += 1
+            finally:
+                capture.release()
+        if limit and emitted >= limit:
+            return
+
+# ===== FILE: egohand3d/jobs.py =====
+"""Persistent, single-writer processing runs with cooperative cancellation."""
+from __future__ import annotations
+
+from contextlib import contextmanager
+from datetime import datetime, timezone
+from pathlib import Path
+import fcntl
+import json
+import sqlite3
+
+from .storage import file_hash, fingerprint
+
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+@contextmanager
+def run_lock(directory: Path):
+    directory.mkdir(parents=True, exist_ok=True)
+    with (directory / ".run.lock").open("a") as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise RuntimeError("Another process owns this output directory") from exc
+        try:
+            yield
+        finally:
+            fcntl.flock(handle, fcntl.LOCK_UN)
+
+
+class JobStore:
+    def __init__(self, path: Path):
+        self.path = path
+        self.db = sqlite3.connect(path, timeout=15)
+        self.db.row_factory = sqlite3.Row
+        self.db.execute("PRAGMA journal_mode=WAL")
+        self.db.executescript("""
+            CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS items (
+                id TEXT PRIMARY KEY, source TEXT NOT NULL, state TEXT NOT NULL,
+                attempts INTEGER NOT NULL DEFAULT 0, error TEXT, record TEXT,
+                artifacts TEXT, seconds REAL, updated TEXT NOT NULL
+            );
+        """)
+
+    def close(self):
+        self.db.close()
+
+    def get(self, key: str, default=None):
+        row = self.db.execute("SELECT value FROM metadata WHERE key=?", (key,)).fetchone()
+        return json.loads(row[0]) if row else default
+
+    def set(self, key: str, value):
+        with self.db:
+            self.db.execute("INSERT OR REPLACE INTO metadata VALUES (?,?)", (key, json.dumps(value)))
+
+    def initialize(self, config: dict, resume: bool):
+        previous = self.get("config_hash")
+        if previous:
+            if not resume:
+                raise ValueError("Run already exists; use --resume or a different output directory")
+            if previous != fingerprint(config):
+                raise ValueError("Inputs, code, assets or options changed; use a new output directory")
+        else:
+            self.set("config_hash", fingerprint(config))
+            self.set("config", config)
+            self.set("created", now())
+        self.set("cancel_requested", False)
+        self.set("state", "running")
+        with self.db:
+            self.db.execute("UPDATE items SET state='pending' WHERE state='running'")
+
+    def completed(self, sample_id: str, directory: Path) -> bool:
+        row = self.db.execute("SELECT state,artifacts FROM items WHERE id=?", (sample_id,)).fetchone()
+        if row is None or row["state"] != "completed":
+            return False
+        artifacts = json.loads(row["artifacts"] or "{}")
+        return bool(artifacts) and all((directory / name).is_file() and file_hash(directory / name) == sha
+                                       for name, sha in artifacts.items())
+
+    def begin(self, sample_id: str, source: str):
+        with self.db:
+            self.db.execute("""INSERT INTO items(id,source,state,attempts,updated) VALUES (?,?,'running',1,?)
+                ON CONFLICT(id) DO UPDATE SET state='running',attempts=attempts+1,error=NULL,updated=excluded.updated""",
+                            (sample_id, source, now()))
+
+    def finish(self, sample_id: str, seconds: float, record: str, artifacts: dict):
+        with self.db:
+            self.db.execute("""UPDATE items SET state='completed',seconds=?,record=?,artifacts=?,error=NULL,
+                updated=? WHERE id=?""", (seconds, record, json.dumps(artifacts), now(), sample_id))
+
+    def fail(self, sample_id: str, error: str):
+        with self.db:
+            self.db.execute("UPDATE items SET state='failed',error=?,updated=? WHERE id=?", (error, now(), sample_id))
+
+    def records(self):
+        return self.db.execute("SELECT * FROM items ORDER BY rowid").fetchall()
+
+    def summary(self) -> dict:
+        counts = dict(self.db.execute("SELECT state,COUNT(*) FROM items GROUP BY state"))
+        return {"state": self.get("state"), "created": self.get("created"),
+                "updated": self.get("updated"), "cancel_requested": self.get("cancel_requested", False),
+                "counts": counts, "discovered_items": sum(counts.values())}
+
+
+def inspect_jobs(directory: Path, cancel: bool = False) -> dict:
+    path = directory / "tasks.sqlite"
+    if not path.is_file():
+        raise FileNotFoundError(f"No run database at {path}")
+    store = JobStore(path)
+    try:
+        if cancel:
+            store.set("cancel_requested", True)
+        return store.summary()
+    finally:
+        store.close()
+
+# ===== FILE: egohand3d/mano_codec.py =====
+"""Explicit MANO interchange; WiLoR left hands use a reflected RIGHT model.
+
+Rotations remain in the canonical right MANO model. Reflection is applied to
+decoded geometry before camera translation; these are not left-model poses.
+"""
+from __future__ import annotations
+
+import copy
+import numpy as np
+from scipy.spatial.transform import Rotation
+
+SCHEMA = "egohand3d.mano/1"
+
+
+def rotations(value, count: int = 16) -> np.ndarray:
+    value = np.asarray(value, dtype=np.float64)
+    if value.shape != (count, 3, 3) or not np.isfinite(value).all():
+        raise ValueError(f"Expected {count} finite 3x3 rotation matrices")
+    if not np.allclose(value @ value.swapaxes(-1, -2), np.eye(3), atol=2e-4):
+        raise ValueError("Rotation matrices are not orthonormal")
+    if not np.allclose(np.linalg.det(value), 1, atol=2e-4):
+        raise ValueError("Rotations must have determinant +1; reflection is separate")
+    return value
+
+
+def encode_hand(hand: dict) -> dict:
+    params = hand["pred_mano_params"]
+    arrays = {}
+    for name in ["global_orient", "hand_pose", "betas"]:
+        payload = params[name]
+        array = np.asarray(payload["values"], dtype=np.float64)
+        if list(array.shape) != payload["shape"]:
+            raise ValueError(f"MANO {name}: declared shape differs from values")
+        arrays[name] = array
+    if arrays["global_orient"].shape != (1, 3, 3) or arrays["hand_pose"].shape != (15, 3, 3):
+        raise ValueError("Runtime MANO must supply rotation matrices, not inferred axis angles")
+    pose = rotations(np.concatenate([arrays["global_orient"], arrays["hand_pose"]]))
+    width, height = hand["img_size_wh"]
+    focal = float(hand["focal_length_px"])
+    packet = {
+        "schema": SCHEMA, "model_hand": "right", "hand_side": hand["hand_side"],
+        "mirror_model_x": hand["hand_side"] == "left", "length_unit": "m", "angle_unit": "rad",
+        "camera_axes": "x_right_y_down_z_forward", "pose_space": "canonical_right_mano",
+        "geometry_origin": "MANO native origin; not explicitly wrist-centered",
+        "pose_rotmat": pose.tolist(), "pose_axis_angle": Rotation.from_matrix(pose).as_rotvec().tolist(),
+        "betas": arrays["betas"].tolist(), "translation_camera": hand["cam_t_full"],
+        "intrinsics": [[focal, 0., width / 2], [0., focal, height / 2], [0., 0., 1.]],
+        "intrinsics_source": "WiLoR assumed focal length; not a camera calibration",
+        "image_size_wh": [width, height],
+    }
+    validate_packet(packet)
+    return packet
+
+
+def validate_packet(packet: dict) -> None:
+    if packet.get("schema") != SCHEMA or packet.get("model_hand") != "right":
+        raise ValueError("Unsupported MANO schema/model hand")
+    if packet.get("hand_side") not in {"left", "right"}:
+        raise ValueError("hand_side must be left or right")
+    if packet.get("mirror_model_x") is not (packet["hand_side"] == "left"):
+        raise ValueError("Hand side and reflection disagree")
+    if packet.get("length_unit") != "m" or packet.get("angle_unit") != "rad":
+        raise ValueError("Interchange uses meters and radians")
+    pose = rotations(packet["pose_rotmat"])
+    aa = np.asarray(packet["pose_axis_angle"], dtype=np.float64)
+    if aa.shape != (16, 3) or not np.isfinite(aa).all():
+        raise ValueError("Expected 16 finite axis-angle vectors")
+    if not np.allclose(Rotation.from_rotvec(aa).as_matrix(), pose, atol=2e-4):
+        raise ValueError("Axis angles and rotation matrices describe different poses")
+    for key, shape in [("betas", (10,)), ("translation_camera", (3,)), ("intrinsics", (3, 3)),
+                       ("image_size_wh", (2,))]:
+        array = np.asarray(packet[key], dtype=float)
+        if array.shape != shape or not np.isfinite(array).all():
+            raise ValueError(f"Invalid {key}; expected finite shape {shape}")
+    k = np.asarray(packet["intrinsics"])
+    if k[0, 0] <= 0 or k[1, 1] <= 0 or not np.allclose(k[2], [0, 0, 1]):
+        raise ValueError("Invalid pinhole intrinsics")
+    if min(packet["image_size_wh"]) <= 0:
+        raise ValueError("Image dimensions must be positive")
+
+
+def project(points_camera, intrinsics) -> tuple[np.ndarray, np.ndarray]:
+    points = np.asarray(points_camera, dtype=np.float64)
+    valid = np.isfinite(points).all(axis=-1) & (points[:, 2] > 1e-8)
+    uv = np.zeros((len(points), 2), dtype=np.float64)
+    homogeneous = points[valid] @ np.asarray(intrinsics, dtype=float).T
+    uv[valid] = homogeneous[:, :2] / homogeneous[:, 2:]
+    return uv, valid
+
+
+class ManoDecoder:
+    def __init__(self, layer):
+        self.layer = layer
+
+    @classmethod
+    def from_directory(cls, directory, device: str = "cpu"):
+        # Use the same declared 21-joint mapping as the external runtime.
+        from wilor.models.mano_wrapper import MANO
+        return cls(MANO(model_path=str(directory), is_rhand=True, use_pca=False,
+                        flat_hand_mean=True).to(device).eval())
+
+    def decode(self, packet: dict) -> dict:
+        import torch
+        validate_packet(packet)
+        device = next(self.layer.buffers()).device
+        pose = torch.as_tensor(packet["pose_rotmat"], dtype=torch.float32, device=device)[None]
+        betas = torch.as_tensor(packet["betas"], dtype=torch.float32, device=device)[None]
+        previous_tf32 = torch.backends.cuda.matmul.allow_tf32
+        try:
+            torch.backends.cuda.matmul.allow_tf32 = False
+            with torch.inference_mode():
+                output = self.layer(global_orient=pose[:, :1], hand_pose=pose[:, 1:], betas=betas, pose2rot=False)
+        finally:
+            torch.backends.cuda.matmul.allow_tf32 = previous_tf32
+        joints = output.joints[0].cpu().numpy().copy()
+        vertices = output.vertices[0].cpu().numpy().copy()
+        if packet["mirror_model_x"]:
+            joints[:, 0] *= -1
+            vertices[:, 0] *= -1
+        translation = np.asarray(packet["translation_camera"])
+        uv, visible_depth = project(joints + translation, packet["intrinsics"])
+        return {"joints_model": joints, "vertices_model": vertices,
+                "joints_camera": joints + translation, "vertices_camera": vertices + translation,
+                "joints_2d": uv, "positive_depth": visible_depth}
+
+    def check(self, packet: dict, hand: dict, tolerance_m: float = 1e-5, tolerance_px: float = 0.05) -> dict:
+        decoded = self.decode(packet)
+        joint_error = np.linalg.norm(decoded["joints_model"] - np.asarray(hand["joints_3d_root"]), axis=1)
+        vertex_error = np.linalg.norm(decoded["vertices_model"] - np.asarray(hand["vertices_3d_root"]), axis=1)
+        valid = decoded["positive_depth"]
+        uv_error = np.linalg.norm(decoded["joints_2d"][valid] - np.asarray(hand["joints_2d_xy"])[valid], axis=1)
+        maximum_px = float(uv_error.max()) if valid.any() else None
+        return {"max_joint_error_m": float(joint_error.max()), "max_vertex_error_m": float(vertex_error.max()),
+                "max_reprojection_error_px": maximum_px, "num_projectable_joints": int(valid.sum()),
+                "tolerance_m": tolerance_m, "tolerance_px": tolerance_px,
+                "passed": bool(joint_error.max() <= tolerance_m and vertex_error.max() <= tolerance_m
+                               and maximum_px is not None and maximum_px <= tolerance_px)}
+
+
+def interpolate_packets(first: dict, second: dict, weight: float) -> dict:
+    """Geodesic interpolation of each rotation, linear shape and translation."""
+    validate_packet(first)
+    validate_packet(second)
+    if first["hand_side"] != second["hand_side"] or not 0 <= weight <= 1:
+        raise ValueError("Interpolation needs the same hand side and weight in [0,1]")
+    if first["image_size_wh"] != second["image_size_wh"] or not np.allclose(first["intrinsics"], second["intrinsics"]):
+        raise ValueError("Interpolation needs matching camera metadata")
+    a, b = np.asarray(first["pose_rotmat"]), np.asarray(second["pose_rotmat"])
+    relative = a.swapaxes(-1, -2) @ b
+    delta = Rotation.from_matrix(relative).as_rotvec() * weight
+    pose = a @ Rotation.from_rotvec(delta).as_matrix()
+    out = copy.deepcopy(second)
+    out["pose_rotmat"] = pose.tolist()
+    out["pose_axis_angle"] = Rotation.from_matrix(pose).as_rotvec().tolist()
+    for key in ["betas", "translation_camera"]:
+        out[key] = ((1 - weight) * np.asarray(first[key]) + weight * np.asarray(second[key])).tolist()
+    return out
+
+# ===== FILE: egohand3d/quality.py =====
+"""Transparent diagnostics, not learned joint confidence or proof of accuracy."""
+from __future__ import annotations
+
+import numpy as np
+
+from .visualization import HAND_CONNECTIONS
+
+
+def inspect_hand(hand: dict, min_detection_score: float = 0.5) -> dict:
+    uv = np.asarray(hand["joints_2d_xy"], dtype=float)
+    xyz = np.asarray(hand["joints_3d_camera"], dtype=float)
+    width, height = hand["img_size_wh"]
+    finite = np.isfinite(uv).all(axis=1) & np.isfinite(xyz).all(axis=1)
+    front = xyz[:, 2] > 1e-8
+    inside = (uv[:, 0] >= 0) & (uv[:, 0] < width) & (uv[:, 1] >= 0) & (uv[:, 1] < height)
+    lengths = np.array([np.linalg.norm(xyz[a] - xyz[b]) for a, b in HAND_CONNECTIONS])
+    flags = []
+    if not finite.all():
+        flags.append("nonfinite_geometry")
+    if not front.all():
+        flags.append("nonpositive_depth")
+    if not inside.all():
+        flags.append("joints_outside_image")
+    if hand["bbox_score"] < min_detection_score:
+        flags.append("low_detection_score")
+    if np.any(lengths < 1e-5):
+        flags.append("degenerate_bone")
+    closure = hand.get("roundtrip")
+    if closure and not closure["passed"]:
+        flags.append("mano_roundtrip_failed")
+    return {"flags": flags, "num_finite_joints": int(finite.sum()),
+            "num_positive_depth": int(front.sum()), "num_inside_image": int(inside.sum()),
+            "num_usable_joints": int((finite & front & inside).sum()),
+            "detection_score": float(hand["bbox_score"]),
+            "score_note": "Detector score is not per-joint confidence",
+            "bone_lengths_m": [float(v) if np.isfinite(v) else None for v in lengths],
+            "thresholds": {"min_detection_score": min_detection_score, "min_bone_length_m": 1e-5}}
+
+# ===== FILE: egohand3d/pipeline.py =====
+"""One inference per frame; all exports share the same predictions."""
+from __future__ import annotations
+
+import csv
+import io
+import platform
+import signal
+import sys
+import time
+from collections import Counter
+from pathlib import Path
+
+import cv2
+import numpy as np
+
+from .jobs import JobStore, now, run_lock
+from .mano_codec import ManoDecoder, encode_hand
+from .media import iter_frames, scan_media
+from .quality import inspect_hand
+from .storage import atomic_text, file_hash, file_identity, load_json, save_json
+from .visualization import draw_record_on_image
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def code_identity() -> dict:
+    paths = sorted((ROOT / "egohand3d").glob("*.py"))
+    paths += sorted((ROOT / "wilor").rglob("*.py"))
+    return {str(path.relative_to(ROOT)): file_hash(path) for path in paths}
+
+
+def write_obj(path: Path, vertices, faces, mirrored: bool):
+    faces = np.asarray(faces)
+    if mirrored:
+        faces = faces[:, [0, 2, 1]]
+    lines = ["# EgoHand3D camera coordinates, meters"]
+    lines += ["v %.9g %.9g %.9g" % tuple(v) for v in vertices]
+    lines += ["f %d %d %d" % tuple(f + 1) for f in faces]
+    atomic_text(path, "\n".join(lines) + "\n")
+
+
+def export_frame(directory: Path, record: dict, image, faces, overlays: bool, meshes: bool) -> dict:
+    sample_id = record["sample_id"]
+    files = []
+    path = directory / "records" / f"{sample_id}.json"
+    save_json(path, record)
+    files.append(path)
+    for kind, keys in {
+        "2d": ["joints_2d_xy", "joints_2d_scores"],
+        "3d": ["joints_3d_root", "joints_3d_camera", "cam_t_full"],
+        "mano": ["mano"],
+    }.items():
+        payload = {key: record[key] for key in ["sample_id", "source_path", "sequence_id", "frame_index", "timestamp_s"]}
+        payload["hands"] = [{key: hand[key] for key in ["hand_index", "hand_side", "bbox_xyxy", "bbox_score", *keys]}
+                            for hand in record["hands"]]
+        output = directory / kind / f"{sample_id}.json"
+        save_json(output, payload)
+        files.append(output)
+    if meshes:
+        for hand in record["hands"]:
+            output = directory / "meshes" / f"{sample_id}_{hand['hand_index']}.obj"
+            write_obj(output, hand["vertices_3d_camera"], faces, hand["hand_side"] == "left")
+            files.append(output)
+    if overlays:
+        output = directory / "overlays" / f"{sample_id}.jpg"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        # Complete-file hashes prevent a partial image being reused after interruption.
+        overlay = draw_record_on_image(image, record, score_threshold=0.01)
+        if not cv2.imwrite(str(output), overlay):
+            raise OSError(f"Cannot write {output}")
+        files.append(output)
+    return {str(path.relative_to(directory)): file_hash(path) for path in files}
+
+
+def write_run_summary(directory: Path, store: JobStore, invocation: dict) -> dict:
+    rows = store.records()
+    successful = [r for r in rows if r["state"] == "completed"]
+    hand_count = 0
+    detected = 0
+    flags = Counter()
+    roundtrip_failed = 0
+    records_index = []
+    for row in successful:
+        record = load_json(directory / row["record"])
+        hand_count += len(record["hands"])
+        detected += bool(record["hands"])
+        for hand in record["hands"]:
+            flags.update(hand["quality"]["flags"])
+            roundtrip_failed += not hand["roundtrip"]["passed"]
+        records_index.append({key: record[key] for key in ["sample_id", "source_path", "sequence_id", "timestamp_s", "frame_index"]}
+                            | {"record": row["record"], "hands": len(record["hands"])})
+    summary = {**store.summary(), "schema": "egohand3d.run/1", "frames_completed": len(successful),
+               "frames_with_hands": detected, "hands": hand_count,
+               "detection_coverage": detected / len(successful) if successful else None,
+               "coverage_note": "Fraction of processed frames with predictions; not detection recall without GT",
+               "quality_flags": dict(flags), "roundtrip_failures": roundtrip_failed,
+               "mean_processing_seconds": float(np.mean([r["seconds"] for r in successful])) if successful else None,
+               "latest_invocation": invocation,
+               "failures": [{"sample_id": r["id"], "error": r["error"]} for r in rows if r["state"] == "failed"]}
+    save_json(directory / "summary.json", summary)
+    save_json(directory / "index.json", {"schema": "egohand3d.index/1", "records": records_index})
+    buffer = io.StringIO()
+    writer = csv.DictWriter(buffer, fieldnames=["sample_id", "source_path", "sequence_id", "timestamp_s", "frame_index", "record", "hands"])
+    writer.writeheader()
+    writer.writerows(records_index)
+    atomic_text(directory / "index.csv", buffer.getvalue())
+    return summary
+
+
+def process(args) -> dict:
+    directory = Path(args.out).resolve()
+    manifest = scan_media(Path(args.input), args.recursive, args.hash_inputs)
+    if not manifest["files"]:
+        raise ValueError("No supported input media")
+    if args.sequence_fps and any(f["kind"] != "image" for f in manifest["files"]):
+        raise ValueError("--sequence-fps is for a directory of images only")
+    assets = {key: file_identity(Path(getattr(args, key)), args.hash_assets)
+              for key in ["checkpoint", "cfg", "detector"]}
+    for name in ["MANO_RIGHT.pkl", "mano_mean_params.npz"]:
+        assets[name] = file_identity(ROOT / "mano_data" / name, args.hash_assets)
+    config = {"pipeline_version": 1, "manifest": manifest, "assets": assets, "code": code_identity(),
+              "options": {key: getattr(args, key) for key in ["stride", "limit", "sequence_fps", "device",
+              "detector_conf", "rescale_factor", "batch_size", "no_mesh", "no_overlay"]}}
+    with run_lock(directory):
+        store = JobStore(directory / "tasks.sqlite")
+        try:
+            store.initialize(config, args.resume)
+            save_json(directory / "manifest.json", manifest)
+            save_json(directory / "run_config.json", config)
+            return _process(args, directory, store, manifest)
+        finally:
+            store.close()
+
+
+def _process(args, directory: Path, store: JobStore, manifest: dict) -> dict:
+    runtime = None
+    started = time.perf_counter()
+    invocation = {"started": now(), "processed": 0, "reused": 0, "python": sys.version, "platform": platform.platform()}
+    previous_sigterm = signal.getsignal(signal.SIGTERM)
+    def interrupted(signum, frame):
+        raise KeyboardInterrupt
+    signal.signal(signal.SIGTERM, interrupted)
+    try:
+        for metadata, image in iter_frames(manifest, args.stride, args.limit, args.sequence_fps):
+            if store.get("cancel_requested", False):
+                store.set("state", "cancelled")
+                break
+            sample_id = metadata["sample_id"]
+            if store.completed(sample_id, directory):
+                invocation["reused"] += 1
+                continue
+            for attempt in range(args.retries + 1):
+                store.begin(sample_id, metadata["source_path"])
+                try:
+                    if image is None:
+                        raise ValueError(metadata.get("decode_error", "Unreadable image/video"))
+                    if runtime is None:
+                        from .inference import infer_hands_from_image, load_runtime
+                        # External WiLoR resolves MANO relative to cwd; CLI establishes ROOT.
+                        runtime = load_runtime(args.checkpoint, args.cfg, args.detector, args.device)
+                        import torch
+                        torch.set_float32_matmul_precision("highest")
+                        torch.backends.cudnn.allow_tf32 = False
+                        decoder = ManoDecoder(runtime.model.mano)
+                        import torch
+                        invocation["runtime"] = {"torch": torch.__version__, "device": str(runtime.device),
+                                                 "cuda": torch.version.cuda, "float32_matmul_precision": torch.get_float32_matmul_precision()}
+                    tick = time.perf_counter()
+                    hands = infer_hands_from_image(image, runtime, detector_conf=args.detector_conf,
+                        rescale_factor=args.rescale_factor, batch_size=args.batch_size,
+                        include_vertices=True, include_mano=True)
+                    for hand in hands:
+                        hand["mano"] = encode_hand(hand)
+                        hand["roundtrip"] = decoder.check(hand["mano"], hand)
+                        hand["quality"] = inspect_hand(hand)
+                    record = {"schema": "egohand3d.frame/1", **metadata, "width": int(image.shape[1]),
+                              "height": int(image.shape[0]), "hands": hands,
+                              "timing": {"inference_and_validation_s": time.perf_counter() - tick}}
+                    artifacts = export_frame(directory, record, image, runtime.model.mano.faces,
+                                             not args.no_overlay, not args.no_mesh)
+                    elapsed = time.perf_counter() - tick
+                    store.finish(sample_id, elapsed, f"records/{sample_id}.json", artifacts)
+                    invocation["processed"] += 1
+                    print(f"[process] {sample_id}: {len(hands)} hands, {elapsed:.3f}s", flush=True)
+                    break
+                except Exception as exc:
+                    store.fail(sample_id, f"{type(exc).__name__}: {exc}")
+                    print(f"[failed] {sample_id} attempt {attempt+1}: {exc}", flush=True)
+                    if attempt == args.retries and args.fail_fast:
+                        raise
+        else:
+            counts = store.summary()["counts"]
+            store.set("state", "completed_with_errors" if counts.get("failed", 0) else "completed")
+    except KeyboardInterrupt:
+        store.set("state", "cancelled")
+        print("[cancelled] Completed artifacts are retained; use --resume.", flush=True)
+    except Exception:
+        store.set("state", "failed")
+        raise
+    finally:
+        signal.signal(signal.SIGTERM, previous_sigterm)
+        invocation["wall_seconds"] = time.perf_counter() - started
+        store.set("updated", now())
+        summary = write_run_summary(directory, store, invocation)
+        from .reports import build_run_report
+        build_run_report(directory)
+    return summary
+
+# ===== FILE: egohand3d/sequence.py =====
+"""Association and explicit postprocessing of observed hand sequences.
+
+This is an application-level baseline, not an identity recognition model.
+Interpolated records are marked and remain separate from detector observations.
+"""
+from __future__ import annotations
+
+import copy
+import math
+from pathlib import Path
+
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+from .mano_codec import ManoDecoder, interpolate_packets
+from .storage import file_hash, load_json, save_json
+
+
+def association_cost(a: dict, b: dict) -> float:
+    if a["hand_side"] != b["hand_side"]:
+        return 1e6
+    x, y = np.asarray(a["bbox_xyxy"]), np.asarray(b["bbox_xyxy"])
+    intersection = np.maximum(0, np.minimum(x[2:], y[2:]) - np.maximum(x[:2], y[:2])).prod()
+    area_x = np.maximum(0, x[2:] - x[:2]).prod()
+    area_y = np.maximum(0, y[2:] - y[:2]).prod()
+    iou = intersection / max(area_x + area_y - intersection, 1.)
+    scale = max(np.linalg.norm(x[2:] - x[:2]), np.linalg.norm(y[2:] - y[:2]), 1.)
+    distance = np.linalg.norm((x[:2] + x[2:] - y[:2] - y[2:]) / 2) / scale
+    if distance > 1.5:
+        return 1e6
+    return float(0.6 * (1 - iou) + 0.4 * distance)
+
+
+class HandTracker:
+    def __init__(self, max_gap: int = 3, smoothing_seconds: float = 0.08):
+        if max_gap < 0 or smoothing_seconds < 0:
+            raise ValueError("max_gap and smoothing_seconds must be nonnegative")
+        self.max_gap = max_gap
+        self.tau = smoothing_seconds
+        self.tracks = {}
+        self.next_id = 1
+        self.previous_time = None
+
+    def update(self, hands: list[dict], index: int, timestamp: float):
+        if not math.isfinite(timestamp) or (self.previous_time is not None and timestamp <= self.previous_time):
+            raise ValueError("Sequence timestamps must be finite and strictly increasing")
+        self.previous_time = timestamp
+        self.tracks = {k: v for k, v in self.tracks.items() if index - v["index"] <= self.max_gap + 1}
+        keys = list(self.tracks)
+        assignments = {}
+        if keys and hands:
+            cost = np.array([[association_cost(self.tracks[k]["hand"], h) for h in hands] for k in keys])
+            rr, cc = linear_sum_assignment(cost)
+            assignments = {int(c): keys[int(r)] for r, c in zip(rr, cc) if cost[r, c] < 1.1}
+        output = []
+        gaps = []
+        for position, hand in enumerate(hands):
+            track_id = assignments.get(position)
+            packet = hand["mano"]
+            previous = self.tracks.get(track_id)
+            if previous is None:
+                track_id = self.next_id
+                self.next_id += 1
+                filtered = packet
+            else:
+                elapsed = timestamp - previous["timestamp"]
+                # A long time gap should not retain a stale pose, even with few samples.
+                weight = 1 - math.exp(-elapsed / self.tau) if self.tau else 1.
+                filtered = interpolate_packets(previous["packet"], packet, weight)
+                if index - previous["index"] > 1:
+                    gaps.append({"track_id": track_id, "start": previous["index"], "end": index,
+                                 "start_time": previous["timestamp"], "end_time": timestamp,
+                                 "first": previous["packet"], "second": filtered})
+            current = {**copy.deepcopy(hand), "track_id": track_id, "observation": "detected",
+                       "processed_mano": filtered}
+            self.tracks[track_id] = {"hand": hand, "packet": filtered, "index": index, "timestamp": timestamp}
+            output.append(current)
+        return output, gaps
+
+
+def geometry_record(decoder: ManoDecoder, packet: dict) -> dict:
+    decoded = decoder.decode(packet)
+    joints = decoded["joints_camera"]
+    return {"joints_3d_root": decoded["joints_model"].tolist(), "joints_3d_camera": joints.tolist(),
+            "joints_2d_xy": decoded["joints_2d"].tolist(), "cam_t_full": packet["translation_camera"],
+            "positive_depth": decoded["positive_depth"].tolist()}
+
+
+def process_sequence(run: Path, out: Path, mano_dir: Path, max_gap: int = 3,
+                     smoothing_seconds: float = 0.08, fill_gaps: bool = False) -> dict:
+    if out.exists() and any(out.iterdir()):
+        raise ValueError("Use a new, empty sequence output directory")
+    run_index = load_json(run / "index.json")["records"]
+    if not run_index:
+        raise ValueError("No completed frames")
+    groups = {}
+    for entry in run_index:
+        if entry["timestamp_s"] is None:
+            raise ValueError("Timestamps required: process a video or use --sequence-fps for image sequences")
+        groups.setdefault(entry["sequence_id"], []).append(entry)
+    for entries in groups.values():
+        entries.sort(key=lambda r: r["frame_index"])
+    decoder = ManoDecoder.from_directory(mano_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    count_observed = count_filled = 0
+    new_index = []
+    track_count = 0
+    source_hashes = {}
+    traces = []
+    source_spacing = {}
+    for sequence_id, entries in groups.items():
+        tracker = HandTracker(max_gap, smoothing_seconds)
+        source_spacing[sequence_id] = float(np.median(np.diff([e["timestamp_s"] for e in entries]))) if len(entries) > 1 else None
+        for index, entry in enumerate(entries):
+            source_hashes[entry["record"]] = file_hash(run / entry["record"])
+            record = load_json(run / entry["record"])
+            hands, gaps = tracker.update(record["hands"], index, entry["timestamp_s"])
+            for hand in hands:
+                hand["processed"] = geometry_record(decoder, hand["processed_mano"])
+                traces.append({"sequence_id": sequence_id, "track_id": hand["track_id"],
+                               "frame_index": entry["frame_index"], "timestamp_s": entry["timestamp_s"],
+                               "raw_joints": hand["joints_3d_camera"],
+                               "processed_joints": hand["processed"]["joints_3d_camera"]})
+            record["hands"] = hands
+            record["postprocessing"] = {"smoothing_seconds": smoothing_seconds,
+                                        "raw_predictions_preserved": True, "fill_gaps": fill_gaps}
+            output_path = out / entry["record"]
+            save_json(output_path, record)
+            new_index.append(dict(entry))
+            count_observed += len(hands)
+            if fill_gaps:
+                for gap in gaps:
+                    for missing_index in range(gap["start"] + 1, gap["end"]):
+                        missing_entry = entries[missing_index]
+                        path = out / missing_entry["record"]
+                        missing_frame = load_json(path)
+                        weight = (missing_entry["timestamp_s"] - gap["start_time"]) / (gap["end_time"] - gap["start_time"])
+                        packet = interpolate_packets(gap["first"], gap["second"], weight)
+                        missing_frame["hands"].append({"track_id": gap["track_id"],
+                            "hand_side": packet["hand_side"], "observation": "interpolated",
+                            "processed_mano": packet, "processed": geometry_record(decoder, packet),
+                            "interpolation": {"from_sample": entries[gap["start"]]["sample_id"],
+                                              "to_sample": entries[gap["end"]]["sample_id"], "weight": weight}})
+                        save_json(path, missing_frame)
+                        count_filled += 1
+        track_count += tracker.next_id - 1
+    # Compute velocities only on consecutive detected observations, never gap fills.
+    speeds = {"raw": [], "processed": []}
+    previous = {}
+    for row in traces:
+        key = (row["sequence_id"], row["track_id"])
+        prior = previous.get(key)
+        dt = row["timestamp_s"] - prior["timestamp_s"] if prior else None
+        spacing = source_spacing[row["sequence_id"]]
+        if prior and spacing is not None and dt <= 1.5 * spacing:
+            for variant in speeds:
+                delta = np.asarray(row[f"{variant}_joints"]) - np.asarray(prior[f"{variant}_joints"])
+                speeds[variant].append(float(np.linalg.norm(delta, axis=1).mean() / dt))
+        previous[key] = row
+    summary = {"schema": "egohand3d.sequence/1", "source_run": str(run.resolve()),
+               "frames": len(new_index), "sequences": len(groups), "tracks": track_count,
+               "detected_hands": count_observed, "interpolated_hands": count_filled,
+               "max_gap_samples": max_gap, "smoothing_seconds": smoothing_seconds,
+               "mean_joint_speed_m_s": {k: float(np.mean(v)) if v else None for k, v in speeds.items()},
+               "speed_note": "Descriptive motion statistic, not accuracy or a ground-truth jitter metric",
+               "source_record_sha256": source_hashes}
+    save_json(out / "index.json", {"schema": "egohand3d.index/1", "records": new_index})
+    save_json(out / "summary.json", summary)
+    from .reports import build_sequence_report
+    build_sequence_report(out, traces, summary)
+    return summary
+
+# ===== FILE: egohand3d/dataset_adapters.py =====
+"""Convert existing, trusted HOI4D annotations into an explicit evaluation manifest."""
+from __future__ import annotations
+
+from pathlib import Path
+import pickle
+
+import numpy as np
+
+from .storage import file_hash, load_json, save_json
+
+
+def prepare_hoi4d(run: Path, sample_dir: Path, out: Path) -> dict:
+    manifest = load_json(run / "manifest.json")
+    config = load_json(run / "run_config.json")
+    source_manifest = sample_dir / "meta/manifest.json"
+    annotations = load_json(source_manifest)
+    by_path = {str((sample_dir / a["image"]).resolve()): a for a in annotations}
+    if len(by_path) != len(annotations):
+        raise ValueError("Duplicate HOI4D image entries")
+    media = manifest["files"]
+    if any(item["kind"] != "image" for item in media):
+        raise ValueError("This adapter expects an image run")
+    limit = config["options"]["limit"]
+    if limit:
+        media = media[:limit]
+    frames = []
+    labels = {}
+    for item in media:
+        key = item["identity"]["path"]
+        if key not in by_path:
+            raise ValueError(f"Input lacks a GT mapping: {key}")
+        entry = by_path[key]
+        label_path = sample_dir / entry["label"]
+        # HOI4D stores annotations as pickle. Only use the user's trusted local dataset.
+        with label_path.open("rb") as stream:
+            annotation = pickle.load(stream)
+        points = np.asarray(annotation["kps2D"], dtype=float)
+        if points.shape != (21, 2) or not np.isfinite(points).all():
+            raise ValueError(f"Invalid 2D label: {label_path}")
+        minimum, maximum = points.min(0), points.max(0)
+        padding = np.maximum(maximum - minimum, 1.) * 0.1
+        bbox = np.concatenate([minimum - padding, maximum + padding])
+        frames.append({"sample_id": item["id"], "source_sample_id": entry["sample_id"],
+                       "hands": [{"hand_side": entry["hand_side"], "bbox_xyxy": bbox.tolist(),
+                                  "bbox_source": "GT 2D joint extent with 10% padding per side",
+                                  "joints_2d_xy": points.tolist(), "valid": [True] * 21}]})
+        labels[str(label_path.resolve())] = file_hash(label_path)
+    result = {"schema": "egohand3d.ground_truth/1", "joint_order": "OpenPose21", "length_unit": "m",
+              "camera_axes": "x_right_y_down_z_forward", "labels_complete": False,
+              "label_scope": "One annotated target hand per image; other visible hands may be unlabelled",
+              "source_manifest_sha256": file_hash(source_manifest), "label_sha256": labels,
+              "note": "2D evaluation only; MANO GT requires a separately verified joint/coordinate conversion",
+              "frames": frames}
+    save_json(out, result)
+    return {"frames": len(frames), "out": str(out), "ground_truth_sha256": file_hash(out)}
+
+# ===== FILE: egohand3d/metrics.py =====
+"""Explicit evaluation with fixed manifests and prediction-independent matching."""
+from __future__ import annotations
+
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+
+def similarity_align(prediction, target) -> np.ndarray:
+    x, y = np.asarray(prediction, dtype=float), np.asarray(target, dtype=float)
+    if x.shape != y.shape or x.ndim != 2 or x.shape[1] != 3 or len(x) < 3:
+        raise ValueError("Alignment requires matching Nx3 arrays, N >= 3")
+    xc, yc = x - x.mean(0), y - y.mean(0)
+    variance = np.sum(xc * xc)
+    if variance < 1e-12 or np.linalg.matrix_rank(xc) < 2 or np.linalg.matrix_rank(yc) < 2:
+        raise ValueError("Degenerate joints cannot define a similarity alignment")
+    u, singular, vt = np.linalg.svd(xc.T @ yc)
+    correction = np.eye(3)
+    correction[-1, -1] = np.sign(np.linalg.det(u @ vt))
+    rotation = u @ correction @ vt
+    scale = np.sum(singular * np.diag(correction)) / variance
+    return scale * xc @ rotation + y.mean(0)
+
+
+def bbox_iou(first, second) -> float:
+    a, b = np.asarray(first, dtype=float), np.asarray(second, dtype=float)
+    if a.shape != (4,) or b.shape != (4,) or not np.isfinite([a, b]).all():
+        raise ValueError("Bounding boxes must be finite xyxy arrays")
+    intersection = np.maximum(0, np.minimum(a[2:], b[2:]) - np.maximum(a[:2], b[:2])).prod()
+    union = np.maximum(0, a[2:] - a[:2]).prod() + np.maximum(0, b[2:] - b[:2]).prod() - intersection
+    return float(intersection / union) if union > 0 else 0.
+
+
+def match_hands(predictions: list[dict], targets: list[dict], threshold: float = 0.1):
+    """One-to-one same-side IoU matching; never choose by joint error."""
+    observed = [i for i, p in enumerate(predictions) if p.get("observation", "detected") == "detected"]
+    if not observed or not targets:
+        return []
+    cost = np.full((len(observed), len(targets)), 1e6)
+    for i, pi in enumerate(observed):
+        for j, target in enumerate(targets):
+            prediction = predictions[pi]
+            if prediction["hand_side"] == target["hand_side"]:
+                overlap = bbox_iou(prediction["bbox_xyxy"], target["bbox_xyxy"])
+                if overlap >= threshold:
+                    cost[i, j] = 1 - overlap
+    ii, jj = linear_sum_assignment(cost)
+    return [(observed[int(i)], int(j)) for i, j in zip(ii, jj) if cost[i, j] < 1e6]
+
+
+def error_summary(values) -> dict:
+    array = np.asarray(values, dtype=float)
+    if not array.size:
+        return {"count": 0, "mean": None, "median": None, "p95": None}
+    return {"count": int(array.size), "mean": float(array.mean()), "median": float(np.median(array)),
+            "p95": float(np.percentile(array, 95))}
+
+
+def evaluate_frames(targets: list[dict], predictions: dict, variant: str = "raw",
+                    match_iou: float = 0.1, pck_thresholds=(5., 10., 20., 50.)) -> dict:
+    if variant not in {"raw", "processed"} or not 0 <= match_iou <= 1:
+        raise ValueError("Invalid variant/matching threshold")
+    if not pck_thresholds or any(t <= 0 for t in pck_thresholds):
+        raise ValueError("PCK thresholds must be positive")
+    ids = [str(frame["sample_id"]) for frame in targets]
+    if len(set(ids)) != len(ids):
+        raise ValueError("Duplicate ground-truth sample IDs")
+    errors = {"2d_px": [], "camera_mpjpe_mm": [], "root_mpjpe_mm": [], "pa_mpjpe_mm": []}
+    gt_hands = matched = detected = total_2d = degenerate_pa = missing_frames = 0
+    details = []
+    for frame in targets:
+        record = predictions.get(str(frame["sample_id"]))
+        hands = record.get("hands", []) if record else []
+        missing_frames += record is None
+        labels = frame["hands"]
+        gt_hands += len(labels)
+        detected += sum(h.get("observation", "detected") == "detected" for h in hands)
+        valid_labels = []
+        for target in labels:
+            if target["hand_side"] not in {"left", "right"}:
+                raise ValueError("GT hand_side must be left/right")
+            bbox_iou(target["bbox_xyxy"], target["bbox_xyxy"])
+            valid = np.asarray(target.get("valid", [True] * 21), dtype=bool)
+            if valid.shape != (21,):
+                raise ValueError("GT valid mask must have 21 entries")
+            for key, dim in [("joints_2d_xy", 2), ("joints_3d_camera", 3)]:
+                if key in target:
+                    points = np.asarray(target[key], dtype=float)
+                    if points.shape != (21, dim) or not np.isfinite(points[valid]).all():
+                        raise ValueError(f"Invalid GT {key}")
+            if "joints_2d_xy" in target:
+                total_2d += int(valid.sum())
+            valid_labels.append(valid)
+        pairs = match_hands(hands, labels, match_iou)
+        matched += len(pairs)
+        for pi, gi in pairs:
+            target = labels[gi]
+            hand = hands[pi]
+            predicted = hand if variant == "raw" else hand.get("processed")
+            if predicted is None:
+                raise ValueError("Processed evaluation requires processed geometry for every matched hand")
+            valid = valid_labels[gi]
+            row = {"sample_id": frame["sample_id"], "gt_hand_index": gi, "prediction_index": pi}
+            if "joints_2d_xy" in target:
+                points = np.asarray(predicted["joints_2d_xy"], dtype=float)
+                if points.shape != (21, 2) or not np.isfinite(points).all():
+                    raise ValueError("Invalid predicted 2D joints")
+                err = np.linalg.norm(points[valid] - np.asarray(target["joints_2d_xy"])[valid], axis=1)
+                errors["2d_px"].extend(err.tolist())
+                row["mean_2d_px"] = float(err.mean()) if len(err) else None
+            if "joints_3d_camera" in target:
+                points = np.asarray(predicted["joints_3d_camera"], dtype=float)
+                truth = np.asarray(target["joints_3d_camera"], dtype=float)
+                if points.shape != (21, 3) or not np.isfinite(points).all():
+                    raise ValueError("Invalid predicted 3D joints")
+                camera = np.linalg.norm(points[valid] - truth[valid], axis=1) * 1000
+                errors["camera_mpjpe_mm"].extend(camera.tolist())
+                if valid[0]:
+                    root = np.linalg.norm((points - points[0])[valid] - (truth - truth[0])[valid], axis=1) * 1000
+                    errors["root_mpjpe_mm"].extend(root.tolist())
+                try:
+                    aligned = similarity_align(points[valid], truth[valid])
+                    pa = np.linalg.norm(aligned - truth[valid], axis=1) * 1000
+                    errors["pa_mpjpe_mm"].extend(pa.tolist())
+                except ValueError:
+                    degenerate_pa += 1
+            details.append(row)
+    pixel_errors = np.asarray(errors["2d_px"])
+    pck = {str(float(threshold)): {"matched_only": float(np.mean(pixel_errors <= threshold)) if pixel_errors.size else None,
+           "all_gt_joints": int(np.sum(pixel_errors <= threshold)) / total_2d if total_2d else None}
+           for threshold in sorted(set(pck_thresholds))}
+    return {"schema": "egohand3d.benchmark/1", "variant": variant, "frames": len(targets),
+            "missing_prediction_frames": missing_frames, "gt_hands": gt_hands, "predicted_hands": detected,
+            "matched_hands": matched, "missed_hands": gt_hands - matched, "unmatched_predictions": detected - matched,
+            "hand_recall": matched / gt_hands if gt_hands else None,
+            "hand_precision": matched / detected if detected else None,
+            "metrics": {key: error_summary(value) for key, value in errors.items()},
+            "pck_px": pck, "num_gt_2d_joints": total_2d, "degenerate_pa_hands": degenerate_pa,
+            "protocol": {"matching": "one_to_one_same_side_bbox_iou", "minimum_iou": match_iou,
+                         "interpolated_hands": "excluded", "3d_unit": "m", "joint_order": "OpenPose21",
+                         "mean_error_denominator": "valid joints in matched hands; report recall alongside",
+                         "all_gt_pck": "unmatched/missing hands count as incorrect"}, "details": details}
+
+# ===== FILE: egohand3d/reports.py =====
+"""Static reports, plots, and portable result archives; no web application."""
+from __future__ import annotations
+
+import csv
+import html
+import io
+import json
+from pathlib import Path
+import zipfile
+
+import numpy as np
+
+from .storage import atomic_text, file_hash, load_json, save_json
+
+
+def write_report(directory, title, paragraphs, rows, columns):
+    markdown = [f"# {title}", "", *paragraphs, "", "|" + "|".join(columns) + "|",
+                "|" + "|".join(["---"] * len(columns)) + "|"]
+    markdown += ["|" + "|".join(str(v) for v in row) + "|" for row in rows]
+    atomic_text(directory / "report.md", "\n".join(markdown) + "\n")
+    table = "<tr>" + "".join(f"<th>{html.escape(c)}</th>" for c in columns) + "</tr>"
+    table += "".join("<tr>" + "".join(f"<td>{html.escape(str(v))}</td>" for v in row) + "</tr>" for row in rows)
+    images = "".join(f'<img src="{html.escape(p.name)}" alt="{html.escape(p.stem)}">'
+                     for p in sorted(directory.glob("chart_*.png")))
+    document = f"""<!doctype html><html lang="en"><meta charset="utf-8"><title>{html.escape(title)}</title>
+<style>body{{max-width:1050px;margin:40px auto;padding:0 20px;font:16px/1.6 sans-serif;color:#223}}
+table{{border-collapse:collapse}}td,th{{border:1px solid #ccd;padding:8px;text-align:left}}img{{max-width:100%}}</style>
+<h1>{html.escape(title)}</h1>{''.join('<p>'+html.escape(p)+'</p>' for p in paragraphs)}<table>{table}</table>{images}</html>"""
+    atomic_text(directory / "report.html", document)
+
+
+def pyplot():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    return plt
+
+
+def build_run_report(directory: Path):
+    summary = load_json(directory / "summary.json")
+    flags = summary["quality_flags"]
+    if flags:
+        plt = pyplot()
+        fig, ax = plt.subplots(figsize=(9, 4), layout="constrained")
+        ax.barh(list(flags), list(flags.values()), color="#437a9e")
+        ax.set(xlabel="Hand observations flagged", title="Quality diagnostics (not accuracy)")
+        fig.savefig(directory / "chart_quality.png", dpi=160)
+        plt.close(fig)
+    rows = [("Run state", summary["state"]), ("Processed frames", summary["frames_completed"]),
+            ("Frames containing predictions", summary["frames_with_hands"]), ("Hands", summary["hands"]),
+            ("MANO consistency failures", summary["roundtrip_failures"]),
+            ("Failed tasks", len(summary["failures"])),
+            ("Mean frame processing seconds", summary["mean_processing_seconds"])]
+    write_report(directory, "EgoHand3D processing report", [
+        "Generated from actual processing records. Detection coverage is not recall without ground truth.",
+        "MANO consistency checks serialization/reconstruction, not pose estimation accuracy.",
+        "run_config.json records asset/input identities, code hashes and options. index.csv maps artifacts to inputs.",
+        "Images and meshes are stored in overlays/ and meshes/."], rows, ["Item", "Value"])
+
+
+def build_sequence_report(directory: Path, traces: list[dict], summary: dict):
+    if traces:
+        plt = pyplot()
+        fig, axes = plt.subplots(2, 1, figsize=(10, 6), layout="constrained")
+        chosen = (traces[0]["sequence_id"], traces[0]["track_id"])
+        subset = [t for t in traces if (t["sequence_id"], t["track_id"]) == chosen]
+        for variant in ["raw", "processed"]:
+            wrist = np.array([t[f"{variant}_joints"][0] for t in subset])
+            times = np.array([t["timestamp_s"] for t in subset])
+            axes[0].plot(times, wrist[:, 0], label=variant)
+            axes[1].plot(times, wrist[:, 2], label=variant)
+        axes[0].set_ylabel("Wrist x (m)")
+        axes[1].set_ylabel("Wrist z (m)")
+        axes[1].set_xlabel("Time (s)")
+        for ax in axes:
+            ax.legend()
+        axes[0].set_title(f"Sequence {chosen[0]}, track {chosen[1]} — observed frames")
+        fig.savefig(directory / "chart_trajectory.png", dpi=160)
+        plt.close(fig)
+    write_report(directory, "EgoHand3D sequence report", [
+        "Raw predictions are retained beside processed MANO and geometry.",
+        "Interpolated hands are explicitly labelled and excluded from detection and accuracy evaluation.",
+        "Lower motion speed does not imply better accuracy; evaluate against ground truth."],
+        [(key, summary[key]) for key in ["frames", "sequences", "tracks", "detected_hands", "interpolated_hands",
+                                       "smoothing_seconds", "mean_joint_speed_m_s"]], ["Item", "Value"])
+
+
+def build_benchmark_report(directory: Path, result: dict):
+    save_json(directory / "summary.json", result)
+    buffer = io.StringIO()
+    writer = csv.DictWriter(buffer, fieldnames=["sample_id", "gt_hand_index", "prediction_index", "mean_2d_px"])
+    writer.writeheader()
+    writer.writerows(result["details"])
+    atomic_text(directory / "details.csv", buffer.getvalue())
+    plt = pyplot()
+    fig, ax = plt.subplots(figsize=(7, 4), layout="constrained")
+    for denominator in ["matched_only", "all_gt_joints"]:
+        pairs = [(float(k), result["pck_px"][k][denominator]) for k in sorted(result["pck_px"], key=float)
+                 if result["pck_px"][k][denominator] is not None]
+        if pairs:
+            ax.plot(*zip(*pairs), marker="o", label=denominator)
+    ax.set(xlabel="Threshold (px)", ylabel="PCK", ylim=(0, 1.02), title="2D PCK with explicit denominators")
+    if ax.lines:
+        ax.legend()
+    fig.savefig(directory / "chart_pck.png", dpi=160)
+    plt.close(fig)
+    rows = [(key, result[key]) for key in ["frames", "gt_hands", "matched_hands", "missed_hands",
+                                         "unmatched_predictions", "hand_recall", "hand_precision"]]
+    rows += [(key, value["mean"]) for key, value in result["metrics"].items()]
+    write_report(directory, "EgoHand3D benchmark report", [
+        "Matching uses same-side bounding-box IoU, not the smallest ground-truth joint error.",
+        "Joint errors use matched hands. All-GT PCK counts missing hands as failures.",
+        f"Ground-truth manifest SHA-256: {result['ground_truth_sha256']}"], rows, ["Metric", "Value"])
+
+
+def compare_benchmarks(paths: list[Path], out: Path):
+    results = [load_json(p) for p in paths]
+    if len(results) < 2:
+        raise ValueError("At least two benchmark summaries are required")
+    reference = results[0]
+    for result in results:
+        if result.get("schema") != "egohand3d.benchmark/1":
+            raise ValueError("Comparison requires benchmark summaries")
+        for key in ["ground_truth_sha256", "protocol", "evaluator_sha256"]:
+            if result[key] != reference[key]:
+                raise ValueError(f"Cannot compare different {key}")
+        if list(result["pck_px"]) != list(reference["pck_px"]):
+            raise ValueError("PCK thresholds differ")
+    if out.exists() and any(out.iterdir()):
+        raise ValueError("Comparison output directory must be empty")
+    out.mkdir(parents=True, exist_ok=True)
+    rows = [(str(path), result["variant"], result["hand_recall"], result["metrics"]["2d_px"]["mean"],
+             result["metrics"]["root_mpjpe_mm"]["mean"], result["metrics"]["pa_mpjpe_mm"]["mean"])
+            for path, result in zip(paths, results)]
+    columns = ["Run", "Variant", "Recall", "2D px", "Root MPJPE mm", "PA-MPJPE mm"]
+    write_report(out, "EgoHand3D benchmark comparison", ["Identical GT manifest, matching rules and evaluator verified."], rows, columns)
+    save_json(out / "comparison.json", {"inputs": [str(p) for p in paths], "columns": columns, "rows": rows,
+                                      "ground_truth_sha256": reference["ground_truth_sha256"]})
+    return {"runs": len(rows), "report": str(out / "report.html")}
+
+
+def package_results(directory: Path, destination: Path) -> dict:
+    if not (directory / "summary.json").is_file():
+        raise ValueError("Result directory needs summary.json")
+    if destination.exists():
+        raise FileExistsError(f"Archive already exists: {destination}")
+    allowed = {".json", ".jsonl", ".csv", ".md", ".html", ".png", ".jpg", ".obj", ".mp4"}
+    files = []
+    for path in sorted(directory.rglob("*")):
+        if path.is_symlink():
+            raise ValueError(f"Refusing to package symlink: {path}")
+        if path.is_file() and path.suffix in allowed:
+            files.append(path)
+    manifest = {str(p.relative_to(directory)): {"bytes": p.stat().st_size, "sha256": file_hash(p)} for p in files}
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_suffix(destination.suffix + ".partial")
+    try:
+        with zipfile.ZipFile(temporary, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+            for path in files:
+                archive.write(path, str(path.relative_to(directory)))
+            archive.writestr("ARTIFACT_MANIFEST.json", json.dumps(manifest, indent=2))
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return {"archive": str(destination), "files": len(files), "sha256": file_hash(destination)}
+
+# ===== FILE: egohand3d/video_export.py =====
+"""Offline side-by-side videos comparing raw observations and processed poses."""
+from __future__ import annotations
+
+from pathlib import Path
+import cv2
+import numpy as np
+
+from .storage import load_json
+from .visualization import draw_hand_skeleton, draw_label
+
+
+def export_sequence_videos(directory: Path) -> list[str]:
+    entries = load_json(directory / "index.json")["records"]
+    groups = {}
+    for entry in entries:
+        groups.setdefault(entry["sequence_id"], []).append(entry)
+    outputs = []
+    for sequence_id, group in groups.items():
+        group.sort(key=lambda e: e["timestamp_s"])
+        times = np.array([e["timestamp_s"] for e in group])
+        differences = np.diff(times)
+        if not len(differences):
+            continue
+        if not np.allclose(differences, differences[0], rtol=1e-3, atol=1e-6):
+            raise ValueError("Video export requires evenly spaced frames; JSON and plots support irregular timestamps")
+        fps = float(1 / differences[0])
+        output = directory / f"{sequence_id}_comparison.mp4"
+        writer = None
+        capture = None
+        capture_path = None
+        try:
+            for entry in group:
+                record = load_json(directory / entry["record"])
+                source = Path(record["source_path"])
+                if record["time_source"] == "container_fps":
+                    if str(source) != capture_path:
+                        if capture is not None:
+                            capture.release()
+                        capture = cv2.VideoCapture(str(source))
+                        capture_path = str(source)
+                    capture.set(cv2.CAP_PROP_POS_FRAMES, record["frame_index"])
+                    ok, image = capture.read()
+                    if not ok:
+                        raise ValueError(f"Cannot reread source video frame {record['frame_index']}")
+                else:
+                    image = cv2.imread(str(source))
+                    if image is None:
+                        raise ValueError(f"Cannot reread source image {source}")
+                panels = [image.copy(), image.copy()]
+                for hand in record["hands"]:
+                    observed = hand.get("observation") == "detected"
+                    if observed:
+                        draw_hand_skeleton(panels[0], np.asarray(hand["joints_2d_xy"]))
+                    points = np.asarray(hand["processed"]["joints_2d_xy"])
+                    draw_hand_skeleton(panels[1], points)
+                    location = tuple(np.rint(points[0]).astype(int))
+                    draw_label(panels[1], f"ID {hand['track_id']} {'detected' if observed else 'INTERPOLATED'}",
+                               location, (20, 230, 100) if observed else (20, 120, 250))
+                for panel, title in zip(panels, ["Raw model observations", "Processed MANO; gaps explicitly labelled"]):
+                    draw_label(panel, title, (15, 30), (240, 240, 240))
+                combined = np.hstack(panels)
+                if writer is None:
+                    size = (combined.shape[1], combined.shape[0])
+                    writer = cv2.VideoWriter(str(output), cv2.VideoWriter_fourcc(*"mp4v"), fps, size)
+                    if not writer.isOpened():
+                        raise OSError("Cannot initialize MP4 writer")
+                if (combined.shape[1], combined.shape[0]) != size:
+                    raise ValueError("Sequence image dimensions changed")
+                writer.write(combined)
+        finally:
+            if writer is not None:
+                writer.release()
+            if capture is not None:
+                capture.release()
+        outputs.append(str(output))
+    return outputs
+
+# ===== FILE: egohand3d/workflow_cli.py =====
+"""Register the headless workflow in the existing command line."""
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def positive_int(value):
+    value = int(value)
+    if value < 1:
+        raise argparse.ArgumentTypeError("must be positive")
+    return value
+
+
+def nonnegative_int(value):
+    value = int(value)
+    if value < 0:
+        raise argparse.ArgumentTypeError("must be nonnegative")
+    return value
+
+
+def positive_float(value):
+    value = float(value)
+    if not math.isfinite(value) or value <= 0:
+        raise argparse.ArgumentTypeError("must be finite and positive")
+    return value
+
+
+def probability(value):
+    value = float(value)
+    if not 0 <= value <= 1:
+        raise argparse.ArgumentTypeError("must be in [0,1]")
+    return value
+
+
+def _execute(args):
+    try:
+        result = execute(args)
+    except (ValueError, OSError, KeyError, RuntimeError) as exc:
+        print(f"[error] {exc}")
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
+    if result.get("state") == "cancelled":
+        return 130
+    if result.get("state") in {"completed_with_errors", "failed"} or result.get("passed") is False or result.get("roundtrip_failures", 0):
+        return 1
+    if args.command == "scan" and result["summary"]["unreadable"]:
+        return 1
+    return 0
+
+
+def execute(args):
+    from .storage import file_hash, load_json, save_json
+    if args.command == "scan":
+        from .media import scan_media
+        result = scan_media(args.input, args.recursive, args.hash_inputs)
+        save_json(args.out, result)
+        return result
+    if args.command == "process":
+        from .pipeline import process
+        for key in ["input", "out", "checkpoint", "cfg", "detector"]:
+            setattr(args, key, str(Path(getattr(args, key)).resolve()))
+        if args.recursive and Path(args.out).is_relative_to(Path(args.input)):
+            raise ValueError("Output must be outside a recursively scanned input directory")
+        previous = Path.cwd()
+        try:
+            os.chdir(ROOT)
+            return process(args)
+        finally:
+            os.chdir(previous)
+    if args.command == "jobs":
+        from .jobs import inspect_jobs
+        return inspect_jobs(args.run, args.cancel)
+    if args.command == "mano-check":
+        from .mano_codec import ManoDecoder, validate_packet
+        payload = load_json(args.input)
+        if "hands" in payload:
+            decoder = ManoDecoder.from_directory(args.mano_dir, args.device)
+            checks = [decoder.check(hand["mano"], hand) for hand in payload["hands"]]
+            result = {"hands": len(checks), "passed": bool(checks) and all(c["passed"] for c in checks), "checks": checks}
+        else:
+            validate_packet(payload)
+            result = {"passed": True, "validation": "Schema and rotation equivalence; no reference geometry supplied"}
+        save_json(args.out, result)
+        return result
+    if args.command == "sequence":
+        from .sequence import process_sequence
+        return process_sequence(args.run, args.out, args.mano_dir, args.max_gap, args.smoothing_seconds, args.fill_gaps)
+    if args.command == "prepare-gt":
+        from .dataset_adapters import prepare_hoi4d
+        return prepare_hoi4d(args.run, args.sample_dir, args.out)
+    if args.command == "render-sequence":
+        from .video_export import export_sequence_videos
+        return {"videos": export_sequence_videos(args.run)}
+    if args.command == "benchmark":
+        from .metrics import evaluate_frames
+        from .reports import build_benchmark_report
+        truth = load_json(args.ground_truth)
+        if truth.get("schema") != "egohand3d.ground_truth/1" or truth.get("joint_order") != "OpenPose21":
+            raise ValueError("GT needs schema egohand3d.ground_truth/1 and joint_order OpenPose21")
+        if truth.get("length_unit") != "m" or truth.get("camera_axes") != "x_right_y_down_z_forward":
+            raise ValueError("GT must declare meters and camera axes x_right_y_down_z_forward")
+        entries = load_json(args.run / "index.json")["records"]
+        predictions, identities = {}, {}
+        wanted = {str(f["sample_id"]) for f in truth["frames"]}
+        for entry in entries:
+            key = str(entry["sample_id"])
+            if key in predictions:
+                raise ValueError("Duplicate prediction sample IDs")
+            if key in wanted:
+                predictions[key] = load_json(args.run / entry["record"])
+                identities[entry["record"]] = file_hash(args.run / entry["record"])
+        result = evaluate_frames(truth["frames"], predictions, args.variant, args.match_iou, args.pck_thresholds)
+        result["protocol"]["labels_complete"] = truth.get("labels_complete", True)
+        result["protocol"]["label_scope"] = truth.get("label_scope", "All relevant hands annotated")
+        result["matched_prediction_fraction"] = result["hand_precision"]
+        if not truth.get("labels_complete", True):
+            result["hand_precision"] = None
+        result.update(ground_truth_sha256=file_hash(args.ground_truth),
+                      evaluator_sha256=file_hash(Path(__file__).with_name("metrics.py")),
+                      prediction_sha256=identities, source_run=str(args.run.resolve()))
+        if args.out.exists() and any(args.out.iterdir()):
+            raise ValueError("Benchmark output directory must be empty")
+        args.out.mkdir(parents=True, exist_ok=True)
+        build_benchmark_report(args.out, result)
+        return {key: value for key, value in result.items() if key not in {"details", "prediction_sha256"}}
+    if args.command == "compare":
+        from .reports import compare_benchmarks
+        return compare_benchmarks(args.summaries, args.out)
+    if args.command == "package":
+        from .reports import package_results
+        return package_results(args.run, args.out)
+    raise ValueError(f"Unsupported command: {args.command}")
+
+
+def add_workflow_commands(sub):
+    p = sub.add_parser("scan", help="Preflight image/video inputs without loading models")
+    p.add_argument("--input", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--recursive", action="store_true")
+    p.add_argument("--hash-inputs", action="store_true")
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("process", help="One inference pass: 2D/3D/MANO/mesh, quality checks and resume")
+    p.add_argument("--input", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--checkpoint", default=str(ROOT / "pretrained_models/wilor_final.ckpt"))
+    p.add_argument("--cfg", default=str(ROOT / "pretrained_models/model_config.yaml"))
+    p.add_argument("--detector", default=str(ROOT / "pretrained_models/detector.pt"))
+    p.add_argument("--device", default="auto")
+    p.add_argument("--detector-conf", type=probability, default=0.3)
+    p.add_argument("--rescale-factor", type=positive_float, default=2.)
+    p.add_argument("--batch-size", type=positive_int, default=16)
+    p.add_argument("--stride", type=positive_int, default=1)
+    p.add_argument("--limit", type=nonnegative_int, default=0)
+    p.add_argument("--sequence-fps", type=positive_float)
+    p.add_argument("--retries", type=nonnegative_int, default=1)
+    for flag in ["recursive", "hash-inputs", "hash-assets", "resume", "fail-fast", "no-mesh", "no-overlay"]:
+        p.add_argument("--" + flag, action="store_true")
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("jobs", help="Inspect a run or request cancellation between frames")
+    p.add_argument("--run", type=Path, required=True)
+    p.add_argument("--cancel", action="store_true")
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("mano-check", help="Validate MANO interchange or reconstruct a complete frame")
+    p.add_argument("--input", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--mano-dir", type=Path, default=ROOT / "mano_data")
+    p.add_argument("--device", default="cpu")
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("sequence", help="Associate hands, smooth poses, optionally fill bounded gaps")
+    p.add_argument("--run", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--mano-dir", type=Path, default=ROOT / "mano_data")
+    p.add_argument("--max-gap", type=nonnegative_int, default=3)
+    p.add_argument("--smoothing-seconds", type=positive_float, default=0.08)
+    p.add_argument("--fill-gaps", action="store_true")
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("prepare-gt", help="Adapt trusted local HOI4D pickle labels to fixed 2D GT")
+    p.add_argument("--run", type=Path, required=True)
+    p.add_argument("--sample-dir", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("render-sequence", help="Export offline raw/processed comparison videos")
+    p.add_argument("--run", type=Path, required=True)
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("benchmark", help="Evaluate fixed GT with one-to-one IoU matching")
+    p.add_argument("--run", type=Path, required=True)
+    p.add_argument("--ground-truth", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--variant", choices=["raw", "processed"], default="raw")
+    p.add_argument("--match-iou", type=probability, default=0.1)
+    p.add_argument("--pck-thresholds", nargs="+", type=positive_float, default=[5., 10., 20., 50.])
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("compare", help="Compare benchmarks with identical evaluation protocols")
+    p.add_argument("--summaries", nargs="+", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.set_defaults(func=_execute)
+
+    p = sub.add_parser("package", help="Archive generated results with checksums, excluding weights")
+    p.add_argument("--run", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.set_defaults(func=_execute)
+
+# ===== FILE: egohand3d/workflow.py =====
+"""Standalone entry point for the EgoHand3D processing workflow."""
+from __future__ import annotations
+
+import argparse
+
+from .workflow_cli import add_workflow_commands
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        prog="python -m egohand3d.workflow",
+        description="Egocentric hand processing, parameter export and evaluation",
+    )
+    subcommands = parser.add_subparsers(dest="command", required=True)
+    add_workflow_commands(subcommands)
+    args = parser.parse_args(argv)
+    return args.func(args)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

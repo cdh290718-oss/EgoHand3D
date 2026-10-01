@@ -1,0 +1,6 @@
+frame,mean_err_px,median_err_px,max_err_px,max_err_joint,csv
+0,1.3895851825432015,0.7454222733252295,6.156244428022157,4,hoi4d_samples/kps2d_comparison/csv/frame_000000_kps2d_compare.csv
+50,1.288653691168007,0.6999609460537438,5.991868172545983,4,hoi4d_samples/kps2d_comparison/csv/frame_000050_kps2d_compare.csv
+100,1.272948942032671,0.8154357932770154,5.15406359932102,4,hoi4d_samples/kps2d_comparison/csv/frame_000100_kps2d_compare.csv
+150,1.2055470960338477,0.7151180637358626,5.305456952975205,4,hoi4d_samples/kps2d_comparison/csv/frame_000150_kps2d_compare.csv
+200,1.3698666698594093,0.8442042615841513,5.7371145676299555,8,hoi4d_samples/kps2d_comparison/csv/frame_000200_kps2d_compare.csv

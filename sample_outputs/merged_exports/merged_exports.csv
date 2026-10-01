@@ -1,0 +1,2 @@
+id,num_files,num_hands,has_2d,has_3d,has_mano,has_mesh,has_overlay,file_counts
+sample_frame,5,1,1,1,1,1,1,joints2d_json:1; joints3d_json:1; mano_json:1; mesh_obj:1; render_overlay:1

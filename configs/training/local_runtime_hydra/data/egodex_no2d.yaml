@@ -1,0 +1,30 @@
+# @package _global_
+
+DATASETS:
+  TRAIN:
+    EGODEX-NO2D-TRAIN:
+      WEIGHT: 1.0
+  VAL:
+    EGODEX-NO2D-VAL:
+      WEIGHT: 1.0
+  TEST:
+    EGODEX-NO2D-TEST:
+      WEIGHT: 1.0
+
+  MOCAP: FREIHAND-MOCAP
+
+  SUPPRESS_KP_CONF_THRESH: 0.3
+  FILTER_NUM_KP: 4
+  FILTER_NUM_KP_THRESH: 0.0
+  FILTER_NUM_KP_3D: 4
+  FILTER_NUM_KP_3D_THRESH: 0.0
+  FILTER_REPROJ_THRESH: 0.0
+  FILTER_MIN_BBOX_SIZE: 0.0
+
+  # EgoDex no2d only provides valid 3D keypoints in the current tars.
+  # Keep MANO pose/beta losses masked and do not synthesize beta supervision.
+  BETAS_REG: False
+  SUPPRESS_BETAS_THRESH: 0.0
+  SUPPRESS_BAD_POSES: False
+  POSES_BETAS_SIMULTANEOUS: False
+  FILTER_NO_POSES: False

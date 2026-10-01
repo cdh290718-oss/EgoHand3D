@@ -1,0 +1,6 @@
+frame,num_hands,selected_hand,is_right,mean_err_px,median_err_px,max_err_px,max_err_joint,csv
+0,1,0,True,14.112192720338246,9.426728392100348,46.886233462728896,20,hoi4d_samples/wilor_vs_gt_2djoints/csv/frame_000000_wilor_vs_gt.csv
+50,1,0,True,26.287417023307107,28.674813326853265,39.18539861280169,20,hoi4d_samples/wilor_vs_gt_2djoints/csv/frame_000050_wilor_vs_gt.csv
+100,1,0,True,23.651379914070514,22.13849386405304,38.698586420930994,20,hoi4d_samples/wilor_vs_gt_2djoints/csv/frame_000100_wilor_vs_gt.csv
+150,1,0,True,21.89525880262186,17.09171169132491,59.82906869277045,20,hoi4d_samples/wilor_vs_gt_2djoints/csv/frame_000150_wilor_vs_gt.csv
+200,1,0,True,31.23383644243186,32.02948750700236,55.539037716569304,20,hoi4d_samples/wilor_vs_gt_2djoints/csv/frame_000200_wilor_vs_gt.csv

@@ -1,0 +1,25 @@
+# @package _global_
+
+DATASETS:
+  TRAIN:
+    HOI4D-CLEAN-TRAIN:
+      WEIGHT: 1.0
+  VAL:
+    HOI4D-CLEAN-VAL:
+      WEIGHT: 1.0
+  TEST:
+    HOI4D-CLEAN-TEST:
+      WEIGHT: 1.0
+
+  MOCAP: FREIHAND-MOCAP
+
+  SUPPRESS_KP_CONF_THRESH: 0.3
+  FILTER_NUM_KP: 4
+  FILTER_NUM_KP_THRESH: 0.0
+  FILTER_REPROJ_THRESH: 0.0
+  FILTER_MIN_BBOX_SIZE: 0.0
+
+  # HOI4D clean annotations are already filtered; keep MANO supervision enabled.
+  SUPPRESS_BETAS_THRESH: 0.0
+  SUPPRESS_BAD_POSES: False
+  POSES_BETAS_SIMULTANEOUS: False

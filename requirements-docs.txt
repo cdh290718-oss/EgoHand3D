@@ -1,0 +1,4 @@
+# Optional, only for rebuilding source listing documents.
+python-docx==1.2.0
+reportlab==5.0.1
+pypdf>=5

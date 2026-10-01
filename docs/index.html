@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EgoHand3D · 第一视角手部姿态估计</title>
+<style>body{max-width:900px;margin:48px auto;padding:0 24px;font:17px/1.8 system-ui;color:#203040}a{color:#176b9c}table{border-collapse:collapse}td,th{padding:10px 24px;border-bottom:1px solid #ccd}img{max-width:100%}</style>
+<h1>EgoHand3D</h1><p>基于 WiLoR 的第一视角 RGB 手部姿态估计适配与处理软件。</p>
+<p>保留 WiLoR 网络，通过第一视角数据微调，并提供可恢复推理、MANO 导出与校验、时序处理、评估和静态报告。</p>
+<table><tr><th>100 张 HOI4D 样例</th><th>初始模型</th><th>微调模型</th></tr>
+<tr><td>匹配关节二维误差</td><td>17.0416 px</td><td>8.2124 px</td></tr>
+<tr><td>标注手匹配</td><td>85/100</td><td>85/100</td></tr>
+<tr><td>全 GT PCK@10 px</td><td>32.00%</td><td>63.76%</td></tr></table>
+<p>固定样例验证；尚未核实与训练数据完全不重叠，不作独立测试集泛化结论。精度差异来自已有权重。本轮无真实三维 GT 评估。</p>
+<p><a href="../README.md">项目说明</a> · <a href="HEADLESS_WORKFLOW.md">操作手册</a> · <a href="../artifacts/README.md">全部结果</a> · <a href="../registration/README.md">源码交存说明</a></p>
+</html>

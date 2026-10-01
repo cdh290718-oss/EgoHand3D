@@ -1,0 +1,65 @@
+{
+  "0": {
+    "mean_err_px": 1.2
+  },
+  "1": {
+    "mean_err_px": 1.1
+  },
+  "2": {
+    "mean_err_px": 1.2
+  },
+  "3": {
+    "mean_err_px": 1.6279
+  },
+  "4": {
+    "mean_err_px": 0.0
+  },
+  "5": {
+    "mean_err_px": 1.6279
+  },
+  "6": {
+    "mean_err_px": 1.2
+  },
+  "7": {
+    "mean_err_px": 1.1
+  },
+  "8": {
+    "mean_err_px": 1.2
+  },
+  "9": {
+    "mean_err_px": 1.6279
+  },
+  "10": {
+    "mean_err_px": 0.0
+  },
+  "11": {
+    "mean_err_px": 1.6279
+  },
+  "12": {
+    "mean_err_px": 1.2
+  },
+  "13": {
+    "mean_err_px": 1.1
+  },
+  "14": {
+    "mean_err_px": 1.2
+  },
+  "15": {
+    "mean_err_px": 1.6279
+  },
+  "16": {
+    "mean_err_px": 0.0
+  },
+  "17": {
+    "mean_err_px": 1.6279
+  },
+  "18": {
+    "mean_err_px": 1.2
+  },
+  "19": {
+    "mean_err_px": 1.1
+  },
+  "20": {
+    "mean_err_px": 1.2
+  }
+}

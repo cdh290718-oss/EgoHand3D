@@ -1,0 +1,19 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - data: hoi4d.yaml
+  - trainer: gpu.yaml
+  - paths: default.yaml
+  - extras: default.yaml
+  - hydra: default.yaml
+  - experiment: wilor_vit_refinenet.yaml
+  - optional launcher: local.yaml
+  - debug: null
+
+task_name: train
+tags: ["wilor"]
+train: True
+test: False
+ckpt_path: null
+seed: null

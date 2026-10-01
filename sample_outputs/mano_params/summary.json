@@ -1,0 +1,7 @@
+{
+  "img_folder": "sample_outputs/assets",
+  "out_folder": "sample_outputs/mano_params",
+  "num_images": 1,
+  "num_readable": 1,
+  "num_hands": 1
+}

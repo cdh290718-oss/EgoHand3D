@@ -1,0 +1,78 @@
+{
+  "sequence": "20260604_203918_008",
+  "camera": "cam0",
+  "source_root": "../WiLoR/20260604_203918_008",
+  "frame_indices": [
+    0,
+    100,
+    200
+  ],
+  "frame_count": 3,
+  "asset_policy": "Lightweight first-person example files only; source videos, checkpoints, MANO assets, and full trajectory arrays are not included.",
+  "array_shapes": {
+    "raw_mm": [
+      892,
+      2,
+      21,
+      3
+    ],
+    "smooth_mm": [
+      892,
+      2,
+      21,
+      3
+    ],
+    "triangulated_mm": [
+      892,
+      2,
+      21,
+      3
+    ],
+    "tracks_2d_cam0_px": [
+      892,
+      2,
+      21,
+      2
+    ],
+    "bboxes_cam0_xyxy": [
+      892,
+      2,
+      4
+    ],
+    "confidence": [
+      892,
+      2
+    ],
+    "depth_cam0_mm": [
+      892,
+      2,
+      21
+    ],
+    "bbox_conf_cam0": [
+      892,
+      2
+    ],
+    "det_ids_cam0": [
+      892,
+      2
+    ]
+  },
+  "camera_params_file": "outputs/3d_trajectory/camera_params_used.json",
+  "trajectory_samples": [
+    {
+      "frame_index": 0,
+      "path": "examples/egocentric_sequence/outputs/3d_trajectory/cam0_frame_000000_trajectory.json",
+      "hands": 2
+    },
+    {
+      "frame_index": 100,
+      "path": "examples/egocentric_sequence/outputs/3d_trajectory/cam0_frame_000100_trajectory.json",
+      "hands": 2
+    },
+    {
+      "frame_index": 200,
+      "path": "examples/egocentric_sequence/outputs/3d_trajectory/cam0_frame_000200_trajectory.json",
+      "hands": 2
+    }
+  ]
+}

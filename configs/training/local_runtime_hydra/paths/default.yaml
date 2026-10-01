@@ -1,0 +1,6 @@
+root_dir: ${oc.env:PROJECT_ROOT}
+data_dir: ${paths.root_dir}/data/
+training_data_dir: ${oc.env:WILOR_TRAINING_DATA,${paths.root_dir}/../hamer/hamer_training_data}
+log_dir: logs/
+output_dir: ${hydra:runtime.output_dir}
+work_dir: ${hydra:runtime.cwd}

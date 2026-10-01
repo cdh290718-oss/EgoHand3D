@@ -1,0 +1,4 @@
+[train] exp_name=smoke_hoi4d_clean_1gpu
+[train] trainer.devices=1
+[train] total_steps=20
+[checkpoint] logs/train/runs/smoke_hoi4d_clean_1gpu/checkpoints/step=000020.ckpt

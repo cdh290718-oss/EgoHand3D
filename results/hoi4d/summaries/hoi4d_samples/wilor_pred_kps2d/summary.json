@@ -1,0 +1,57 @@
+[
+  {
+    "frame": 0,
+    "num_hands": 1,
+    "saved": true,
+    "hand_index": 0,
+    "is_right": true,
+    "npy": "hoi4d_samples/wilor_pred_kps2d/npy/frame_000000_wilor_kps2d.npy",
+    "txt": "hoi4d_samples/wilor_pred_kps2d/txt/frame_000000_wilor_kps2d.txt",
+    "csv": "hoi4d_samples/wilor_pred_kps2d/csv/frame_000000_wilor_kps2d.csv",
+    "json": "hoi4d_samples/wilor_pred_kps2d/json/frame_000000_wilor_kps2d.json"
+  },
+  {
+    "frame": 50,
+    "num_hands": 1,
+    "saved": true,
+    "hand_index": 0,
+    "is_right": true,
+    "npy": "hoi4d_samples/wilor_pred_kps2d/npy/frame_000050_wilor_kps2d.npy",
+    "txt": "hoi4d_samples/wilor_pred_kps2d/txt/frame_000050_wilor_kps2d.txt",
+    "csv": "hoi4d_samples/wilor_pred_kps2d/csv/frame_000050_wilor_kps2d.csv",
+    "json": "hoi4d_samples/wilor_pred_kps2d/json/frame_000050_wilor_kps2d.json"
+  },
+  {
+    "frame": 100,
+    "num_hands": 1,
+    "saved": true,
+    "hand_index": 0,
+    "is_right": true,
+    "npy": "hoi4d_samples/wilor_pred_kps2d/npy/frame_000100_wilor_kps2d.npy",
+    "txt": "hoi4d_samples/wilor_pred_kps2d/txt/frame_000100_wilor_kps2d.txt",
+    "csv": "hoi4d_samples/wilor_pred_kps2d/csv/frame_000100_wilor_kps2d.csv",
+    "json": "hoi4d_samples/wilor_pred_kps2d/json/frame_000100_wilor_kps2d.json"
+  },
+  {
+    "frame": 150,
+    "num_hands": 1,
+    "saved": true,
+    "hand_index": 0,
+    "is_right": true,
+    "npy": "hoi4d_samples/wilor_pred_kps2d/npy/frame_000150_wilor_kps2d.npy",
+    "txt": "hoi4d_samples/wilor_pred_kps2d/txt/frame_000150_wilor_kps2d.txt",
+    "csv": "hoi4d_samples/wilor_pred_kps2d/csv/frame_000150_wilor_kps2d.csv",
+    "json": "hoi4d_samples/wilor_pred_kps2d/json/frame_000150_wilor_kps2d.json"
+  },
+  {
+    "frame": 200,
+    "num_hands": 1,
+    "saved": true,
+    "hand_index": 0,
+    "is_right": true,
+    "npy": "hoi4d_samples/wilor_pred_kps2d/npy/frame_000200_wilor_kps2d.npy",
+    "txt": "hoi4d_samples/wilor_pred_kps2d/txt/frame_000200_wilor_kps2d.txt",
+    "csv": "hoi4d_samples/wilor_pred_kps2d/csv/frame_000200_wilor_kps2d.csv",
+    "json": "hoi4d_samples/wilor_pred_kps2d/json/frame_000200_wilor_kps2d.json"
+  }
+]

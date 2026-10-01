@@ -1,0 +1,77 @@
+{
+  "summary": {
+    "num_samples": 1,
+    "num_files": 5,
+    "scanned_dirs": [
+      "sample_outputs"
+    ],
+    "file_type_counts": {
+      "joints2d_json": 1,
+      "joints3d_json": 1,
+      "mano_json": 1,
+      "mesh_obj": 1,
+      "render_overlay": 1
+    },
+    "num_with_2d": 1,
+    "num_with_3d": 1,
+    "num_with_mano": 1,
+    "num_with_mesh": 1,
+    "num_with_overlay": 1
+  },
+  "records": [
+    {
+      "id": "sample_frame",
+      "files": {
+        "joints2d_json": [
+          {
+            "path": "sample_outputs/2d_joints/sample_frame_kpts2d.json"
+          }
+        ],
+        "joints3d_json": [
+          {
+            "path": "sample_outputs/3d_joints/sample_frame_joints3d.json"
+          }
+        ],
+        "mano_json": [
+          {
+            "path": "sample_outputs/mano_params/sample_frame_mano.json"
+          }
+        ],
+        "mesh_obj": [
+          {
+            "path": "sample_outputs/reconstruct/sample_frame_0.obj"
+          }
+        ],
+        "render_overlay": [
+          {
+            "path": "sample_outputs/reconstruct/sample_frame_overlay.png"
+          }
+        ]
+      },
+      "hands": [
+        {
+          "hand_index": 0,
+          "files": {
+            "joints3d_json": [
+              "sample_outputs/3d_joints/sample_frame_joints3d.json"
+            ]
+          }
+        }
+      ],
+      "metadata": {
+        "image": "sample_frame.png",
+        "width": 960,
+        "height": 640,
+        "num_hands": 1
+      },
+      "file_counts": {
+        "joints2d_json": 1,
+        "joints3d_json": 1,
+        "mano_json": 1,
+        "mesh_obj": 1,
+        "render_overlay": 1
+      },
+      "num_files": 5
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "python": {
+    "executable": "/usr/bin/python",
+    "version": "3.x",
+    "platform": "linux"
+  },
+  "imports": [
+    {
+      "module": "cv2",
+      "ok": true
+    },
+    {
+      "module": "torch",
+      "ok": true
+    },
+    {
+      "module": "ultralytics",
+      "ok": true
+    }
+  ],
+  "paths": [
+    {
+      "label": "WiLoR checkpoint",
+      "path": "pretrained_models/wilor_final.ckpt",
+      "exists": true
+    },
+    {
+      "label": "YOLO detector",
+      "path": "pretrained_models/detector.pt",
+      "exists": true
+    },
+    {
+      "label": "MANO right",
+      "path": "mano_data/MANO_RIGHT.pkl",
+      "exists": true
+    }
+  ],
+  "torch": {
+    "ok": true,
+    "cuda_available": false
+  },
+  "model_loading": {
+    "requested": false
+  }
+}

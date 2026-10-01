@@ -1,0 +1,71 @@
+{
+  "description": "Identity only; model assets are external and not uploaded.",
+  "assets": [
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/pretrained_models/wilor_final.ckpt",
+      "bytes": 2564990443,
+      "mtime_ns": 1770037597582452457,
+      "sha256": "22fb2660f6ac3f611919c9abd5c412372a212309d04fcf3697b291da25a29456",
+      "roles": [
+        "hoi4d_baseline:checkpoint"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/pretrained_models/model_config.yaml",
+      "bytes": 2228,
+      "mtime_ns": 1754036567000000000,
+      "sha256": "64e75699eb7f1234ee16ba1bbb983db35e03f584fe4bd524559432b1efec3d2c",
+      "roles": [
+        "hoi4d_baseline:cfg"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/pretrained_models/detector.pt",
+      "bytes": 53582271,
+      "mtime_ns": 1770037271436662985,
+      "sha256": "5ef3df44e42d2db52d4ffe91f83a22ce9925e2acc9abebf453f2c5d22e380033",
+      "roles": [
+        "hoi4d_baseline:detector",
+        "hoi4d_finetuned:detector"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/mano_data/MANO_RIGHT.pkl",
+      "bytes": 3821356,
+      "mtime_ns": 1770037798482664386,
+      "sha256": "45d60aa3b27ef9107a7afd4e00808f307fd91111e1cfa35afd5c4a62de264767",
+      "roles": [
+        "hoi4d_baseline:MANO_RIGHT.pkl",
+        "hoi4d_finetuned:MANO_RIGHT.pkl"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/mano_data/mano_mean_params.npz",
+      "bytes": 1178,
+      "mtime_ns": 1754036567000000000,
+      "sha256": "efc0ec58e4a5cef78f3abfb4e8f91623b8950be9eff8b8e0dbb0d036ebc63988",
+      "roles": [
+        "hoi4d_baseline:mano_mean_params.npz",
+        "hoi4d_finetuned:mano_mean_params.npz"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.87984.ckpt",
+      "bytes": 7692036177,
+      "mtime_ns": 1782707776168004140,
+      "sha256": "3e0f26a7c3f8c48742f053048e1434b9856616815a81e4bbf751d7422eb2060f",
+      "roles": [
+        "hoi4d_finetuned:checkpoint"
+      ]
+    },
+    {
+      "path": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/model_config.yaml",
+      "bytes": 3095,
+      "mtime_ns": 1782671358196197398,
+      "sha256": "10de8f635d62616c071c723cb6623d95023922816c8a902b4b269fc067cabd51",
+      "roles": [
+        "hoi4d_finetuned:cfg"
+      ]
+    }
+  ]
+}

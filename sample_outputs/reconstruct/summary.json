@@ -1,0 +1,9 @@
+{
+  "command": "reconstruct",
+  "image": "sample_frame.png",
+  "num_hands": 1,
+  "outputs": [
+    "sample_frame_0.obj",
+    "sample_frame_overlay.png"
+  ]
+}

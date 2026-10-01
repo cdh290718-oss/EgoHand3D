@@ -1,0 +1,42 @@
+[
+  {
+    "frame": 0,
+    "mean_err_px": 1.3895851825432015,
+    "median_err_px": 0.7454222733252295,
+    "max_err_px": 6.156244428022157,
+    "max_err_joint": 4,
+    "csv": "hoi4d_samples/kps2d_comparison/csv/frame_000000_kps2d_compare.csv"
+  },
+  {
+    "frame": 50,
+    "mean_err_px": 1.288653691168007,
+    "median_err_px": 0.6999609460537438,
+    "max_err_px": 5.991868172545983,
+    "max_err_joint": 4,
+    "csv": "hoi4d_samples/kps2d_comparison/csv/frame_000050_kps2d_compare.csv"
+  },
+  {
+    "frame": 100,
+    "mean_err_px": 1.272948942032671,
+    "median_err_px": 0.8154357932770154,
+    "max_err_px": 5.15406359932102,
+    "max_err_joint": 4,
+    "csv": "hoi4d_samples/kps2d_comparison/csv/frame_000100_kps2d_compare.csv"
+  },
+  {
+    "frame": 150,
+    "mean_err_px": 1.2055470960338477,
+    "median_err_px": 0.7151180637358626,
+    "max_err_px": 5.305456952975205,
+    "max_err_joint": 4,
+    "csv": "hoi4d_samples/kps2d_comparison/csv/frame_000150_kps2d_compare.csv"
+  },
+  {
+    "frame": 200,
+    "mean_err_px": 1.3698666698594093,
+    "median_err_px": 0.8442042615841513,
+    "max_err_px": 5.7371145676299555,
+    "max_err_joint": 8,
+    "csv": "hoi4d_samples/kps2d_comparison/csv/frame_000200_kps2d_compare.csv"
+  }
+]

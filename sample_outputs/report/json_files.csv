@@ -1,0 +1,3 @@
+path,num_hands,keys
+2d_joints/sample_frame_kpts2d.json,1,"image,hands"
+3d_joints/sample_frame_joints3d.json,1,"image,hands,width,height"

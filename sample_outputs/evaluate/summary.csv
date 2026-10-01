@@ -1,0 +1,4 @@
+metric,value
+num_samples,1
+num_eval_joints,21
+mean_err_px,1.1318

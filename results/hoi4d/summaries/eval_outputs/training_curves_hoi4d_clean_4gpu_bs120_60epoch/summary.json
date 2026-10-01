@@ -1,0 +1,41 @@
+{
+  "run_dir": "logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1",
+  "event_files": [
+    "logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782469437.t-20260626182208-zngvl-worker-0.777.0"
+  ],
+  "total_steps": 48876,
+  "steps_per_epoch": 814.6,
+  "train_loss": {
+    "count": 488,
+    "last": {
+      "step": 48800,
+      "epoch": 59.90670267616008,
+      "loss": 0.9828599691390991,
+      "wall_time_utc": "2026-06-26 18:21:20 UTC"
+    },
+    "best": {
+      "step": 45100,
+      "epoch": 55.36459612079548,
+      "loss": 0.6537035703659058,
+      "wall_time_utc": "2026-06-26 17:45:44 UTC"
+    }
+  },
+  "val_loss": {
+    "count": 11,
+    "last": {
+      "step": 47984,
+      "epoch": 58.90498404124724,
+      "loss": 0.9214019179344177,
+      "wall_time_utc": "2026-06-26 18:13:16 UTC"
+    },
+    "best": {
+      "step": 30656,
+      "epoch": 37.63319420574515,
+      "loss": 0.4340740442276001,
+      "wall_time_utc": "2026-06-26 15:25:22 UTC"
+    }
+  },
+  "csv": "eval_outputs/training_curves_hoi4d_clean_4gpu_bs120_60epoch/loss_curve.csv",
+  "total_loss_png": "eval_outputs/training_curves_hoi4d_clean_4gpu_bs120_60epoch/total_loss_curve.png",
+  "components_png": "eval_outputs/training_curves_hoi4d_clean_4gpu_bs120_60epoch/loss_components_curve.png"
+}

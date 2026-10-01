@@ -1,0 +1,346 @@
+[
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=0.99682.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=0.99682.ckpt",
+    "file_name": "step=036656-val_loss=0.99682.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.89867.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.89867.ckpt",
+    "file_name": "step=063312-val_loss=0.89867.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=036656-val_loss=0.49437.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=036656-val_loss=0.49437.ckpt",
+    "file_name": "step=036656-val_loss=0.49437.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=063312-val_loss=0.49383.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=063312-val_loss=0.49383.ckpt",
+    "file_name": "step=063312-val_loss=0.49383.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=076640-val_loss=0.92166.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=076640-val_loss=0.92166.ckpt",
+    "file_name": "step=076640-val_loss=0.92166.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.21769.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.21769.ckpt",
+    "file_name": "step=036656-val_loss=1.21769.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.87861.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.87861.ckpt",
+    "file_name": "step=063312-val_loss=0.87861.ckpt",
+    "size_bytes": 7692036241,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=1.11833.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=1.11833.ckpt",
+    "file_name": "step=049984-val_loss=1.11833.ckpt",
+    "size_bytes": 7692036177,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.87984.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.87984.ckpt",
+    "file_name": "step=063312-val_loss=0.87984.ckpt",
+    "size_bytes": 7692036177,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036177,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.05479.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.05479.ckpt",
+    "file_name": "step=036656-val_loss=1.05479.ckpt",
+    "size_bytes": 7692036177,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=0.95244.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=0.95244.ckpt",
+    "file_name": "step=023328-val_loss=0.95244.ckpt",
+    "size_bytes": 7692036049,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692036049,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=1.19596.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=1.19596.ckpt",
+    "file_name": "step=023328-val_loss=1.19596.ckpt",
+    "size_bytes": 7692036049,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=020000-val_loss=0.51997.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_8gpu_from_wilor_60epoch_bs60_v1/checkpoints/step=020000-val_loss=0.51997.ckpt",
+    "file_name": "step=020000-val_loss=0.51997.ckpt",
+    "size_bytes": 7692035985,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=1.05468.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=023328-val_loss=1.05468.ckpt",
+    "file_name": "step=023328-val_loss=1.05468.ckpt",
+    "size_bytes": 7692035985,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.22618.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_egofishhands_quarter_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.22618.ckpt",
+    "file_name": "step=010000-val_loss=1.22618.ckpt",
+    "size_bytes": 7692035602,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.35510.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_quarter_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.35510.ckpt",
+    "file_name": "step=010000-val_loss=1.35510.ckpt",
+    "size_bytes": 7692035602,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.22114.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_renderegomano_half_8gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=010000-val_loss=1.22114.ckpt",
+    "file_name": "step=010000-val_loss=1.22114.ckpt",
+    "size_bytes": 7692035538,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692035153,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=084656-val_loss=0.76442.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=084656-val_loss=0.76442.ckpt",
+    "file_name": "step=084656-val_loss=0.76442.ckpt",
+    "size_bytes": 7692035153,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.00285.ckpt",
+    "relative_path": "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.00285.ckpt",
+    "file_name": "step=036656-val_loss=1.00285.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=0.95493.ckpt",
+    "relative_path": "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=0.95493.ckpt",
+    "file_name": "step=049984-val_loss=0.95493.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.84825.ckpt",
+    "relative_path": "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=0.84825.ckpt",
+    "file_name": "step=063312-val_loss=0.84825.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.60626.ckpt",
+    "relative_path": "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=036656-val_loss=1.60626.ckpt",
+    "file_name": "step=036656-val_loss=1.60626.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=1.54911.ckpt",
+    "relative_path": "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=049984-val_loss=1.54911.ckpt",
+    "file_name": "step=049984-val_loss=1.54911.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=1.42039.ckpt",
+    "relative_path": "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=063312-val_loss=1.42039.ckpt",
+    "file_name": "step=063312-val_loss=1.42039.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=030656-val_loss=0.62344.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=030656-val_loss=0.62344.ckpt",
+    "file_name": "step=030656-val_loss=0.62344.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=034656-val_loss=0.63343.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_from_wilor_60epoch_bs120_v1/checkpoints/step=034656-val_loss=0.63343.ckpt",
+    "file_name": "step=034656-val_loss=0.63343.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/last.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/last.ckpt",
+    "file_name": "last.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/step=078328-val_loss=0.66152.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/step=078328-val_loss=0.66152.ckpt",
+    "file_name": "step=078328-val_loss=0.66152.ckpt",
+    "size_bytes": 7692035025,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=059984-val_loss=0.83093.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=059984-val_loss=0.83093.ckpt",
+    "file_name": "step=059984-val_loss=0.83093.ckpt",
+    "size_bytes": 7692034961,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=049984-val_loss=0.75937.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume48000_to86376_bs120_v1/checkpoints/step=049984-val_loss=0.75937.ckpt",
+    "file_name": "step=049984-val_loss=0.75937.ckpt",
+    "size_bytes": 7692034450,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/step=059984-val_loss=0.70163.ckpt",
+    "relative_path": "logs/train/runs/train_hoi4d_clean_4gpu_resume55000_to86376_bs120_v1/checkpoints/step=059984-val_loss=0.70163.ckpt",
+    "file_name": "step=059984-val_loss=0.70163.ckpt",
+    "size_bytes": 7692034450,
+    "size_gb": 7.164,
+    "is_hoi4d_related": true
+  },
+  {
+    "source": "../WiLoR/pretrained_models/wilor_final.ckpt",
+    "relative_path": "pretrained_models/wilor_final.ckpt",
+    "file_name": "wilor_final.ckpt",
+    "size_bytes": 2564990443,
+    "size_gb": 2.389,
+    "is_hoi4d_related": false
+  },
+  {
+    "source": "../WiLoR/pretrained_models/detector.pt",
+    "relative_path": "pretrained_models/detector.pt",
+    "file_name": "detector.pt",
+    "size_bytes": 53582271,
+    "size_gb": 0.05,
+    "is_hoi4d_related": false
+  }
+]

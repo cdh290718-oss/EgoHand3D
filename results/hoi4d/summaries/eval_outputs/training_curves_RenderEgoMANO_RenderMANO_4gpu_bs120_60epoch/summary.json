@@ -1,0 +1,87 @@
+{
+  "steps_per_epoch": 1250.0,
+  "runs": {
+    "RenderEgoMANO": {
+      "run_dir": "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1",
+      "event_files": [
+        "logs/train/runs/train_RenderEgoMANO_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782483262.t-20260626221140-l69gc-worker-0.761.0"
+      ],
+      "train_loss": {
+        "count": 750,
+        "last": {
+          "step": 75000,
+          "epoch": 60.0,
+          "loss": 0.944469153881073,
+          "wall_time_utc": "2026-06-27 02:10:29 UTC"
+        },
+        "best": {
+          "step": 71200,
+          "epoch": 56.96,
+          "loss": 0.8681517839431763,
+          "wall_time_utc": "2026-06-27 01:35:18 UTC"
+        }
+      },
+      "val_loss": {
+        "count": 5,
+        "last": {
+          "step": 63312,
+          "epoch": 50.6496,
+          "loss": 0.8680456876754761,
+          "wall_time_utc": "2026-06-27 00:19:14 UTC"
+        },
+        "best": {
+          "step": 63312,
+          "epoch": 50.6496,
+          "loss": 0.8680456876754761,
+          "wall_time_utc": "2026-06-27 00:19:14 UTC"
+        }
+      },
+      "csv": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderEgoMANO/loss_curve.csv",
+      "total_loss_png": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderEgoMANO/total_loss_curve.png",
+      "components_png": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderEgoMANO/loss_components_curve.png"
+    },
+    "RenderMANO": {
+      "run_dir": "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1",
+      "event_files": [
+        "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782483212.t-20260626221100-64fbq-worker-0.778.0",
+        "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782484947.t-20260626223819-cm727-worker-0.795.0",
+        "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782487062.t-20260626231323-4x8jk-worker-0.795.0",
+        "logs/train/runs/train_RenderMANO_4gpu_from_wilor_60epoch_bs120_v1/tensorboard/events.out.tfevents.1782488806.t-20260626234231-pzv4h-worker-0.779.0"
+      ],
+      "train_loss": {
+        "count": 750,
+        "last": {
+          "step": 75000,
+          "epoch": 60.0,
+          "loss": 1.6481715440750122,
+          "wall_time_utc": "2026-06-27 03:57:41 UTC"
+        },
+        "best": {
+          "step": 70500,
+          "epoch": 56.4,
+          "loss": 1.5494747161865234,
+          "wall_time_utc": "2026-06-27 03:15:04 UTC"
+        }
+      },
+      "val_loss": {
+        "count": 5,
+        "last": {
+          "step": 63312,
+          "epoch": 50.6496,
+          "loss": 1.4094501733779907,
+          "wall_time_utc": "2026-06-27 02:03:46 UTC"
+        },
+        "best": {
+          "step": 63312,
+          "epoch": 50.6496,
+          "loss": 1.4094501733779907,
+          "wall_time_utc": "2026-06-27 02:03:46 UTC"
+        }
+      },
+      "csv": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderMANO/loss_curve.csv",
+      "total_loss_png": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderMANO/total_loss_curve.png",
+      "components_png": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/RenderMANO/loss_components_curve.png"
+    }
+  },
+  "combined_total_loss_png": "eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/combined_total_loss_curve.png"
+}

@@ -1,0 +1,13 @@
+{
+  "result_dir": "sample_outputs",
+  "summary": {
+    "json_files": 11,
+    "csv_files": 5,
+    "image_files": 4,
+    "obj_files": 1
+  },
+  "examples": [
+    "2d_joints/sample_frame_kpts2d.json",
+    "3d_joints/sample_frame_joints3d.json"
+  ]
+}

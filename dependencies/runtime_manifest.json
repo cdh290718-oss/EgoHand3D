@@ -1,0 +1,247 @@
+{
+  "description": "External local WiLoR runtime used for the archived experiments; source not bundled. An upstream clone alone differs from this runtime.",
+  "official_upstream": "https://github.com/rolpotamias/WiLoR",
+  "upstream_audit_commit": "fcb911312a38fa8badd30d9656a167485d61b8f9",
+  "files": [
+    {
+      "path": "wilor/configs/__init__.py",
+      "bytes": 3242,
+      "sha256": "2570cce9c9bf45b46fbe53b94b57655638d90fe6a3183854a766cf128eedb3ba"
+    },
+    {
+      "path": "wilor/configs/datasets_tar.yaml",
+      "bytes": 2725,
+      "sha256": "4108a7ad6166614d752e9e00a01f8ec3d29b8a2c8ee05518c489f09d4b0c998a"
+    },
+    {
+      "path": "wilor/configs_hydra/data/egodex_no2d.yaml",
+      "bytes": 672,
+      "sha256": "d79efe0dbde73d94e366f11c1d610267d51829c3fa2f500eb6b0170a3aa30dc2"
+    },
+    {
+      "path": "wilor/configs_hydra/data/hoi4d.yaml",
+      "bytes": 544,
+      "sha256": "47b1e77315ad2c4706d1bcfdfe24c6c34ddaff85f530f3eee2ff533ebb99a1f0"
+    },
+    {
+      "path": "wilor/configs_hydra/data/hoi4d_clean.yaml",
+      "bytes": 508,
+      "sha256": "90fae44b2a58aa98075045f1d029fa3bd7818debb2409d09a17ab48f6e338be9"
+    },
+    {
+      "path": "wilor/configs_hydra/data/hoi4d_clean_egodex_no2d.yaml",
+      "bytes": 714,
+      "sha256": "e8a20aa9e982a0528a0bdb90bc52817635f3fb7290b7b9a729b3673eef8d793d"
+    },
+    {
+      "path": "wilor/configs_hydra/data/mix_all.yaml",
+      "bytes": 511,
+      "sha256": "0a59f4ae9e0345ebe8c0dd4c793d7584eb582b23f23d848c228c79103ceb5278"
+    },
+    {
+      "path": "wilor/configs_hydra/data_filtering/low1.yaml",
+      "bytes": 338,
+      "sha256": "018a4be790995c27d05137875eaf2835fbdf0e3357a2c373cc6ed442042402b0"
+    },
+    {
+      "path": "wilor/configs_hydra/experiment/wilor_vit_refinenet.yaml",
+      "bytes": 1608,
+      "sha256": "1c8f048b94b5ab248890830338ab35e5d08e7cf2ffbb64b82a05b66b6aa0725e"
+    },
+    {
+      "path": "wilor/configs_hydra/extras/default.yaml",
+      "bytes": 232,
+      "sha256": "7bb741898d2bfd2532f120bbf61e64d9edbf2becb4caaa5721a412398b13ab95"
+    },
+    {
+      "path": "wilor/configs_hydra/hydra/default.yaml",
+      "bytes": 630,
+      "sha256": "1d4a42a722e0f9bf9d55844dfd164241d3036093fbcc7a35bebd4a343784d582"
+    },
+    {
+      "path": "wilor/configs_hydra/launcher/local.yaml",
+      "bytes": 258,
+      "sha256": "8403e687b102fa966d5b0a6796c8e206835fc7f9c0e21a1681f771621f35e8cb"
+    },
+    {
+      "path": "wilor/configs_hydra/launcher/slurm.yaml",
+      "bytes": 491,
+      "sha256": "131c6597bba665ec2a22426e21fcf61900f91ac4654df7f5b0d1df875cee4042"
+    },
+    {
+      "path": "wilor/configs_hydra/paths/default.yaml",
+      "bytes": 249,
+      "sha256": "320fdff6cde77a50cf289cae98895eb22d79ebbdb5fe4198845cad119ae1fba5"
+    },
+    {
+      "path": "wilor/configs_hydra/train.yaml",
+      "bytes": 334,
+      "sha256": "0986f9380eb6f7e369390c09b9e46a9d95066a607be36feee4bfe33a8784d61d"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/cpu.yaml",
+      "bytes": 79,
+      "sha256": "0ddc0a0030e53746500b711bc7b6e6e23bdf8d939d477545d6bf233df0219de8"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/ddp.yaml",
+      "bytes": 441,
+      "sha256": "484a1ade1e9b89ae5c7e87d753d51c96dafd47eb73fa0f4a4396fc72f6fe9db8"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/default.yaml",
+      "bytes": 251,
+      "sha256": "8573205b2444a4b38a683447d53d09c46c8f83c6ffc704de2836d4ce560946ec"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/default_wilor.yaml",
+      "bytes": 224,
+      "sha256": "4cc34da569c75029b1e72b929a2504f48fe016c22cb881223048c6259f12adf1"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/gpu.yaml",
+      "bytes": 79,
+      "sha256": "59337941f70af27cb62457f37180cd45d34ca5e999f647b9906495aaa054d69d"
+    },
+    {
+      "path": "wilor/configs_hydra/trainer/mps.yaml",
+      "bytes": 79,
+      "sha256": "1e3a96c683c843472ea9cb15553eb5dd1a8f001cedc25ee2fae71d5fb67c1e39"
+    },
+    {
+      "path": "wilor/datasets/__init__.py",
+      "bytes": 3109,
+      "sha256": "b29e3aae790d09fe65c3dd868f4d8859ff23218f06336a8c5bc15e5ef9fc9dbc"
+    },
+    {
+      "path": "wilor/datasets/dataset.py",
+      "bytes": 659,
+      "sha256": "ff6c0b14d9d2130687dae844a461ec071c85f32c13a1079a39d0ad944e4b0ee9"
+    },
+    {
+      "path": "wilor/datasets/image_dataset.py",
+      "bytes": 20540,
+      "sha256": "d31cee66bb81b5a0c1caf0ee677c41aaef9898c93935e8accec614342c0218fa"
+    },
+    {
+      "path": "wilor/datasets/mocap_dataset.py",
+      "bytes": 883,
+      "sha256": "65ac23eb9c4434b5fc9fbcb42469093bebf38e14615f631cd6b564af273fa822"
+    },
+    {
+      "path": "wilor/datasets/utils.py",
+      "bytes": 43810,
+      "sha256": "24229bd14758b5f73a3531ceb73f4c93f3955278df21800f5a34115221e534fd"
+    },
+    {
+      "path": "wilor/datasets/vitdet_dataset.py",
+      "bytes": 3484,
+      "sha256": "44ba126c1cde1cef163a735b00801c74bb1437afe3186619314f90860569cbfd"
+    },
+    {
+      "path": "wilor/models/__init__.py",
+      "bytes": 1607,
+      "sha256": "900b2265362c0199e8906be50bcab685667fae2caacf75d126b53acef2b65a93"
+    },
+    {
+      "path": "wilor/models/backbones/__init__.py",
+      "bytes": 626,
+      "sha256": "f4e16992c4890acb10ce5c5f8646e7e2419d28582085efd3558e96ffa1a2c487"
+    },
+    {
+      "path": "wilor/models/backbones/vit.py",
+      "bytes": 16030,
+      "sha256": "b01ce63b23eb03ce023b9b06f5caf53c82c9f1cc5fff3c90d99c7939f427470d"
+    },
+    {
+      "path": "wilor/models/discriminator.py",
+      "bytes": 3649,
+      "sha256": "c72ed76c595d5c8350784093dc3332aaeff89a5821de0d218f7c344f9912d4c9"
+    },
+    {
+      "path": "wilor/models/heads/__init__.py",
+      "bytes": 37,
+      "sha256": "788c3df4b0f0eecec99a4e94149f05cc00e03261564080c2be4952cfbf12ab62"
+    },
+    {
+      "path": "wilor/models/heads/refinement_net.py",
+      "bytes": 8677,
+      "sha256": "5878350b52af6c4cd27541ee02579ea7fe30549ef8e101a72fe2cf6a82eef59d"
+    },
+    {
+      "path": "wilor/models/losses.py",
+      "bytes": 3948,
+      "sha256": "53052f7589ead73531202548f452d294a3ae0a15d279a55a8508239ec282c311"
+    },
+    {
+      "path": "wilor/models/mano_wrapper.py",
+      "bytes": 1874,
+      "sha256": "dbe78558c3ccaa6deaba7731858565dcdd193fb0ee7b6543c059a07f0408239a"
+    },
+    {
+      "path": "wilor/models/wilor.py",
+      "bytes": 17867,
+      "sha256": "5e925462a00ca9f6e9d5140effdde1d7974e5c5eb9b754d20dafb5e28a4791e6"
+    },
+    {
+      "path": "wilor/utils/__init__.py",
+      "bytes": 611,
+      "sha256": "6cecaa6a761c94e3b67358e8416008d445ad9a538c05f0074af92e35b57ec791"
+    },
+    {
+      "path": "wilor/utils/camera.py",
+      "bytes": 542,
+      "sha256": "d33c99ea8ca4bd66a70237254af8308bacd489a4daa6eef126a1a0e3535799e1"
+    },
+    {
+      "path": "wilor/utils/geometry.py",
+      "bytes": 4189,
+      "sha256": "9eb08e438622a36f3bc40d3fd48b776022b80ee26406f0d826d7b7132821e778"
+    },
+    {
+      "path": "wilor/utils/mesh_renderer.py",
+      "bytes": 6827,
+      "sha256": "9825b4c4c50ed1020b4cab3db2135e0f88a8eb5616a5ab0bd84a44049d749253"
+    },
+    {
+      "path": "wilor/utils/misc.py",
+      "bytes": 6340,
+      "sha256": "5e1bc5edea3a9792e315189a9e5761cd9c87ba03e269d12585ffe8662a9beaba"
+    },
+    {
+      "path": "wilor/utils/pose_utils.py",
+      "bytes": 14413,
+      "sha256": "5bc11827ca90d8757eb273ca72ec2d430ccd8cd24c6695da1c98853b5cc3b818"
+    },
+    {
+      "path": "wilor/utils/pylogger.py",
+      "bytes": 608,
+      "sha256": "c8a816419a6b61389321f971427e1b88f7fda0345ae49f579318abdcb8349296"
+    },
+    {
+      "path": "wilor/utils/render_openpose.py",
+      "bytes": 8858,
+      "sha256": "420563f3d6869a2ce25257176ecb73d58c8409ce37b2ef2f3631893eabe7cdd4"
+    },
+    {
+      "path": "wilor/utils/renderer.py",
+      "bytes": 15597,
+      "sha256": "148a78219241740821d8f0516fd391b1eac09d44237d12a4f28bbcb91f2c8019"
+    },
+    {
+      "path": "wilor/utils/rich_utils.py",
+      "bytes": 3320,
+      "sha256": "4634c280ef2f3f4e52ad20e319d89e4ba45cd1137fc6ba47e122898e932f4d00"
+    },
+    {
+      "path": "wilor/utils/skeleton_renderer.py",
+      "bytes": 9109,
+      "sha256": "a8818691fb88bf46cc5f3ac9fcc85cdf6c3ed54322882557ed5c5cb7b4c08557"
+    },
+    {
+      "path": "wilor/utils/yolo_loader.py",
+      "bytes": 625,
+      "sha256": "8043fcc05eb37c03574774dcb710b67cf80fb62f8412d425709ecde18a0aab0c"
+    }
+  ]
+}

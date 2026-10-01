@@ -1,0 +1,36 @@
+{
+  "software_name": "第一视角手部三维重建适配与评估软件",
+  "short_name": "EgoHand3D",
+  "version": "V1.0",
+  "scope": "新增命令行流程应用模块；WiLoR/MANO 模型和原有推理适配器作为外部或既有依赖，不在本清单的新增源码主张范围内。",
+  "files": [
+    "egohand3d/storage.py",
+    "egohand3d/media.py",
+    "egohand3d/jobs.py",
+    "egohand3d/mano_codec.py",
+    "egohand3d/quality.py",
+    "egohand3d/pipeline.py",
+    "egohand3d/sequence.py",
+    "egohand3d/dataset_adapters.py",
+    "egohand3d/metrics.py",
+    "egohand3d/reports.py",
+    "egohand3d/video_export.py",
+    "egohand3d/workflow_cli.py",
+    "egohand3d/workflow.py"
+  ],
+  "excluded_existing_application_dependencies": [
+    "egohand3d/__init__.py",
+    "egohand3d/inference.py",
+    "egohand3d/io_utils.py",
+    "egohand3d/visualization.py"
+  ],
+  "excluded_duplicate_or_adapted_legacy_scripts": [
+    "train.py",
+    "export_2d_joints.py",
+    "detect_and_reconstruct.py",
+    "tools/detect_video_hands.py",
+    "tools/evaluate_hoi4d_wilor_2djoints.py"
+  ],
+  "order_reason": "存储、输入、任务、参数、检查、处理、时序、标注、评估、报告、视频、命令注册、程序入口。整个清单全部交存，未将第三方核心置于中间隐藏。",
+  "rule_url": "https://www.ncac.gov.cn/xxfb/flfg/bmgz/202410/t20241015_869486.html"
+}

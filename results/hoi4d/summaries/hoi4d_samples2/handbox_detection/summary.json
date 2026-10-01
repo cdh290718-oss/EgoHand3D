@@ -1,0 +1,3518 @@
+{
+  "sample_dir": "hoi4d_samples2",
+  "image_dir": "hoi4d_samples2/images",
+  "detector": "pretrained_models/detector.pt",
+  "conf_threshold": 0.3,
+  "num_images": 100,
+  "num_detected_images": 86,
+  "num_missed_images": 14,
+  "num_total_hands": 94,
+  "missed_images": [
+    "sample_0005_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000019",
+    "sample_0015_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000022",
+    "sample_0020_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000020",
+    "sample_0025_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000032",
+    "sample_0029_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000190",
+    "sample_0030_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000026",
+    "sample_0035_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000032",
+    "sample_0040_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000030",
+    "sample_0055_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000022",
+    "sample_0070_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000026",
+    "sample_0075_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000027",
+    "sample_0080_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000023",
+    "sample_0085_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000056",
+    "sample_0095_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000021"
+  ],
+  "frames": [
+    {
+      "image": "hoi4d_samples2/images/sample_0000_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000000.jpg",
+      "image_name": "sample_0000_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0000_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8130109310150146,
+          "bbox_xyxy": [
+            1180.0,
+            798.0,
+            1351.0,
+            1073.0
+          ],
+          "bbox_area": 47025.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0001_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000042.jpg",
+      "image_name": "sample_0001_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0001_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8321005702018738,
+          "bbox_xyxy": [
+            953.0,
+            637.0,
+            1182.0,
+            885.0
+          ],
+          "bbox_area": 56792.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0002_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000085.jpg",
+      "image_name": "sample_0002_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0002_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.846937894821167,
+          "bbox_xyxy": [
+            1083.0,
+            527.0,
+            1331.0,
+            782.0
+          ],
+          "bbox_area": 63240.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0003_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000128.jpg",
+      "image_name": "sample_0003_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0003_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8200877904891968,
+          "bbox_xyxy": [
+            1108.0,
+            698.0,
+            1336.0,
+            950.0
+          ],
+          "bbox_area": 57456.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0004_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000170.jpg",
+      "image_name": "sample_0004_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0004_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8223177194595337,
+          "bbox_xyxy": [
+            1216.0,
+            751.0,
+            1453.0,
+            1004.0
+          ],
+          "bbox_area": 59961.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0005_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000019.jpg",
+      "image_name": "sample_0005_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000019.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0005_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000019_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0006_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000054.jpg",
+      "image_name": "sample_0006_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000054.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0006_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000054_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6435107588768005,
+          "bbox_xyxy": [
+            925.0,
+            617.0,
+            1093.0,
+            824.0
+          ],
+          "bbox_area": 34776.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0007_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000089.jpg",
+      "image_name": "sample_0007_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000089.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0007_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000089_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7541640996932983,
+          "bbox_xyxy": [
+            916.0,
+            593.0,
+            1185.0,
+            862.0
+          ],
+          "bbox_area": 72361.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0008_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000124.jpg",
+      "image_name": "sample_0008_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000124.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0008_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000124_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7896935343742371,
+          "bbox_xyxy": [
+            909.0,
+            576.0,
+            1102.0,
+            828.0
+          ],
+          "bbox_area": 48636.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0009_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000159.jpg",
+      "image_name": "sample_0009_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000159.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0009_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000159_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8087124824523926,
+          "bbox_xyxy": [
+            888.0,
+            601.0,
+            1125.0,
+            876.0
+          ],
+          "bbox_area": 65175.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0010_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000000.jpg",
+      "image_name": "sample_0010_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0010_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8159229159355164,
+          "bbox_xyxy": [
+            927.0,
+            792.0,
+            1107.0,
+            993.0
+          ],
+          "bbox_area": 36180.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0011_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000041.jpg",
+      "image_name": "sample_0011_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000041.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0011_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000041_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.756924569606781,
+          "bbox_xyxy": [
+            842.0,
+            515.0,
+            1016.0,
+            724.0
+          ],
+          "bbox_area": 36366.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0012_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000091.jpg",
+      "image_name": "sample_0012_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000091.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0012_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000091_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6912434101104736,
+          "bbox_xyxy": [
+            1067.0,
+            501.0,
+            1254.0,
+            688.0
+          ],
+          "bbox_area": 34969.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0013_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000133.jpg",
+      "image_name": "sample_0013_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000133.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0013_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000133_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8347206115722656,
+          "bbox_xyxy": [
+            828.0,
+            535.0,
+            1010.0,
+            752.0
+          ],
+          "bbox_area": 39494.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0014_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000174.jpg",
+      "image_name": "sample_0014_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000174.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0014_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000174_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8019278049468994,
+          "bbox_xyxy": [
+            973.0,
+            698.0,
+            1142.0,
+            871.0
+          ],
+          "bbox_area": 29237.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0015_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000022.jpg",
+      "image_name": "sample_0015_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000022.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0015_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000022_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0016_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000061.jpg",
+      "image_name": "sample_0016_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000061.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0016_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000061_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7976928353309631,
+          "bbox_xyxy": [
+            921.0,
+            723.0,
+            1069.0,
+            913.0
+          ],
+          "bbox_area": 28120.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0017_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000101.jpg",
+      "image_name": "sample_0017_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000101.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0017_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000101_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8086994886398315,
+          "bbox_xyxy": [
+            992.0,
+            720.0,
+            1154.0,
+            905.0
+          ],
+          "bbox_area": 29970.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0018_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000140.jpg",
+      "image_name": "sample_0018_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000140.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0018_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000140_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8050299286842346,
+          "bbox_xyxy": [
+            1073.0,
+            749.0,
+            1235.0,
+            945.0
+          ],
+          "bbox_area": 31752.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0019_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000180.jpg",
+      "image_name": "sample_0019_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000180.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0019_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000180_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6316502094268799,
+          "bbox_xyxy": [
+            1115.0,
+            850.0,
+            1264.0,
+            1058.0
+          ],
+          "bbox_area": 30992.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0020_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000020.jpg",
+      "image_name": "sample_0020_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000020.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0020_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000020_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0021_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000055.jpg",
+      "image_name": "sample_0021_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000055.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0021_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000055_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7129147052764893,
+          "bbox_xyxy": [
+            833.0,
+            664.0,
+            966.0,
+            826.0
+          ],
+          "bbox_area": 21546.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0022_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000091.jpg",
+      "image_name": "sample_0022_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000091.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0022_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000091_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.742975652217865,
+          "bbox_xyxy": [
+            902.0,
+            648.0,
+            1037.0,
+            799.0
+          ],
+          "bbox_area": 20385.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0023_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000126.jpg",
+      "image_name": "sample_0023_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000126.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0023_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000126_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7011762857437134,
+          "bbox_xyxy": [
+            1123.0,
+            730.0,
+            1283.0,
+            925.0
+          ],
+          "bbox_area": 31200.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0024_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000173.jpg",
+      "image_name": "sample_0024_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000173.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0024_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000173_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7725839018821716,
+          "bbox_xyxy": [
+            1140.0,
+            838.0,
+            1311.0,
+            1043.0
+          ],
+          "bbox_area": 35055.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0025_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000032.jpg",
+      "image_name": "sample_0025_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000032.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0025_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000032_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0026_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000065.jpg",
+      "image_name": "sample_0026_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000065.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0026_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000065_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8539994955062866,
+          "bbox_xyxy": [
+            974.0,
+            592.0,
+            1234.0,
+            905.0
+          ],
+          "bbox_area": 81380.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0027_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000098.jpg",
+      "image_name": "sample_0027_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000098.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0027_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000098_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7950274348258972,
+          "bbox_xyxy": [
+            1017.0,
+            544.0,
+            1213.0,
+            816.0
+          ],
+          "bbox_area": 53312.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0028_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000131.jpg",
+      "image_name": "sample_0028_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000131.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0028_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000131_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8058440089225769,
+          "bbox_xyxy": [
+            1281.0,
+            598.0,
+            1476.0,
+            881.0
+          ],
+          "bbox_area": 55185.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0029_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000190.jpg",
+      "image_name": "sample_0029_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000190.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0029_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000190_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0030_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000026.jpg",
+      "image_name": "sample_0030_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000026.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0030_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000026_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0031_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000059.jpg",
+      "image_name": "sample_0031_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000059.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0031_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000059_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8201497197151184,
+          "bbox_xyxy": [
+            820.0,
+            678.0,
+            1073.0,
+            952.0
+          ],
+          "bbox_area": 69322.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0032_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000093.jpg",
+      "image_name": "sample_0032_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000093.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0032_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000093_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7650151252746582,
+          "bbox_xyxy": [
+            842.0,
+            698.0,
+            1025.0,
+            906.0
+          ],
+          "bbox_area": 38064.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0033_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000127.jpg",
+      "image_name": "sample_0033_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000127.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0033_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000127_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7909326553344727,
+          "bbox_xyxy": [
+            851.0,
+            701.0,
+            1033.0,
+            908.0
+          ],
+          "bbox_area": 37674.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0034_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000178.jpg",
+      "image_name": "sample_0034_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000178.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0034_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000178_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8007970452308655,
+          "bbox_xyxy": [
+            845.0,
+            877.0,
+            1093.0,
+            1080.0
+          ],
+          "bbox_area": 50344.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0035_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000032.jpg",
+      "image_name": "sample_0035_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000032.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0035_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000032_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0036_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000064.jpg",
+      "image_name": "sample_0036_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000064.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0036_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000064_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8053769469261169,
+          "bbox_xyxy": [
+            902.0,
+            685.0,
+            1137.0,
+            952.0
+          ],
+          "bbox_area": 62745.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0037_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000096.jpg",
+      "image_name": "sample_0037_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000096.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0037_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000096_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7549648284912109,
+          "bbox_xyxy": [
+            955.0,
+            599.0,
+            1125.0,
+            861.0
+          ],
+          "bbox_area": 44540.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0038_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000128.jpg",
+      "image_name": "sample_0038_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0038_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.83469557762146,
+          "bbox_xyxy": [
+            841.0,
+            668.0,
+            1098.0,
+            939.0
+          ],
+          "bbox_area": 69647.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0039_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000183.jpg",
+      "image_name": "sample_0039_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000183.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0039_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000183_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.780516505241394,
+          "bbox_xyxy": [
+            930.0,
+            936.0,
+            1121.0,
+            1080.0
+          ],
+          "bbox_area": 27504.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0040_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000030.jpg",
+      "image_name": "sample_0040_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000030.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0040_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000030_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0041_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000059.jpg",
+      "image_name": "sample_0041_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000059.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0041_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000059_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7911704778671265,
+          "bbox_xyxy": [
+            1039.0,
+            693.0,
+            1246.0,
+            968.0
+          ],
+          "bbox_area": 56925.0,
+          "gt_kpts_inside": 21
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.7344378232955933,
+          "bbox_xyxy": [
+            596.0,
+            675.0,
+            798.0,
+            920.0
+          ],
+          "bbox_area": 49490.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0042_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000088.jpg",
+      "image_name": "sample_0042_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000088.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0042_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000088_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7820603847503662,
+          "bbox_xyxy": [
+            1032.0,
+            688.0,
+            1256.0,
+            990.0
+          ],
+          "bbox_area": 67648.0,
+          "gt_kpts_inside": 20
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.7752882242202759,
+          "bbox_xyxy": [
+            583.0,
+            686.0,
+            792.0,
+            961.0
+          ],
+          "bbox_area": 57475.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0043_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000117.jpg",
+      "image_name": "sample_0043_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000117.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0043_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000117_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7870873212814331,
+          "bbox_xyxy": [
+            1041.0,
+            722.0,
+            1248.0,
+            1009.0
+          ],
+          "bbox_area": 59409.0,
+          "gt_kpts_inside": 21
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.7731701135635376,
+          "bbox_xyxy": [
+            609.0,
+            702.0,
+            794.0,
+            947.0
+          ],
+          "bbox_area": 45325.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0044_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000162.jpg",
+      "image_name": "sample_0044_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000162.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0044_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000162_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8500933647155762,
+          "bbox_xyxy": [
+            1134.0,
+            619.0,
+            1421.0,
+            924.0
+          ],
+          "bbox_area": 87535.0,
+          "gt_kpts_inside": 21
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.7645265460014343,
+          "bbox_xyxy": [
+            466.0,
+            535.0,
+            743.0,
+            802.0
+          ],
+          "bbox_area": 73959.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0045_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000000.jpg",
+      "image_name": "sample_0045_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0045_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6932452321052551,
+          "bbox_xyxy": [
+            1101.0,
+            615.0,
+            1227.0,
+            777.0
+          ],
+          "bbox_area": 20412.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0046_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000042.jpg",
+      "image_name": "sample_0046_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0046_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7408562302589417,
+          "bbox_xyxy": [
+            1028.0,
+            571.0,
+            1156.0,
+            727.0
+          ],
+          "bbox_area": 19968.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0047_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000085.jpg",
+      "image_name": "sample_0047_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0047_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7758637070655823,
+          "bbox_xyxy": [
+            972.0,
+            415.0,
+            1114.0,
+            597.0
+          ],
+          "bbox_area": 25844.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0048_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000128.jpg",
+      "image_name": "sample_0048_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0048_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7377288937568665,
+          "bbox_xyxy": [
+            1020.0,
+            576.0,
+            1149.0,
+            725.0
+          ],
+          "bbox_area": 19221.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0049_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000170.jpg",
+      "image_name": "sample_0049_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0049_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7529250383377075,
+          "bbox_xyxy": [
+            1119.0,
+            612.0,
+            1264.0,
+            754.0
+          ],
+          "bbox_area": 20590.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0050_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000000.jpg",
+      "image_name": "sample_0050_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0050_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8006209135055542,
+          "bbox_xyxy": [
+            1097.0,
+            536.0,
+            1285.0,
+            804.0
+          ],
+          "bbox_area": 50384.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0051_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000042.jpg",
+      "image_name": "sample_0051_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0051_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8511112928390503,
+          "bbox_xyxy": [
+            1008.0,
+            489.0,
+            1243.0,
+            766.0
+          ],
+          "bbox_area": 65095.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0052_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000085.jpg",
+      "image_name": "sample_0052_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0052_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.83523029088974,
+          "bbox_xyxy": [
+            1004.0,
+            474.0,
+            1216.0,
+            750.0
+          ],
+          "bbox_area": 58512.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0053_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000128.jpg",
+      "image_name": "sample_0053_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0053_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.818360447883606,
+          "bbox_xyxy": [
+            1027.0,
+            513.0,
+            1225.0,
+            786.0
+          ],
+          "bbox_area": 54054.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0054_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000170.jpg",
+      "image_name": "sample_0054_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0054_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7435857653617859,
+          "bbox_xyxy": [
+            1054.0,
+            449.0,
+            1209.0,
+            757.0
+          ],
+          "bbox_area": 47740.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0055_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000022.jpg",
+      "image_name": "sample_0055_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000022.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0055_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000022_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0056_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000055.jpg",
+      "image_name": "sample_0056_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000055.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0056_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000055_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7143089175224304,
+          "bbox_xyxy": [
+            882.0,
+            806.0,
+            1028.0,
+            1054.0
+          ],
+          "bbox_area": 36208.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0057_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000089.jpg",
+      "image_name": "sample_0057_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000089.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0057_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000089_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.693040132522583,
+          "bbox_xyxy": [
+            1131.0,
+            737.0,
+            1317.0,
+            997.0
+          ],
+          "bbox_area": 48360.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0058_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000122.jpg",
+      "image_name": "sample_0058_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000122.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0058_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000122_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.542400598526001,
+          "bbox_xyxy": [
+            1103.0,
+            904.0,
+            1242.0,
+            1052.0
+          ],
+          "bbox_area": 20572.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0059_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000181.jpg",
+      "image_name": "sample_0059_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000181.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0059_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000181_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8509538173675537,
+          "bbox_xyxy": [
+            992.0,
+            740.0,
+            1249.0,
+            1023.0
+          ],
+          "bbox_area": 72731.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0060_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000000.jpg",
+      "image_name": "sample_0060_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0060_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8076126575469971,
+          "bbox_xyxy": [
+            964.0,
+            612.0,
+            1149.0,
+            857.0
+          ],
+          "bbox_area": 45325.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0061_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000042.jpg",
+      "image_name": "sample_0061_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0061_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8524190187454224,
+          "bbox_xyxy": [
+            908.0,
+            470.0,
+            1105.0,
+            744.0
+          ],
+          "bbox_area": 53978.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0062_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000085.jpg",
+      "image_name": "sample_0062_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0062_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8546624183654785,
+          "bbox_xyxy": [
+            941.0,
+            487.0,
+            1143.0,
+            775.0
+          ],
+          "bbox_area": 58176.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0063_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000128.jpg",
+      "image_name": "sample_0063_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0063_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.83343905210495,
+          "bbox_xyxy": [
+            909.0,
+            512.0,
+            1114.0,
+            784.0
+          ],
+          "bbox_area": 55760.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0064_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000170.jpg",
+      "image_name": "sample_0064_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0064_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8567120432853699,
+          "bbox_xyxy": [
+            881.0,
+            490.0,
+            1091.0,
+            784.0
+          ],
+          "bbox_area": 61740.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0065_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000000.jpg",
+      "image_name": "sample_0065_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0065_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8351704478263855,
+          "bbox_xyxy": [
+            1010.0,
+            811.0,
+            1211.0,
+            1069.0
+          ],
+          "bbox_area": 51858.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0066_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000042.jpg",
+      "image_name": "sample_0066_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0066_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7766819000244141,
+          "bbox_xyxy": [
+            958.0,
+            713.0,
+            1128.0,
+            989.0
+          ],
+          "bbox_area": 46920.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0067_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000085.jpg",
+      "image_name": "sample_0067_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0067_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7837482690811157,
+          "bbox_xyxy": [
+            970.0,
+            736.0,
+            1145.0,
+            995.0
+          ],
+          "bbox_area": 45325.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0068_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000128.jpg",
+      "image_name": "sample_0068_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0068_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.683264970779419,
+          "bbox_xyxy": [
+            1058.0,
+            788.0,
+            1197.0,
+            1039.0
+          ],
+          "bbox_area": 34889.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0069_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000170.jpg",
+      "image_name": "sample_0069_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0069_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8015653491020203,
+          "bbox_xyxy": [
+            984.0,
+            643.0,
+            1184.0,
+            921.0
+          ],
+          "bbox_area": 55600.0,
+          "gt_kpts_inside": 18
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0070_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000026.jpg",
+      "image_name": "sample_0070_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000026.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0070_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000026_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0071_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000059.jpg",
+      "image_name": "sample_0071_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000059.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0071_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000059_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8442760705947876,
+          "bbox_xyxy": [
+            937.0,
+            649.0,
+            1132.0,
+            915.0
+          ],
+          "bbox_area": 51870.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0072_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000092.jpg",
+      "image_name": "sample_0072_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000092.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0072_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000092_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6635867357254028,
+          "bbox_xyxy": [
+            968.0,
+            732.0,
+            1094.0,
+            961.0
+          ],
+          "bbox_area": 28854.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0073_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000125.jpg",
+      "image_name": "sample_0073_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000125.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0073_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000125_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6800992488861084,
+          "bbox_xyxy": [
+            973.0,
+            782.0,
+            1097.0,
+            1006.0
+          ],
+          "bbox_area": 27776.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0074_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000190.jpg",
+      "image_name": "sample_0074_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000190.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0074_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000190_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7016100287437439,
+          "bbox_xyxy": [
+            931.0,
+            839.0,
+            1189.0,
+            1080.0
+          ],
+          "bbox_area": 62178.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0075_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000027.jpg",
+      "image_name": "sample_0075_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000027.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0075_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000027_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0076_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000060.jpg",
+      "image_name": "sample_0076_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000060.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0076_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000060_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8390244841575623,
+          "bbox_xyxy": [
+            915.0,
+            597.0,
+            1152.0,
+            919.0
+          ],
+          "bbox_area": 76314.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0077_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000093.jpg",
+      "image_name": "sample_0077_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000093.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0077_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000093_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.683391809463501,
+          "bbox_xyxy": [
+            996.0,
+            667.0,
+            1130.0,
+            869.0
+          ],
+          "bbox_area": 27068.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0078_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000127.jpg",
+      "image_name": "sample_0078_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000127.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0078_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000127_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7614026069641113,
+          "bbox_xyxy": [
+            1001.0,
+            678.0,
+            1137.0,
+            871.0
+          ],
+          "bbox_area": 26248.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0079_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000179.jpg",
+      "image_name": "sample_0079_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000179.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0079_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000179_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.5865581631660461,
+          "bbox_xyxy": [
+            935.0,
+            932.0,
+            1058.0,
+            1080.0
+          ],
+          "bbox_area": 18204.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0080_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000023.jpg",
+      "image_name": "sample_0080_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000023.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0080_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000023_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0081_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000059.jpg",
+      "image_name": "sample_0081_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000059.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0081_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000059_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7623821496963501,
+          "bbox_xyxy": [
+            835.0,
+            725.0,
+            973.0,
+            976.0
+          ],
+          "bbox_area": 34638.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0082_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000095.jpg",
+      "image_name": "sample_0082_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000095.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0082_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000095_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.5764150023460388,
+          "bbox_xyxy": [
+            907.0,
+            626.0,
+            1059.0,
+            862.0
+          ],
+          "bbox_area": 35872.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0083_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000131.jpg",
+      "image_name": "sample_0083_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000131.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0083_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000131_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7815197110176086,
+          "bbox_xyxy": [
+            835.0,
+            762.0,
+            1026.0,
+            984.0
+          ],
+          "bbox_area": 42402.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0084_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000191.jpg",
+      "image_name": "sample_0084_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000191.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0084_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000191_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.6765084266662598,
+          "bbox_xyxy": [
+            753.0,
+            877.0,
+            1017.0,
+            1080.0
+          ],
+          "bbox_area": 53592.0,
+          "gt_kpts_inside": 16
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0085_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000056.jpg",
+      "image_name": "sample_0085_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000056.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0085_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000056_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0086_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000080.jpg",
+      "image_name": "sample_0086_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000080.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0086_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000080_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7560321092605591,
+          "bbox_xyxy": [
+            859.0,
+            565.0,
+            1045.0,
+            801.0
+          ],
+          "bbox_area": 43896.0,
+          "gt_kpts_inside": 21
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.6636970043182373,
+          "bbox_xyxy": [
+            144.0,
+            591.0,
+            382.0,
+            835.0
+          ],
+          "bbox_area": 58072.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0087_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000104.jpg",
+      "image_name": "sample_0087_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000104.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0087_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000104_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8169792294502258,
+          "bbox_xyxy": [
+            871.0,
+            542.0,
+            1055.0,
+            815.0
+          ],
+          "bbox_area": 50232.0,
+          "gt_kpts_inside": 21
+        },
+        {
+          "detection_index": 1,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.761759340763092,
+          "bbox_xyxy": [
+            111.0,
+            588.0,
+            362.0,
+            907.0
+          ],
+          "bbox_area": 80069.0,
+          "gt_kpts_inside": 0
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0088_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000128.jpg",
+      "image_name": "sample_0088_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0088_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.8100153207778931,
+          "bbox_xyxy": [
+            170.0,
+            580.0,
+            390.0,
+            848.0
+          ],
+          "bbox_area": 58960.0,
+          "gt_kpts_inside": 0
+        },
+        {
+          "detection_index": 1,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7888895273208618,
+          "bbox_xyxy": [
+            905.0,
+            541.0,
+            1081.0,
+            785.0
+          ],
+          "bbox_area": 42944.0,
+          "gt_kpts_inside": 20
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0089_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000173.jpg",
+      "image_name": "sample_0089_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000173.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0089_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000173_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 2,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.8823639154434204,
+          "bbox_xyxy": [
+            132.0,
+            501.0,
+            490.0,
+            901.0
+          ],
+          "bbox_area": 143200.0,
+          "gt_kpts_inside": 0
+        },
+        {
+          "detection_index": 1,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8638659119606018,
+          "bbox_xyxy": [
+            845.0,
+            468.0,
+            1157.0,
+            821.0
+          ],
+          "bbox_area": 110136.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0090_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000000.jpg",
+      "image_name": "sample_0090_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000000.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0090_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000000_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7797044515609741,
+          "bbox_xyxy": [
+            1198.0,
+            519.0,
+            1342.0,
+            771.0
+          ],
+          "bbox_area": 36288.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0091_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000042.jpg",
+      "image_name": "sample_0091_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000042.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0091_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000042_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8014732003211975,
+          "bbox_xyxy": [
+            1049.0,
+            477.0,
+            1283.0,
+            746.0
+          ],
+          "bbox_area": 62946.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0092_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000085.jpg",
+      "image_name": "sample_0092_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000085.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0092_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000085_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8287101984024048,
+          "bbox_xyxy": [
+            965.0,
+            438.0,
+            1217.0,
+            715.0
+          ],
+          "bbox_area": 69804.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0093_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000128.jpg",
+      "image_name": "sample_0093_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000128.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0093_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000128_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8124244809150696,
+          "bbox_xyxy": [
+            1075.0,
+            435.0,
+            1266.0,
+            727.0
+          ],
+          "bbox_area": 55772.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0094_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000170.jpg",
+      "image_name": "sample_0094_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000170.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0094_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000170_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8019906282424927,
+          "bbox_xyxy": [
+            970.0,
+            410.0,
+            1211.0,
+            664.0
+          ],
+          "bbox_area": 61214.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0095_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000021.jpg",
+      "image_name": "sample_0095_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000021.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0095_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000021_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 0,
+      "hands": []
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0096_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000055.jpg",
+      "image_name": "sample_0096_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000055.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0096_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000055_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 0,
+          "class_name": "left",
+          "handedness": "left",
+          "is_right": false,
+          "score": 0.45047691464424133,
+          "bbox_xyxy": [
+            1066.0,
+            678.0,
+            1175.0,
+            822.0
+          ],
+          "bbox_area": 15696.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0097_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000089.jpg",
+      "image_name": "sample_0097_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000089.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0097_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000089_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.7856742739677429,
+          "bbox_xyxy": [
+            1050.0,
+            586.0,
+            1186.0,
+            800.0
+          ],
+          "bbox_area": 29104.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0098_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000123.jpg",
+      "image_name": "sample_0098_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000123.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0098_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000123_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.827590823173523,
+          "bbox_xyxy": [
+            1014.0,
+            680.0,
+            1202.0,
+            907.0
+          ],
+          "bbox_area": 42676.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    },
+    {
+      "image": "hoi4d_samples2/images/sample_0099_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000168.jpg",
+      "image_name": "sample_0099_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000168.jpg",
+      "overlay": "hoi4d_samples2/handbox_detection/overlays/sample_0099_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000168_handbox.jpg",
+      "image_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "detector": {
+        "checkpoint": "pretrained_models/detector.pt",
+        "conf_threshold": 0.3,
+        "class_names": {
+          "0": "left",
+          "1": "right"
+        }
+      },
+      "num_hands": 1,
+      "hands": [
+        {
+          "detection_index": 0,
+          "class_id": 1,
+          "class_name": "right",
+          "handedness": "right",
+          "is_right": true,
+          "score": 0.8267231583595276,
+          "bbox_xyxy": [
+            996.0,
+            659.0,
+            1233.0,
+            886.0
+          ],
+          "bbox_area": 53799.0,
+          "gt_kpts_inside": 21
+        }
+      ]
+    }
+  ]
+}

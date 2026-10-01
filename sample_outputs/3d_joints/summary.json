@@ -1,0 +1,14 @@
+{
+  "img_folder": "sample_outputs/assets",
+  "out_folder": "sample_outputs/3d_joints",
+  "num_images": 1,
+  "num_readable": 1,
+  "num_hands": 1,
+  "records": [
+    {
+      "image": "sample_frame.png",
+      "readable": true,
+      "num_hands": 1
+    }
+  ]
+}

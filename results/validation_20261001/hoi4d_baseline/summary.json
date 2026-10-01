@@ -1,0 +1,31 @@
+{
+  "state": "completed",
+  "created": "2026-10-01T08:52:12.415581+00:00",
+  "updated": "2026-10-01T08:56:47.540035+00:00",
+  "cancel_requested": false,
+  "counts": {
+    "completed": 100
+  },
+  "discovered_items": 100,
+  "schema": "egohand3d.run/1",
+  "frames_completed": 100,
+  "frames_with_hands": 86,
+  "hands": 94,
+  "detection_coverage": 0.86,
+  "coverage_note": "Fraction of processed frames with predictions; not detection recall without GT",
+  "quality_flags": {
+    "joints_outside_image": 2,
+    "low_detection_score": 1
+  },
+  "roundtrip_failures": 0,
+  "mean_processing_seconds": 0.18909906921442599,
+  "latest_invocation": {
+    "started": "2026-10-01T08:56:46.411584+00:00",
+    "processed": 0,
+    "reused": 100,
+    "python": "3.10.0 (default, Mar  3 2022, 09:58:08) [GCC 7.5.0]",
+    "platform": "Linux-5.4.250-2-velinux1u1-amd64-x86_64-with-glibc2.31",
+    "wall_seconds": 1.12845744099468
+  },
+  "failures": []
+}

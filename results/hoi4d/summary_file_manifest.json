@@ -1,0 +1,442 @@
+[
+  {
+    "source": "../WiLoR/eval_outputs/RenderEgoMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/RenderEgoMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_2d/summary.json",
+    "size_bytes": 1131
+  },
+  {
+    "source": "../WiLoR/eval_outputs/RenderEgoMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_pa_mpjpe/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/RenderEgoMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_pa_mpjpe/summary.json",
+    "size_bytes": 1543
+  },
+  {
+    "source": "../WiLoR/eval_outputs/RenderMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/RenderMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_2d/summary.json",
+    "size_bytes": 1122
+  },
+  {
+    "source": "../WiLoR/eval_outputs/RenderMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_pa_mpjpe/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/RenderMANO_4gpu60e_bs120_step063312_best_on_own_test_5000_pa_mpjpe/summary.json",
+    "size_bytes": 1523
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_4gpu60e_bs120_step030656_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_4gpu60e_bs120_step030656_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1122
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_4gpu60e_bs120_step030656_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_4gpu60e_bs120_step030656_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2195
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_4gpu_resume_to86376_step049984_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_4gpu_resume_to86376_step049984_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1128
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_4gpu_resume_to86376_step049984_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_4gpu_resume_to86376_step049984_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2187
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_egofishhands_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_egofishhands_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1159
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_egofishhands_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_egofishhands_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2241
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_egofishhands_quarter_8gpu60e_bs60_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_egofishhands_quarter_8gpu60e_bs60_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1177
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_egofishhands_quarter_8gpu60e_bs60_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_egofishhands_quarter_8gpu60e_bs60_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2233
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_half_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_half_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1164
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_half_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_half_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2231
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_half_8gpu60e_bs120_step023328_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_half_8gpu60e_bs120_step023328_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1169
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_half_8gpu60e_bs120_step023328_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_half_8gpu60e_bs120_step023328_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2232
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1169
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_renderegomano_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_renderegomano_quarter_4gpu60e_bs120_step063312_best_on_hoi4d_clean_test_5000_mano_pj/summary.json",
+    "size_bytes": 2234
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_2d/summary.json",
+    "size_bytes": 1139
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_3d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_3d/summary.json",
+    "size_bytes": 2214
+  },
+  {
+    "source": "../WiLoR/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_eval.log",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/hoi4d_clean_test5000_8gpu_bs60_final_eval.log",
+    "size_bytes": 42
+  },
+  {
+    "source": "../WiLoR/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1134
+  },
+  {
+    "source": "../WiLoR/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_mano_pa_mpjpe/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_mano_pa_mpjpe/summary.json",
+    "size_bytes": 1563
+  },
+  {
+    "source": "../WiLoR/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_mano_pa_mpjpe_smoke16/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/renderegomano_step063312_best_on_hoi4d_clean_test_5000_mano_pa_mpjpe_smoke16/summary.json",
+    "size_bytes": 1552
+  },
+  {
+    "source": "../WiLoR/eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/training_curves_RenderEgoMANO_RenderMANO_4gpu_bs120_60epoch/summary.json",
+    "size_bytes": 3617
+  },
+  {
+    "source": "../WiLoR/eval_outputs/training_curves_hoi4d_clean_4gpu_bs120_60epoch/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/training_curves_hoi4d_clean_4gpu_bs120_60epoch/summary.json",
+    "size_bytes": 1329
+  },
+  {
+    "source": "../WiLoR/eval_outputs/wilor_initial_on_hoi4d_clean_test_5000_2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/wilor_initial_on_hoi4d_clean_test_5000_2d/summary.json",
+    "size_bytes": 1011
+  },
+  {
+    "source": "../WiLoR/eval_outputs/wilor_initial_on_hoi4d_clean_test_5000_mano_pa_mpjpe/summary.json",
+    "stored_as": "results/hoi4d/summaries/eval_outputs/wilor_initial_on_hoi4d_clean_test_5000_mano_pa_mpjpe/summary.json",
+    "size_bytes": 1421
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/kps2d_comparison/comparison_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/kps2d_comparison/comparison_summary.csv",
+    "size_bytes": 702
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/kps2d_comparison/comparison_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/kps2d_comparison/comparison_summary.json",
+    "size_bytes": 1232
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1285
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2966
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 1663
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_egodex_no2d_4gpu_92k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 7839
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_pred_kps2d/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_pred_kps2d/summary.csv",
+    "size_bytes": 1442
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_pred_kps2d/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_pred_kps2d/summary.json",
+    "size_bytes": 2114
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1284
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2964
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_vs_gt_2djoints/summary.csv",
+    "size_bytes": 794
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples/wilor_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples/wilor_vs_gt_2djoints/summary.json",
+    "size_bytes": 1964
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/gt_quality_check/gt_quality_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/gt_quality_check/gt_quality_summary.json",
+    "size_bytes": 8583
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/handbox_detection/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/handbox_detection/summary.csv",
+    "size_bytes": 24878
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/handbox_detection/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/handbox_detection/summary.json",
+    "size_bytes": 104011
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/mano_projection_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/mano_projection_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 915
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/mano_projection_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/mano_projection_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2977
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/mano_projection_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/mano_projection_vs_gt_2djoints/summary.csv",
+    "size_bytes": 52258
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/mano_projection_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/mano_projection_vs_gt_2djoints/summary.json",
+    "size_bytes": 172903
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/meta/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/meta/summary.json",
+    "size_bytes": 2684
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_3d_eval/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_3d_eval/summary.csv",
+    "size_bytes": 24136
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_3d_eval/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_3d_eval/summary.json",
+    "size_bytes": 297913
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 980
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2950
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 40206
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/renderegomano_ego2_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 140660
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_3d_eval/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_3d_eval/summary.csv",
+    "size_bytes": 24116
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_3d_eval/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_3d_eval/summary.json",
+    "size_bytes": 300192
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 951
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2945
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41722
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_resume_62k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 142928
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 955
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2947
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/summary.csv",
+    "size_bytes": 39494
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_8gpu_v1_vs_gt_2djoints/summary.json",
+    "size_bytes": 139409
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 953
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2943
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41385
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_clean_only_4gpu_86k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 142413
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 951
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2947
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41883
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_2x4gpu_94k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 143204
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1041
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2968
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41771
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_100k_last_vs_gt_2djoints/summary.json",
+    "size_bytes": 143379
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1041
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2950
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41457
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_28k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 142433
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1041
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2966
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/summary.csv",
+    "size_bytes": 41637
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_egodex_no2d_4gpu_82k_best_vs_gt_2djoints/summary.json",
+    "size_bytes": 143341
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_vs_gt_2djoints/per_joint_summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_vs_gt_2djoints/per_joint_summary.csv",
+    "size_bytes": 1280
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_vs_gt_2djoints/per_joint_summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_vs_gt_2djoints/per_joint_summary.json",
+    "size_bytes": 2960
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_vs_gt_2djoints/summary.csv",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_vs_gt_2djoints/summary.csv",
+    "size_bytes": 23556
+  },
+  {
+    "source": "../WiLoR/hoi4d_samples2/wilor_vs_gt_2djoints/summary.json",
+    "stored_as": "results/hoi4d/summaries/hoi4d_samples2/wilor_vs_gt_2djoints/summary.json",
+    "size_bytes": 46700
+  }
+]

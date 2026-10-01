@@ -1,0 +1,8 @@
+{
+  "video": "sample_video.mp4",
+  "num_frames_seen": 1,
+  "num_frames_processed": 1,
+  "num_frames_with_hands": 1,
+  "json_dir": "jsons",
+  "overlay_dir": "overlay_frames"
+}

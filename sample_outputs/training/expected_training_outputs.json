@@ -1,0 +1,6 @@
+{
+  "log_dir": "logs/train/runs/<exp_name>/",
+  "checkpoint_dir": "logs/train/runs/<exp_name>/checkpoints/",
+  "example_checkpoint": "step=000020.ckpt",
+  "note": "Checkpoint binaries are not stored in GitHub sample outputs."
+}

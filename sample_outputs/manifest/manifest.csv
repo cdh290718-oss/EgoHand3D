@@ -1,0 +1,2 @@
+id,media_type,path,has_predictions,has_label,label,kpts2d,joints3d,mano
+sample_frame,image,sample_outputs/assets/sample_frame.png,True,False,,sample_outputs/2d_joints/sample_frame_kpts2d.json,,

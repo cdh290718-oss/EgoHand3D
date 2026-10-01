@@ -1,0 +1,24 @@
+{
+  "hands": 2,
+  "passed": true,
+  "checks": [
+    {
+      "max_joint_error_m": 3.003425057343598e-08,
+      "max_vertex_error_m": 3.077594869184923e-08,
+      "max_reprojection_error_px": 6.897961246473144e-05,
+      "num_projectable_joints": 21,
+      "tolerance_m": 1e-05,
+      "tolerance_px": 0.05,
+      "passed": true
+    },
+    {
+      "max_joint_error_m": 2.3853496601554932e-08,
+      "max_vertex_error_m": 3.7438704152110554e-08,
+      "max_reprojection_error_px": 4.176812664226106e-05,
+      "num_projectable_joints": 21,
+      "tolerance_m": 1e-05,
+      "tolerance_px": 0.05,
+      "passed": true
+    }
+  ]
+}

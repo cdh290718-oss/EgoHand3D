@@ -1,0 +1,9 @@
+{
+  "num_samples": 1,
+  "num_detected": 1,
+  "num_eval_joints": 21,
+  "mean_err_px": 1.1318,
+  "median_err_px": 1.2,
+  "rmse_err_px": 1.42,
+  "max_err_px": 1.6279
+}

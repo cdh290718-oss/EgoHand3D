@@ -1,0 +1,115 @@
+{
+  "num_samples": 100,
+  "num_sequences": 20,
+  "output_dir": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hois4d_ample",
+  "source_root": "/c20250503/Robert/HOI4D",
+  "label_type": "Hand_pose pickle files copied from handpose_right_hand/handpose_left_hand",
+  "image_type": "JPEG frames extracted from matching align_rgb/image.mp4 videos",
+  "sequences": [
+    {
+      "sequence": "ZY20210800001/H1/C1/N19/S100/s02/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C2/N11/S212/s03/T2",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C3/N01/S54/s05/T2",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C5/N15/S57/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C7/N11/S270/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C12/N11/S169/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C13/N11/S132/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C14/N15/S158/s02/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800001/H1/C20/N18/S286/s01/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C1/N01/S336/s02/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C2/N11/S25/s01/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C3/N02/S354/s01/T2",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C5/N11/S121/s01/T3",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C7/N11/S64/s01/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C12/N11/S154/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C13/N11/S124/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C14/N11/S161/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800002/H2/C20/N11/S271/s03/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800003/H3/C1/N02/S86/s01/T1",
+      "side": "right",
+      "samples": 5
+    },
+    {
+      "sequence": "ZY20210800003/H3/C2/N11/S215/s03/T5",
+      "side": "right",
+      "samples": 5
+    }
+  ],
+  "subjects": [
+    "ZY20210800001",
+    "ZY20210800002",
+    "ZY20210800003"
+  ]
+}

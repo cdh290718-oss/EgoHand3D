@@ -1,0 +1,55 @@
+logs/
+outputs/
+__pycache__/
+*.pyc
+.hydra/
+.pytest_cache/
+wandb/
+/data/
+
+# Local runtime files and generated artifacts
+clash.log
+*.log
+*.tmp
+*.bak
+!results/**/*.log
+
+# External assets. Keep these out of a public repo unless their license permits redistribution.
+wilor
+wilor/
+pretrained_models
+pretrained_models/
+mano_data
+mano_data/
+*.ckpt
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.tar
+*.tar.gz
+*.zip
+
+# Example photos are not guaranteed to be redistribution-safe.
+examples/images/
+!examples/egocentric_sequence/outputs/
+!examples/egocentric_sequence/outputs/**
+
+# Private software-copyright registration materials and official templates.
+软著申请材料_*/
+软著撰写指南*.md
+计算机软件著作权登记信息模板*.doc
+软件开发文档编写规范*.doc
+第一视角手部三维重建适配与评估软件V1.0软件说明书.md
+*.doc
+*.docx
+
+# Selected publication artifacts (no identity/application forms).
+!artifacts/*.zip
+!registration/source/*.docx
+# Authentication and local environments must never be committed.
+.env
+.env.*
+.venv/
+*.pem
+*.key

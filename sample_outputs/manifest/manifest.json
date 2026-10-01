@@ -1,0 +1,38 @@
+{
+  "image_dir": "sample_outputs/assets",
+  "video_dir": null,
+  "pred_dir": "sample_outputs/2d_joints",
+  "label_dir": null,
+  "recursive": false,
+  "summary": {
+    "num_records": 1,
+    "media_counts": {
+      "image": 1
+    },
+    "suffix_counts": {
+      ".png": 1
+    },
+    "prediction_counts": {
+      "kpts2d": 1
+    },
+    "num_with_predictions": 1,
+    "num_with_labels": 0,
+    "num_missing_predictions": 0,
+    "num_missing_labels": 1
+  },
+  "records": [
+    {
+      "id": "sample_frame",
+      "media_type": "image",
+      "path": "sample_outputs/assets/sample_frame.png",
+      "name": "sample_frame.png",
+      "suffix": ".png",
+      "predictions": {
+        "kpts2d": "sample_outputs/2d_joints/sample_frame_kpts2d.json"
+      },
+      "has_predictions": true,
+      "label": null,
+      "has_label": false
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-01",
+  "reference_python_files": 128,
+  "reference_scope": "Local WiLoR root Python files plus wilor/, tools/, scripts/; downloaded official upstream Python snapshot.",
+  "official_upstream_commit": "fcb911312a38fa8badd30d9656a167485d61b8f9",
+  "method": "Exact file bytes, exact function AST (at least 40 nodes), consecutive stripped nonblank/non-comment line blocks >=10.",
+  "limits": "These checks are not a legal originality decision or a plagiarism percentage. Shared algorithms, imports and short patterns are expected. Mixed provenance of legacy scripts remains unresolved.",
+  "submission_files": [
+    {
+      "file": "egohand3d/storage.py",
+      "sha256": "aa8460ccd811c35470b5772b159702d071b2979e8aac85276127d24e3855fc89",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/media.py",
+      "sha256": "a2b5db5a43933e0956af4221cb830d52ae22f0306f113ae8cb5944d413c43d0e",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/jobs.py",
+      "sha256": "11177d5dd0614fc17d4854ec7e2ab8cf956a4f7b97d3e076481612aaf27ba44a",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/mano_codec.py",
+      "sha256": "2431c86ed5bd0079f957b847918ae2e168b1c536c9ac6fa38c1c4927cec2021a",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/quality.py",
+      "sha256": "54e679b9fb0604d60aa0ef2426599507a86747aec304d2a5027c9327feed5c16",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/pipeline.py",
+      "sha256": "ae0f18a491b950864afcb7d7e8f8038f96f109d39415f898259884da683499ac",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/sequence.py",
+      "sha256": "dce16a25fdd3ace8004a1a80c3f32e5f2885b2673ceb20be47204ac89d02d997",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/dataset_adapters.py",
+      "sha256": "c236e5504afc1c0c1bcaf5d5c452dedd582a3019dea21ba695ba6adda0700e01",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/metrics.py",
+      "sha256": "823f1240f890d89b11e9b0a8b0b5b1b71349543becf19662a99de769b841cf92",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/reports.py",
+      "sha256": "d408248685ddccc0d129a8c9d26075deee365dd925c8e235396b90f7095e22e9",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/video_export.py",
+      "sha256": "6b747f773a7bad6606ceeb1d419e410326d319c944c889d5feab0f86ae90a84b",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/workflow_cli.py",
+      "sha256": "b7fc98b42494424c956aac6375b247ac3f4a4503a4c0cccadcfc0b2c568a55e8",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    },
+    {
+      "file": "egohand3d/workflow.py",
+      "sha256": "125ae725064f1a43fb2f706596c314c9413ec853466730af1664379ad18117bc",
+      "exact_file_matches": [],
+      "identical_function_ast_matches_minimum_40_nodes": [],
+      "consecutive_normalized_blocks_at_least_10_lines": []
+    }
+  ],
+  "excluded_legacy_examples": [
+    {
+      "file": "train.py",
+      "local_wilor_reference": "train.py",
+      "exact_bytes": true,
+      "normalized_line_sequence_ratio": 1.0,
+      "in_source_submission": false
+    },
+    {
+      "file": "export_2d_joints.py",
+      "local_wilor_reference": "demo_to_2djoints.py",
+      "exact_bytes": true,
+      "normalized_line_sequence_ratio": 1.0,
+      "in_source_submission": false
+    },
+    {
+      "file": "tools/detect_video_hands.py",
+      "local_wilor_reference": "detect_video_hands.py",
+      "exact_bytes": true,
+      "normalized_line_sequence_ratio": 1.0,
+      "in_source_submission": false
+    },
+    {
+      "file": "tools/evaluate_hoi4d_wilor_2djoints.py",
+      "local_wilor_reference": "evaluate_hoi4d_wilor_2djoints.py",
+      "exact_bytes": true,
+      "normalized_line_sequence_ratio": 1.0,
+      "in_source_submission": false
+    },
+    {
+      "file": "detect_and_reconstruct.py",
+      "local_wilor_reference": "demo.py",
+      "exact_bytes": false,
+      "normalized_line_sequence_ratio": 0.972972972972973,
+      "in_source_submission": false
+    }
+  ]
+}

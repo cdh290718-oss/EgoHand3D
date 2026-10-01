@@ -1,0 +1,161 @@
+{
+  "software_name": "第一视角手部三维重建适配与评估软件",
+  "version": "V1.0",
+  "scope": "新增命令行流程应用模块；WiLoR/MANO 模型和原有推理适配器作为外部或既有依赖，不在本清单的新增源码主张范围内。",
+  "files": [
+    {
+      "file": "egohand3d/storage.py",
+      "file_id": 1,
+      "sha256": "aa8460ccd811c35470b5772b159702d071b2979e8aac85276127d24e3855fc89",
+      "physical_lines": 51,
+      "nonblank_lines": 38,
+      "first_listing_line": 1,
+      "last_listing_line": 38
+    },
+    {
+      "file": "egohand3d/media.py",
+      "file_id": 2,
+      "sha256": "a2b5db5a43933e0956af4221cb830d52ae22f0306f113ae8cb5944d413c43d0e",
+      "physical_lines": 109,
+      "nonblank_lines": 98,
+      "first_listing_line": 39,
+      "last_listing_line": 136
+    },
+    {
+      "file": "egohand3d/jobs.py",
+      "file_id": 3,
+      "sha256": "11177d5dd0614fc17d4854ec7e2ab8cf956a4f7b97d3e076481612aaf27ba44a",
+      "physical_lines": 117,
+      "nonblank_lines": 97,
+      "first_listing_line": 137,
+      "last_listing_line": 233
+    },
+    {
+      "file": "egohand3d/mano_codec.py",
+      "file_id": 4,
+      "sha256": "2431c86ed5bd0079f957b847918ae2e168b1c536c9ac6fa38c1c4927cec2021a",
+      "physical_lines": 157,
+      "nonblank_lines": 139,
+      "first_listing_line": 234,
+      "last_listing_line": 372
+    },
+    {
+      "file": "egohand3d/quality.py",
+      "file_id": 5,
+      "sha256": "54e679b9fb0604d60aa0ef2426599507a86747aec304d2a5027c9327feed5c16",
+      "physical_lines": 37,
+      "nonblank_lines": 33,
+      "first_listing_line": 373,
+      "last_listing_line": 405
+    },
+    {
+      "file": "egohand3d/pipeline.py",
+      "file_id": 6,
+      "sha256": "ae0f18a491b950864afcb7d7e8f8038f96f109d39415f898259884da683499ac",
+      "physical_lines": 207,
+      "nonblank_lines": 191,
+      "first_listing_line": 406,
+      "last_listing_line": 596
+    },
+    {
+      "file": "egohand3d/sequence.py",
+      "file_id": 7,
+      "sha256": "dce16a25fdd3ace8004a1a80c3f32e5f2885b2673ceb20be47204ac89d02d997",
+      "physical_lines": 171,
+      "nonblank_lines": 158,
+      "first_listing_line": 597,
+      "last_listing_line": 754
+    },
+    {
+      "file": "egohand3d/dataset_adapters.py",
+      "file_id": 8,
+      "sha256": "c236e5504afc1c0c1bcaf5d5c452dedd582a3019dea21ba695ba6adda0700e01",
+      "physical_lines": 55,
+      "nonblank_lines": 50,
+      "first_listing_line": 755,
+      "last_listing_line": 804
+    },
+    {
+      "file": "egohand3d/metrics.py",
+      "file_id": 9,
+      "sha256": "823f1240f890d89b11e9b0a8b0b5b1b71349543becf19662a99de769b841cf92",
+      "physical_lines": 141,
+      "nonblank_lines": 130,
+      "first_listing_line": 805,
+      "last_listing_line": 934
+    },
+    {
+      "file": "egohand3d/reports.py",
+      "file_id": 10,
+      "sha256": "d408248685ddccc0d129a8c9d26075deee365dd925c8e235396b90f7095e22e9",
+      "physical_lines": 165,
+      "nonblank_lines": 148,
+      "first_listing_line": 935,
+      "last_listing_line": 1082
+    },
+    {
+      "file": "egohand3d/video_export.py",
+      "file_id": 11,
+      "sha256": "6b747f773a7bad6606ceeb1d419e410326d319c944c889d5feab0f86ae90a84b",
+      "physical_lines": 76,
+      "nonblank_lines": 72,
+      "first_listing_line": 1083,
+      "last_listing_line": 1154
+    },
+    {
+      "file": "egohand3d/workflow_cli.py",
+      "file_id": 12,
+      "sha256": "b7fc98b42494424c956aac6375b247ac3f4a4503a4c0cccadcfc0b2c568a55e8",
+      "physical_lines": 215,
+      "nonblank_lines": 190,
+      "first_listing_line": 1155,
+      "last_listing_line": 1344
+    },
+    {
+      "file": "egohand3d/workflow.py",
+      "file_id": 13,
+      "sha256": "125ae725064f1a43fb2f706596c314c9413ec853466730af1664379ad18117bc",
+      "physical_lines": 21,
+      "nonblank_lines": 15,
+      "first_listing_line": 1345,
+      "last_listing_line": 1359
+    }
+  ],
+  "physical_lines": 1522,
+  "listing_nonblank_lines": 1359,
+  "full_pages": 28,
+  "submission_pages": 28,
+  "selected_original_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "rule": "50 nonblank original source lines per page, except the final page. Long lines wrap visually. If at most 60 pages, submit all; otherwise first/last 30.",
+  "rule_url": "https://www.ncac.gov.cn/xxfb/flfg/bmgz/202410/t20241015_869486.html",
+  "ownership_note": "A traceable scope listing, not proof of ownership."
+}

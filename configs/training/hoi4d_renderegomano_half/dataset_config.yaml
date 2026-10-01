@@ -1,0 +1,106 @@
+COCOW-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/cocow-train/{000000..000036}.tar
+  epoch_size: 78666
+DEX-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/dex-train/{000000..000406}.tar
+  epoch_size: 406888
+EGODEX-NO2D-TEST:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/egodex_no2d_test/{000000..000021}.tar
+  epoch_size: 42024
+EGODEX-NO2D-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/egodex_no2d_train/{000000..000357}.tar
+  epoch_size: 706529
+EGODEX-NO2D-VAL:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/egodex_no2d_val/{000000..000020}.tar
+  epoch_size: 41104
+FREIHAND-MOCAP:
+  DATASET_FILE: $WILOR_TRAINING_DATA/freihand_mocap.npz
+FREIHAND-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/freihand-train/{000000..000130}.tar
+  epoch_size: 130240
+H2O3D-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/h2o3d-train/{000000..000060}.tar
+  epoch_size: 121996
+HALPE-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/halpe-train/{000000..000022}.tar
+  epoch_size: 34289
+HO3D-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/ho3d-train/{000000..000083}.tar
+  epoch_size: 83325
+HOI4D-CLEAN-TEST:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-clean-test/{000000..000023}.tar
+  epoch_size: 23765
+HOI4D-CLEAN-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-clean-train/{000000..000391}.tar
+  epoch_size: 391003
+HOI4D-CLEAN-VAL:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-clean-val/{000000..000020}.tar
+  epoch_size: 20328
+HOI4D-TEST:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-test/{000000..000018}.tar
+  epoch_size: 18359
+HOI4D-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-train/{000000..000403}.tar
+  epoch_size: 403806
+HOI4D-VAL:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/hoi4d-val/{000000..000024}.tar
+  epoch_size: 24155
+INTERHAND26M-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/interhand26m-train/{000000..001056}.tar
+  epoch_size: 1424632
+MPIINZSL-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/mpiinzsl-train/{000000..000015}.tar
+  epoch_size: 15184
+MTC-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/mtc-train/{000000..000306}.tar
+  epoch_size: 363947
+RENDEREGOMANO-HALF-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderEgoMANO/{000000..000299}.tar
+  epoch_size: 300000
+RENDEREGOMANO-QUARTER-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderEgoMANO/{000000..000149}.tar
+  epoch_size: 150000
+RENDEREGOMANO-TEST:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderEgoMANO/{000611..000621}.tar
+  epoch_size: 10600
+RENDEREGOMANO-VAL:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderEgoMANO/{000600..000610}.tar
+  epoch_size: 11000
+RENDERMANO-HAMER-TEST:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderMANO_hamer/{000611..000621}.tar
+  epoch_size: 10600
+RENDERMANO-HAMER-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderMANO_hamer/{000000..000599}.tar
+  epoch_size: 600000
+RENDERMANO-HAMER-VAL:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/RenderMANO_hamer/{000600..000610}.tar
+  epoch_size: 11000
+RHD-TRAIN:
+  TYPE: ImageDataset
+  URLS: $WILOR_TRAINING_DATA/dataset_tars/rhd-train/{000000..000041}.tar
+  epoch_size: 61705

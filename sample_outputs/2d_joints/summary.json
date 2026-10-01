@@ -1,0 +1,6 @@
+{
+  "img_folder": "sample_outputs/assets",
+  "out_folder": "sample_outputs/2d_joints",
+  "num_images": 1,
+  "num_hands": 1
+}
