@@ -8,6 +8,14 @@
 
 图片叠加没有处理场景物体对手部的遮挡；用于展示预测网格，精度结论请参阅[已有评估报告](../validation_20261001/comparison/report.md)。
 
+## 50 张纯图片拼图
+
+**[查看 50 张微调模型结果拼图（无标题、名称或说明文字）](mesh_overlay_50/README.md)**
+
+[PNG 高清图](mesh_overlay_50/mesh_overlay_50_no_text.png) · [JPG 高清图](mesh_overlay_50/mesh_overlay_50_no_text.jpg) · [50 张单独网格叠加图](mesh_overlay_50/overlays/)
+
+![50 张微调模型网格叠加图](mesh_overlay_50/mesh_overlay_50_no_text.jpg)
+
 ## 六图拼接大图
 
 六张已有三维网格叠加图按 2 行 3 列排列，右下角为初始模型结果，其余为第一视角微调结果。

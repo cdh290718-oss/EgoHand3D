@@ -1,0 +1,1266 @@
+{
+  "count": 50,
+  "model": "EgoHand3D first-person fine-tuned weights",
+  "training_performed": false,
+  "inference_performed": false,
+  "source_run": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned",
+  "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+  "selection": "Retain five earlier fine-tuned samples; add 45 uniformly spaced records from remaining valid saved predictions. No GT/error selection.",
+  "layout": {
+    "rows": 10,
+    "columns": 5,
+    "text": false,
+    "titles": false,
+    "borders": false
+  },
+  "rendering": "Unmodified saved camera-space vertices, original topology, opaque mesh, no scene-occlusion model",
+  "faces_source": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/workflow_smoke_02/meshes/873519995f6debef9aa8_0.obj",
+  "faces_source_sha256": "e96ff5d0e26c6674140019a9529b473c98a051889b0695e9bfd01abb8dfe6cf3",
+  "script_sha256": "cbcbc1b47078e2cd59d0ebbf3e94d196e1b53f45433f82ce1c8dea035428edde",
+  "results": [
+    {
+      "order": 0,
+      "index": 0,
+      "sample_id": "7095ec389449fffd7a9d",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0000_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000000.jpg",
+      "source_image_sha256": "bd0c1a36eb3ec1d3e03cf57d178c02f407d95b320f8c61d635b1e20f149937fd",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/7095ec389449fffd7a9d.json",
+      "record_sha256": "aba09bb2b96976e7b14dc0927b5962ee2638671948641c8a089fc429681ab8e9",
+      "file": "overlays/sample_0000_mesh_overlay.jpg",
+      "sha256": "f193ac6cf44937b218316d8a033930bfe32ada871dda6bce68dde5f563470394",
+      "mesh_pixels": 17876,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        7.699784032411117e-05
+      ],
+      "detail_crop_xyxy": [
+        1049,
+        756,
+        1481,
+        1080
+      ]
+    },
+    {
+      "order": 1,
+      "index": 1,
+      "sample_id": "efc49070b118c539fa6a",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0001_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000042.jpg",
+      "source_image_sha256": "1a83d2a7b9f372544e030178bcfea418fbd8f4e83d6ed0a88ce3ca9433076035",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/efc49070b118c539fa6a.json",
+      "record_sha256": "36bbb88da84f585f135384b814faa24ad619623cb2d03ba72e22eb5b7892a614",
+      "file": "overlays/sample_0001_mesh_overlay.jpg",
+      "sha256": "04ac5e4a2043c17e58b6927df03f3321b276a7b29518f5258ae6f4d3ca3ce866",
+      "mesh_pixels": 16583,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.843733629262715e-05
+      ],
+      "detail_crop_xyxy": [
+        848,
+        597,
+        1286,
+        925
+      ]
+    },
+    {
+      "order": 2,
+      "index": 3,
+      "sample_id": "06ce13b63db95aa54426",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0003_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000128.jpg",
+      "source_image_sha256": "d0a6c1c2efceda3bd9b5c23e9e19d50b0dc69f32c4852f2a6e7ab3e3922be7c8",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/06ce13b63db95aa54426.json",
+      "record_sha256": "9beb0f1e2a976c135cc37dea098c2ad04cfacade236b14e1065cc506dcd01c65",
+      "file": "overlays/sample_0003_mesh_overlay.jpg",
+      "sha256": "4240325ab1c9b5d58fbf7f0238fdb618ff3a1acb0b3067492a8653d4c1b33d47",
+      "mesh_pixels": 16737,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        8.794083419161325e-05
+      ],
+      "detail_crop_xyxy": [
+        1000,
+        658,
+        1443,
+        990
+      ]
+    },
+    {
+      "order": 3,
+      "index": 6,
+      "sample_id": "71640f7e58fb3b506fa8",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0006_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000054.jpg",
+      "source_image_sha256": "e1e10f9213f34890f81dcb45d3e07f2d688d91236fcf111b6ef0030eb9027cb7",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/71640f7e58fb3b506fa8.json",
+      "record_sha256": "cd8c70db9eafa83bd9ca98c6fad8d6023749f82b20c0138a84ebc84b6627b5d2",
+      "file": "overlays/sample_0006_mesh_overlay.jpg",
+      "sha256": "c20c69b6dd726e54dc9874faf4ef6238cfeee7624af6074dcc83011451b44884",
+      "mesh_pixels": 14156,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.271381360216765e-05
+      ],
+      "detail_crop_xyxy": [
+        817,
+        577,
+        1200,
+        864
+      ]
+    },
+    {
+      "order": 4,
+      "index": 7,
+      "sample_id": "593d916a72b8d99af85d",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0007_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000089.jpg",
+      "source_image_sha256": "13ac4da2fa629d62e8efcbb2edf8591e9374a6775d0dc0f0777b68f2654460da",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/593d916a72b8d99af85d.json",
+      "record_sha256": "77dc41dcc062bbe5cf79c3c747922fb7213c6240e5bd50f82975ebf1adbb05fe",
+      "file": "overlays/sample_0007_mesh_overlay.jpg",
+      "sha256": "3b3dbae8819472cd83473efea6325c9a2d9c776b72c06ddae694724b42b3d6be",
+      "mesh_pixels": 16232,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.227584731277602e-05
+      ],
+      "detail_crop_xyxy": [
+        816,
+        552,
+        1284,
+        903
+      ]
+    },
+    {
+      "order": 5,
+      "index": 9,
+      "sample_id": "cca98cf9156e3e117e6e",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0009_right_ZY20210800001_H1_C2_N11_S212_s03_T2_f000159.jpg",
+      "source_image_sha256": "dd7843aa3b9bdc863c960c338261441ca8fec221ba7772886029efc940518bb9",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/cca98cf9156e3e117e6e.json",
+      "record_sha256": "efb7504a09721da686db3ce553aad7e3c63f1c6484837dafdfacaf035b8ebdb8",
+      "file": "overlays/sample_0009_mesh_overlay.jpg",
+      "sha256": "2da20957f705b3ca3f763fe7ca0b62e485ade807aefde554beb9d379351479d1",
+      "mesh_pixels": 21454,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.9509407947189175e-05
+      ],
+      "detail_crop_xyxy": [
+        767,
+        559,
+        1246,
+        918
+      ]
+    },
+    {
+      "order": 6,
+      "index": 11,
+      "sample_id": "0080ceb53ff15a248283",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0011_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000041.jpg",
+      "source_image_sha256": "a6295f8d134b019aa2c96d8e3215b14928e16f13f7410587afc3629881f64159",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/0080ceb53ff15a248283.json",
+      "record_sha256": "ad8d79fa93a0d3604e6ce689aa28c50a877b81833cb2e4d2d301a48ba961a0f6",
+      "file": "overlays/sample_0011_mesh_overlay.jpg",
+      "sha256": "e89ba484504e560aebf0bd6068a067ff86273ee9dad22199953e573b3a140868",
+      "mesh_pixels": 12662,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        3.673853086638701e-05
+      ],
+      "detail_crop_xyxy": [
+        736,
+        475,
+        1122,
+        764
+      ]
+    },
+    {
+      "order": 7,
+      "index": 13,
+      "sample_id": "c4255a26745d7717684a",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0013_right_ZY20210800001_H1_C3_N01_S54_s05_T2_f000133.jpg",
+      "source_image_sha256": "3ebbaf84da89e45272101dc27b8765325ac5f9d25e03c474b411ce918b06e7db",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/c4255a26745d7717684a.json",
+      "record_sha256": "024398fc8fe1cf8527fbc959b7f5865c47150e8a1c7acb8fc8e7786bf8e70538",
+      "file": "overlays/sample_0013_mesh_overlay.jpg",
+      "sha256": "9ce3db93785c80a5eba2cee8538f5dd19126221a7d711a5a07ec50db41054039",
+      "mesh_pixels": 12341,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        4.159267314207682e-05
+      ],
+      "detail_crop_xyxy": [
+        721,
+        495,
+        1117,
+        792
+      ]
+    },
+    {
+      "order": 8,
+      "index": 16,
+      "sample_id": "d99c19f246113bd54fac",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0016_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000061.jpg",
+      "source_image_sha256": "42361192786fd1745c5d84f4d985ed376062b3b894f7309cbc9de5d7bac31c25",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/d99c19f246113bd54fac.json",
+      "record_sha256": "1bfea24fdc635a26ca27a3768bf5325125ad9c1771b86f9f775e9a0a031907cb",
+      "file": "overlays/sample_0016_mesh_overlay.jpg",
+      "sha256": "df03de30078643d77e62175aa4f2152313e72f66520bc6b5a6e7839b30530964",
+      "mesh_pixels": 18176,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.806594549540023e-05
+      ],
+      "detail_crop_xyxy": [
+        805,
+        683,
+        1185,
+        968
+      ]
+    },
+    {
+      "order": 9,
+      "index": 18,
+      "sample_id": "3c73a3bdfccb31f7a17e",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0018_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000140.jpg",
+      "source_image_sha256": "0eb8439b7dcfc843a5c64eaa573fdc23f8a13d5897dd6a9fd4b28d308e52756b",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/3c73a3bdfccb31f7a17e.json",
+      "record_sha256": "305b7e78327fd2a2c7b4b7d51ea11d71b6488a0040199d4e44c7a12fcc0be204",
+      "file": "overlays/sample_0018_mesh_overlay.jpg",
+      "sha256": "dcdd398657dd5f8863c2a5223179c39aebec091e6e9aacf79fa4a935d6328e4c",
+      "mesh_pixels": 19297,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.927046115379198e-05
+      ],
+      "detail_crop_xyxy": [
+        967,
+        709,
+        1341,
+        989
+      ]
+    },
+    {
+      "order": 10,
+      "index": 19,
+      "sample_id": "72b49737f19b1e3cd9e9",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0019_right_ZY20210800001_H1_C5_N15_S57_s03_T1_f000180.jpg",
+      "source_image_sha256": "9cd7c91088b34ed2bcaa8079fc5a44fd8c9c69e3b7978a6b4edc2679de37587a",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/72b49737f19b1e3cd9e9.json",
+      "record_sha256": "4e2822f1510cbd0d4f40403d54d07814bb3840a87215754bb2ba8725def14bb4",
+      "file": "overlays/sample_0019_mesh_overlay.jpg",
+      "sha256": "b9db4f8f3bfc8b4c20dfd3104b64d828de80a956ba8784af9173449579d2a2d2",
+      "mesh_pixels": 16561,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.835687986495032e-05
+      ],
+      "detail_crop_xyxy": [
+        1009,
+        810,
+        1369,
+        1080
+      ]
+    },
+    {
+      "order": 11,
+      "index": 21,
+      "sample_id": "0822c45047bfd2ec5649",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0021_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000055.jpg",
+      "source_image_sha256": "5facb0db91eb9a7f074bcea2bfe4747b36c1b62496690312073ead35bb12232c",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/0822c45047bfd2ec5649.json",
+      "record_sha256": "6af77e4532ab3799b9001b1b62a44fd7e96020d80e8d064b2025da955412e4b3",
+      "file": "overlays/sample_0021_mesh_overlay.jpg",
+      "sha256": "8db79cca7635137ccd9d2015b2f0198daa37bd84476c1334fffd4f0a8245d5f5",
+      "mesh_pixels": 9552,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        3.9858231275502476e-05
+      ],
+      "detail_crop_xyxy": [
+        738,
+        624,
+        1061,
+        866
+      ]
+    },
+    {
+      "order": 12,
+      "index": 23,
+      "sample_id": "c75b756ae4f4733e9b54",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0023_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000126.jpg",
+      "source_image_sha256": "bfd1a084d6ca6a74a9d5af438165391fc214d092bf5cff8cd1292836a26ac848",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/c75b756ae4f4733e9b54.json",
+      "record_sha256": "ebc5152167f77e5d8d0d121d3537aef7e62ad0bbe87c47b4df08533b358d2fca",
+      "file": "overlays/sample_0023_mesh_overlay.jpg",
+      "sha256": "d5628d89c87e5d182c3265845e63346290873d35f5391592778ce897ede5b177",
+      "mesh_pixels": 10802,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.667186767117528e-05
+      ],
+      "detail_crop_xyxy": [
+        1019,
+        690,
+        1386,
+        965
+      ]
+    },
+    {
+      "order": 13,
+      "index": 26,
+      "sample_id": "f087ba92a9bb0929804e",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0026_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000065.jpg",
+      "source_image_sha256": "2bbc7b82d2d1ca28723575c54a77235a7aff30c7039d088afe6218ee2d1d817f",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/f087ba92a9bb0929804e.json",
+      "record_sha256": "37e4bfc1a3948e7885fa45efe6b8508ce185cdfa36701cbd1803296a7653d77e",
+      "file": "overlays/sample_0026_mesh_overlay.jpg",
+      "sha256": "57907e01d33cbb6a806949c1b2afd760f1b49b8104af76f23a4d5f086755fce9",
+      "mesh_pixels": 24229,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        7.09044577433815e-05
+      ],
+      "detail_crop_xyxy": [
+        832,
+        545,
+        1375,
+        952
+      ]
+    },
+    {
+      "order": 14,
+      "index": 28,
+      "sample_id": "1d1ae671d78565e50394",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0028_right_ZY20210800001_H1_C12_N11_S169_s03_T1_f000131.jpg",
+      "source_image_sha256": "0fed9807a34e3ebcd1bdc4e09e2465a283d51837bbc2cd68f72410f6f78fa947",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/1d1ae671d78565e50394.json",
+      "record_sha256": "d063b3ceb534895297aa4864bfdcb01de6104dd450ae1482fe784052671fbcb2",
+      "file": "overlays/sample_0028_mesh_overlay.jpg",
+      "sha256": "ced7b6728806fcbde4596c1d5a73d354af1fc8e36371c3a663674d1698dc5382",
+      "mesh_pixels": 23234,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        7.183619391071261e-05
+      ],
+      "detail_crop_xyxy": [
+        1132,
+        555,
+        1624,
+        924
+      ]
+    },
+    {
+      "order": 15,
+      "index": 32,
+      "sample_id": "e0ff6dfa92b450dca265",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0032_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000093.jpg",
+      "source_image_sha256": "15bd16e81688aeab7666f47638546dbbf3389910c0be9e30502f3c44fddd8173",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/e0ff6dfa92b450dca265.json",
+      "record_sha256": "9e5dffcf8073758d3aaa5fefcf0fe063cba7c34e8a374b6049be3538fb9d79b7",
+      "file": "overlays/sample_0032_mesh_overlay.jpg",
+      "sha256": "d0f0aa5cad1b41eb9aa7a76dfaf49f4eee914673c0bcb3d139b7f546bf7e3a5e",
+      "mesh_pixels": 12973,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        4.1677872673062666e-05
+      ],
+      "detail_crop_xyxy": [
+        741,
+        658,
+        1125,
+        946
+      ]
+    },
+    {
+      "order": 16,
+      "index": 33,
+      "sample_id": "45d75c0c2a93499fc546",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0033_right_ZY20210800001_H1_C13_N11_S132_s03_T1_f000127.jpg",
+      "source_image_sha256": "a10fe13473c421a33cd64594c28a71b27c4c3a50c22dcf308202220154b260e4",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/45d75c0c2a93499fc546.json",
+      "record_sha256": "d4799254a42192433a0a1c56c7194acfbbdca9495e97c31ea1be958799b6c449",
+      "file": "overlays/sample_0033_mesh_overlay.jpg",
+      "sha256": "9e610d279e7b3409e295e65b89353079ec996b7aa52a5b5499cdfafe116bf744",
+      "mesh_pixels": 13080,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        3.62107170985837e-05
+      ],
+      "detail_crop_xyxy": [
+        750,
+        661,
+        1133,
+        948
+      ]
+    },
+    {
+      "order": 17,
+      "index": 36,
+      "sample_id": "3c756c05e14dc6e54fe9",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0036_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000064.jpg",
+      "source_image_sha256": "c6a07d0b71a74fe2a0694f66cfd1478c7f10707d7a3584b335855119d3221de1",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/3c756c05e14dc6e54fe9.json",
+      "record_sha256": "7107aab8b2647f5641a760b1e87d6839719282a83f760f3be47186df298468f9",
+      "file": "overlays/sample_0036_mesh_overlay.jpg",
+      "sha256": "3b2ad6911d9fea4876a63b9ce4fc015984c3d56ce8d2431c5a1c35226847ff7e",
+      "mesh_pixels": 17518,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.023286255185667e-05
+      ],
+      "detail_crop_xyxy": [
+        786,
+        644,
+        1252,
+        993
+      ]
+    },
+    {
+      "order": 18,
+      "index": 38,
+      "sample_id": "7b1828b2da33207e8fb8",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0038_right_ZY20210800001_H1_C14_N15_S158_s02_T1_f000128.jpg",
+      "source_image_sha256": "d3d566d5c1b3af3a925d5de17dcfc249f9d5bc30e6c8617f55361d9f04c778a3",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/7b1828b2da33207e8fb8.json",
+      "record_sha256": "c0a0e15a2e8cbd152261686b5fb05e0a4050282f72620723118dce6f6477c2d6",
+      "file": "overlays/sample_0038_mesh_overlay.jpg",
+      "sha256": "bbf91e3da2df70e7bf254bdd02fd1bb0c2e28ee69d2edae64d429403f0d9e6a2",
+      "mesh_pixels": 18015,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        3.499320416722185e-05
+      ],
+      "detail_crop_xyxy": [
+        734,
+        627,
+        1205,
+        980
+      ]
+    },
+    {
+      "order": 19,
+      "index": 41,
+      "sample_id": "943665096f5defbc30b3",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0041_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000059.jpg",
+      "source_image_sha256": "9e86597fb46acfb7076adc2926028f3e61b4cd0bd266d3597bf4968f85b689f6",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/943665096f5defbc30b3.json",
+      "record_sha256": "bc4636a697a7840326c099129c05ce7069ecffdfe75e67d89bcdbb881d060e4e",
+      "file": "overlays/sample_0041_mesh_overlay.jpg",
+      "sha256": "8986881ebe2fb3a40a98f7874179b2465b078738bb44fbd7facd73dfb26b2379",
+      "mesh_pixels": 29006,
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "projection_max_abs_errors_px": [
+        6.664141415058111e-05,
+        4.9633102207735647e-05
+      ],
+      "detail_crop_xyxy": [
+        498,
+        445,
+        1344,
+        1080
+      ]
+    },
+    {
+      "order": 20,
+      "index": 42,
+      "sample_id": "508124fd5a4d407abd69",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0042_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000088.jpg",
+      "source_image_sha256": "91e18e668e3b3471f7de2ead8bf13d1f7fdc7010782fdc109edbeb386124f3a1",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/508124fd5a4d407abd69.json",
+      "record_sha256": "bb9c87ecac3e9eb41e839d3058f376eadbcf4fae13b16d1902de386048ac149f",
+      "file": "overlays/sample_0042_mesh_overlay.jpg",
+      "sha256": "fd0da98c2b06bf7738b9c58ce792a05eeeb7aa8b61d804dedb59f4c0c8a65a9c",
+      "mesh_pixels": 32661,
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "projection_max_abs_errors_px": [
+        6.414564700207848e-05,
+        4.1024377878784435e-05
+      ],
+      "detail_crop_xyxy": [
+        482,
+        423,
+        1357,
+        1080
+      ]
+    },
+    {
+      "order": 21,
+      "index": 44,
+      "sample_id": "76eeddfa6e14ffdd619b",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0044_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000162.jpg",
+      "source_image_sha256": "f8b34cd8640767d88ff90a8257369e6396e94294311076e0c45da8084aa016f4",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/76eeddfa6e14ffdd619b.json",
+      "record_sha256": "6c79e8901d616e2daefcf81b66bb92c00434136ee5018684b301168ff6a97bb5",
+      "file": "overlays/sample_0044_mesh_overlay.jpg",
+      "sha256": "c724bc6ee70d470e52fa521b2ad853f510dacec6f2c1554aa8a61f2e23c38c9d",
+      "mesh_pixels": 47673,
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "projection_max_abs_errors_px": [
+        8.52412658787216e-05,
+        4.388126990306773e-05
+      ],
+      "detail_crop_xyxy": [
+        322,
+        147,
+        1565,
+        1080
+      ]
+    },
+    {
+      "order": 22,
+      "index": 46,
+      "sample_id": "7a7d38e7387294610cf0",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0046_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000042.jpg",
+      "source_image_sha256": "f0f804e4fd100316ca7c9b94c3a1bd5de2498c30f9234abbd771eb0f7f9b9481",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/7a7d38e7387294610cf0.json",
+      "record_sha256": "b1ec1c1211d447531ad204836dd5d5419de07006256bbcc3029c65154600fb57",
+      "file": "overlays/sample_0046_mesh_overlay.jpg",
+      "sha256": "5dbfe062688224f83428a94f37b262c0bd74fa229b14e287b7cdc5de8bc9d0bf",
+      "mesh_pixels": 10820,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.409295588127861e-05
+      ],
+      "detail_crop_xyxy": [
+        934,
+        531,
+        1249,
+        767
+      ]
+    },
+    {
+      "order": 23,
+      "index": 47,
+      "sample_id": "f9cd026b235377bda645",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0047_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000085.jpg",
+      "source_image_sha256": "f8829976c14f50d4a04e381d657b61086a644f3c3fbae76122c11cf0738ce368",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/f9cd026b235377bda645.json",
+      "record_sha256": "b08cc0598ab459a2fc276c7ee4baeda01dae24f6529d1aa14b7959b3d16c7c9a",
+      "file": "overlays/sample_0047_mesh_overlay.jpg",
+      "sha256": "df4c818800c5277d3ee66979973b372b8a98665a8d66ad134f1d52314aab5150",
+      "mesh_pixels": 13191,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.47111797004618e-05
+      ],
+      "detail_crop_xyxy": [
+        868,
+        375,
+        1218,
+        637
+      ]
+    },
+    {
+      "order": 24,
+      "index": 49,
+      "sample_id": "5eacf98160c8b785ba22",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0049_right_ZY20210800002_H2_C1_N01_S336_s02_T1_f000170.jpg",
+      "source_image_sha256": "414a42ccff6d98587eb3994c76d16f5cf17f46fcb203f32a43f2204b25d295a7",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/5eacf98160c8b785ba22.json",
+      "record_sha256": "a846b7647da27da742a5921eeebd8f47eafe66c0051483484adaf5fc7209c590",
+      "file": "overlays/sample_0049_mesh_overlay.jpg",
+      "sha256": "34275b6d56e285d5e0551ce62e8e462bcfe26c095f7d1409d99b08f08df06a94",
+      "mesh_pixels": 10311,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.544845632561191e-05
+      ],
+      "detail_crop_xyxy": [
+        1043,
+        572,
+        1339,
+        794
+      ]
+    },
+    {
+      "order": 25,
+      "index": 51,
+      "sample_id": "58e6b07c3049ac236f1e",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0051_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000042.jpg",
+      "source_image_sha256": "683e7828f53ed514693cf020c4cb23475beb15eea906a85efaa177930001e042",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/58e6b07c3049ac236f1e.json",
+      "record_sha256": "295c8a8426a1cb050cc8b5b6b9444f6d5cce9726b0d800c436fb8aea2f0f1c8d",
+      "file": "overlays/sample_0051_mesh_overlay.jpg",
+      "sha256": "35e323684ab96d3d7445f65d8ffe87fa0b64770e38732dd9b3c32390917e9e4f",
+      "mesh_pixels": 19492,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.129767666607222e-05
+      ],
+      "detail_crop_xyxy": [
+        884,
+        447,
+        1366,
+        808
+      ]
+    },
+    {
+      "order": 26,
+      "index": 53,
+      "sample_id": "d0d38f1355763e01c950",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0053_right_ZY20210800002_H2_C2_N11_S25_s01_T1_f000128.jpg",
+      "source_image_sha256": "839a38b36bb343567cf7ab87d071af400f3f475bdd7618b081841cd9f4f0bdfa",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/d0d38f1355763e01c950.json",
+      "record_sha256": "2fbd0748ade7fd6544f6e6fdac556ed0c36a959d6a28120eab915a4256ca9fd9",
+      "file": "overlays/sample_0053_mesh_overlay.jpg",
+      "sha256": "e3f423832ce28f52c7606057c6658ebe5ac9779df5d589b43664b69967a08fb4",
+      "mesh_pixels": 17386,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.137206449035148e-05
+      ],
+      "detail_crop_xyxy": [
+        889,
+        472,
+        1363,
+        827
+      ]
+    },
+    {
+      "order": 27,
+      "index": 56,
+      "sample_id": "93854a9cdc61107ad4ec",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0056_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000055.jpg",
+      "source_image_sha256": "2163182630b2c319fe813bb1a99829105a67bc8f35cee91f1cb08f34cc99ff93",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/93854a9cdc61107ad4ec.json",
+      "record_sha256": "bb4689715565f8adcc2c4e46db48d0ede10ebf9b6c34092cc2e4e5730d7b48e5",
+      "file": "overlays/sample_0056_mesh_overlay.jpg",
+      "sha256": "d2a3fca3699363f6362f2cdae3ea2e3bf42b35d4876a990b86e4f5383085b68a",
+      "mesh_pixels": 13293,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        3.922825658264628e-05
+      ],
+      "detail_crop_xyxy": [
+        733,
+        753,
+        1169,
+        1080
+      ]
+    },
+    {
+      "order": 28,
+      "index": 57,
+      "sample_id": "96c1b22dff10663f8b82",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0057_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000089.jpg",
+      "source_image_sha256": "2d67d517013ab1306b4508a65519fb42432660e3f62a36aa3083447bac5e2b81",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/96c1b22dff10663f8b82.json",
+      "record_sha256": "a83796991ebf3c536210a0ee263aea638902c46647c4ac77dc92c1ccc322a5d4",
+      "file": "overlays/sample_0057_mesh_overlay.jpg",
+      "sha256": "6a321e78d89179d1eac54e9da68b3da22a4b79be856ae3f93089b1f396d38541",
+      "mesh_pixels": 18389,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        7.712539354542969e-05
+      ],
+      "detail_crop_xyxy": [
+        992,
+        690,
+        1456,
+        1038
+      ]
+    },
+    {
+      "order": 29,
+      "index": 59,
+      "sample_id": "5d9e157e47dbd1a6b264",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0059_right_ZY20210800002_H2_C3_N02_S354_s01_T2_f000181.jpg",
+      "source_image_sha256": "0cfac25340f9438ebb712962646286b1c82978c81fafbb013bdf90ba6c7d430e",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/5d9e157e47dbd1a6b264.json",
+      "record_sha256": "73b693b789a203dcb20b25e899fcd4a6b5df136f4d4cf570793410a0f0ca33f9",
+      "file": "overlays/sample_0059_mesh_overlay.jpg",
+      "sha256": "db285e59e903ed38ce26bca7087e84fac36220c2accc49fd1378cace28bb6792",
+      "mesh_pixels": 19296,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.985796176195436e-05
+      ],
+      "detail_crop_xyxy": [
+        874,
+        697,
+        1366,
+        1066
+      ]
+    },
+    {
+      "order": 30,
+      "index": 60,
+      "sample_id": "f0e90327ceda2e00e78b",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0060_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000000.jpg",
+      "source_image_sha256": "bf317dc28bb9fa6fdbeebcfe7928169a724320f487e7a5561f1d3b9afb574508",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/f0e90327ceda2e00e78b.json",
+      "record_sha256": "63419a1a66fe0f8db227f33f2a5c89d6982e8cd3ab44675188416376fb1e4d4e",
+      "file": "overlays/sample_0060_mesh_overlay.jpg",
+      "sha256": "5529dc37524ea928ad6c3d39961c009d49de3ef2888da8cac8a56f66a0c9539a",
+      "mesh_pixels": 17156,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.5852855439297855e-05
+      ],
+      "detail_crop_xyxy": [
+        839,
+        572,
+        1273,
+        897
+      ]
+    },
+    {
+      "order": 31,
+      "index": 62,
+      "sample_id": "f367b7efc007f79f6635",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0062_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000085.jpg",
+      "source_image_sha256": "a4be7d01f8c34c9fc1e6948390c7a10054bb30863364cd5dda451a6b7a46d5f3",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/f367b7efc007f79f6635.json",
+      "record_sha256": "928b1ebd69406bd77b3f16a6e24ef7ea34a5237cea3de60f16d8a47a62c0df76",
+      "file": "overlays/sample_0062_mesh_overlay.jpg",
+      "sha256": "1de32bf97077052cb10cbe3c3614aa746b0495ed0fb8a6aaf9963e929fe99698",
+      "mesh_pixels": 18958,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        4.62123571196571e-05
+      ],
+      "detail_crop_xyxy": [
+        791,
+        443,
+        1293,
+        819
+      ]
+    },
+    {
+      "order": 32,
+      "index": 64,
+      "sample_id": "ec1f5ab456f8e3d44ceb",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0064_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000170.jpg",
+      "source_image_sha256": "75924c0040b1c86ff345e8fd37eda3f2267b63b9a578cb8938b23b8faecdd852",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/ec1f5ab456f8e3d44ceb.json",
+      "record_sha256": "f503e7bd3f0641ae4d6df54628075c52a6fe6c508ac5a1c4af20d77a12a9d2ea",
+      "file": "overlays/sample_0064_mesh_overlay.jpg",
+      "sha256": "09fb1543ae3c70d4e80e534d55e0ef3a38a2bfaf1afe2a05820d385625f5d2fc",
+      "mesh_pixels": 20062,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.558650354942074e-05
+      ],
+      "detail_crop_xyxy": [
+        730,
+        445,
+        1242,
+        829
+      ]
+    },
+    {
+      "order": 33,
+      "index": 66,
+      "sample_id": "b39a3b916c33e2ddfdff",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0066_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000042.jpg",
+      "source_image_sha256": "064583465773fd4611d7ec00c38b9981188ee5e21b2b29aa885d33306059349f",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/b39a3b916c33e2ddfdff.json",
+      "record_sha256": "1deacfe775431dd899e9946d864c6a066818056ed3819fce8bf21a4713efa71f",
+      "file": "overlays/sample_0066_mesh_overlay.jpg",
+      "sha256": "8472d645349084e8d815c70f1daae5317bf5f8dee3a6d6f4bd8779d2c1f5f2c9",
+      "mesh_pixels": 14052,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.337192007777048e-05
+      ],
+      "detail_crop_xyxy": [
+        793,
+        664,
+        1284,
+        1032
+      ]
+    },
+    {
+      "order": 34,
+      "index": 68,
+      "sample_id": "2572c9e7d7545d40e68d",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0068_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000128.jpg",
+      "source_image_sha256": "2f8a563a314e1773a9389c725e6d0389c3529eae67b4c1ccb8678afff3270b3c",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/2572c9e7d7545d40e68d.json",
+      "record_sha256": "9e26c255a39899d6c05e3e0af37097a74fceddc74eb64f76a0fd3232e872db37",
+      "file": "overlays/sample_0068_mesh_overlay.jpg",
+      "sha256": "95c3d2a679a31d49cb23c98c444130e436799e02bfe9c9ba2ddcef2aaa3c6caa",
+      "mesh_pixels": 10905,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.0733963664461044e-05
+      ],
+      "detail_crop_xyxy": [
+        906,
+        748,
+        1348,
+        1079
+      ]
+    },
+    {
+      "order": 35,
+      "index": 69,
+      "sample_id": "b2ba89ed8232a61689c5",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0069_right_ZY20210800002_H2_C7_N11_S64_s01_T1_f000170.jpg",
+      "source_image_sha256": "0356e8663d05c55233196e9690babe8bae6a5708c9edf729e6b7b3fdf7d6ae2c",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/b2ba89ed8232a61689c5.json",
+      "record_sha256": "af757e1216c0e1f1d90c832dfc6a917797d0fd158a5b2aee763b02542db23c2d",
+      "file": "overlays/sample_0069_mesh_overlay.jpg",
+      "sha256": "651904ac924e986de41f58c140547a420277761903360bb9b08099363a496de4",
+      "mesh_pixels": 16106,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.841311849508202e-05
+      ],
+      "detail_crop_xyxy": [
+        828,
+        595,
+        1320,
+        964
+      ]
+    },
+    {
+      "order": 36,
+      "index": 72,
+      "sample_id": "038609e0c34832d615b9",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0072_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000092.jpg",
+      "source_image_sha256": "94f4dacdb23c876294eaadda7bf89cb989a7354833131495d5abfbcbc3812697",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/038609e0c34832d615b9.json",
+      "record_sha256": "da92fa5b2053e74414bde7738be83b026a9bc983058df9c1c1aff81e9224c318",
+      "file": "overlays/sample_0072_mesh_overlay.jpg",
+      "sha256": "40ab841f03d47e6017cc2598dd93a08aa072fbca31ec35af39baca48498fcaef",
+      "mesh_pixels": 13533,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.21050742463558e-05
+      ],
+      "detail_crop_xyxy": [
+        823,
+        689,
+        1239,
+        1001
+      ]
+    },
+    {
+      "order": 37,
+      "index": 74,
+      "sample_id": "c97d7a1d58ceb6b9c31b",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0074_right_ZY20210800002_H2_C12_N11_S154_s03_T1_f000190.jpg",
+      "source_image_sha256": "8e27a37fa9b40bad7443d49c3290266710410e57a88282500ce931921636a6cf",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/c97d7a1d58ceb6b9c31b.json",
+      "record_sha256": "c93e595db3aed4a56648a30e748018203e6bc0644ae97934acc5f4850fe06041",
+      "file": "overlays/sample_0074_mesh_overlay.jpg",
+      "sha256": "b14fb279774dbd351782e255e8e6b33645382e608cd36edfc98a286c8d17f975",
+      "mesh_pixels": 19006,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.367899368342478e-05
+      ],
+      "detail_crop_xyxy": [
+        872,
+        799,
+        1247,
+        1080
+      ]
+    },
+    {
+      "order": 38,
+      "index": 77,
+      "sample_id": "5ef74d6cf8ff3f5902cb",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0077_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000093.jpg",
+      "source_image_sha256": "79b066fc3fa09f5c133eef2462c45dd88ef6054d58ce72312877279d331cb32f",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/5ef74d6cf8ff3f5902cb.json",
+      "record_sha256": "d05293a1970e181814c7359caf42120f09299056c92acdc3561f2fb2557c1d0f",
+      "file": "overlays/sample_0077_mesh_overlay.jpg",
+      "sha256": "433500891e797ddb5e34ed89c0d99739ee1c58d12bada7cc879546b02ffe03a2",
+      "mesh_pixels": 15002,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.751254548158613e-05
+      ],
+      "detail_crop_xyxy": [
+        875,
+        627,
+        1251,
+        909
+      ]
+    },
+    {
+      "order": 39,
+      "index": 79,
+      "sample_id": "dcb5b948f1252cd07efb",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0079_right_ZY20210800002_H2_C13_N11_S124_s03_T1_f000179.jpg",
+      "source_image_sha256": "8a29951097160d8a758525b82384ada03b0b20459f8234dcba459a0f43ed6cda",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/dcb5b948f1252cd07efb.json",
+      "record_sha256": "97c8855d179a3e354ba05a24b8a8568d0a61653c50454cb304425397da5ec24a",
+      "file": "overlays/sample_0079_mesh_overlay.jpg",
+      "sha256": "ed56ad1cb75dc2c2add57f60c69a9e337ddaddfc995ef1fd624f6d269fcd72de",
+      "mesh_pixels": 12670,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        8.85929746345937e-05
+      ],
+      "detail_crop_xyxy": [
+        877,
+        892,
+        1128,
+        1080
+      ]
+    },
+    {
+      "order": 40,
+      "index": 81,
+      "sample_id": "3c076b42ca607f86dad6",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0081_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000059.jpg",
+      "source_image_sha256": "43134f65e566c3e0a27802974c724518f455a3572958430d082d73f843034206",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/3c076b42ca607f86dad6.json",
+      "record_sha256": "02a3de5b378b9d3a60bc2dbef971f61723d88e844a04531b9603fe55e5d00461",
+      "file": "overlays/sample_0081_mesh_overlay.jpg",
+      "sha256": "3d99be50e601dec9a007d2335c946c972176830a46ba588613ddfa02006b612b",
+      "mesh_pixels": 18767,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        4.201630679290247e-05
+      ],
+      "detail_crop_xyxy": [
+        683,
+        685,
+        1125,
+        1016
+      ]
+    },
+    {
+      "order": 41,
+      "index": 82,
+      "sample_id": "d8d336061089fcc41379",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0082_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000095.jpg",
+      "source_image_sha256": "dd900e13dd34a8a338cbabe3f08980414350749ddd7df824291347784417b498",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/d8d336061089fcc41379.json",
+      "record_sha256": "27837dc73f1f9941dadd0c540a084e90f56093ed3d76c0d69510df995bb21ef0",
+      "file": "overlays/sample_0082_mesh_overlay.jpg",
+      "sha256": "e6de96440f29e2586e62f023e6cf6f2becec294a3184784970bccef5f1f60e0f",
+      "mesh_pixels": 17434,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        4.11233932027244e-05
+      ],
+      "detail_crop_xyxy": [
+        772,
+        586,
+        1194,
+        902
+      ]
+    },
+    {
+      "order": 42,
+      "index": 84,
+      "sample_id": "bb5c304911f2b603f576",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0084_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000191.jpg",
+      "source_image_sha256": "1add65f901d166243188e82a101894448c3df95a893ebc0cccfca1a3dc25e328",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/bb5c304911f2b603f576.json",
+      "record_sha256": "c6d5557f6b81f641bbec71c2843d98982b40988e1f08c6c5cecaffac8c1cc43d",
+      "file": "overlays/sample_0084_mesh_overlay.jpg",
+      "sha256": "688d6d789be0527e8c29edb3e97e4fbcdcbe08c49b61b77fee1faaf18b4bff31",
+      "mesh_pixels": 15751,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        7.052245246086386e-05
+      ],
+      "detail_crop_xyxy": [
+        710,
+        817,
+        1060,
+        1080
+      ]
+    },
+    {
+      "order": 43,
+      "index": 87,
+      "sample_id": "bd797c1babcd2f7f599d",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0087_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000104.jpg",
+      "source_image_sha256": "c92ff0f75e6f33e962c328b63305b11aa74c070e33888ce0869d16459453763b",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/bd797c1babcd2f7f599d.json",
+      "record_sha256": "dcf824b96593cde5c6da94aabfebadbfc5fbf533ffedfc0c2f0432584e40475c",
+      "file": "overlays/sample_0087_mesh_overlay.jpg",
+      "sha256": "76a58dd5b4266339764aea67f5828f75c8a39dfb12c7145c8785c4eb0339c8b3",
+      "mesh_pixels": 44367,
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "projection_max_abs_errors_px": [
+        3.573407991552813e-05,
+        4.819918393650369e-05
+      ],
+      "detail_crop_xyxy": [
+        0,
+        182,
+        1197,
+        1080
+      ]
+    },
+    {
+      "order": 44,
+      "index": 89,
+      "sample_id": "0d5cd5084bc9cb8d5d97",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0089_right_ZY20210800002_H2_C20_N11_S271_s03_T1_f000173.jpg",
+      "source_image_sha256": "0951040b8902671959c054f1c413b6be10aa5c0a0e8e8e9003062489d333fd76",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/0d5cd5084bc9cb8d5d97.json",
+      "record_sha256": "d06a54566f71854c2e3e52a65e35a66eceb63dc71101b5e44d13d7d1c9967f6c",
+      "file": "overlays/sample_0089_mesh_overlay.jpg",
+      "sha256": "76a9ca6f71fa7f9d946cb115825c3275095e1458d83815aca76c6f033df10be7",
+      "mesh_pixels": 75396,
+      "hand_sides": [
+        "left",
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        5.9427343160223245e-05,
+        6.1012897958789836e-05
+      ],
+      "detail_crop_xyxy": [
+        0,
+        96,
+        1311,
+        1080
+      ]
+    },
+    {
+      "order": 45,
+      "index": 91,
+      "sample_id": "ed2e31b73fe5cd9c92f2",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0091_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000042.jpg",
+      "source_image_sha256": "7e6e88fcd015e4be0d2e72b985a94e8ad7ee64e6ee33b518f6b97f2c9e4d3c43",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/ed2e31b73fe5cd9c92f2.json",
+      "record_sha256": "c71e80c1d2d5773231f9e10d085195770038ac4d087cff14f8d43a16fca04170",
+      "file": "overlays/sample_0091_mesh_overlay.jpg",
+      "sha256": "97b3c6f01f0937d17acfaf2a16ff6a03ad62424ff8dd7326e228bcd50c35e749",
+      "mesh_pixels": 22052,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.330446171887161e-05
+      ],
+      "detail_crop_xyxy": [
+        932,
+        436,
+        1400,
+        787
+      ]
+    },
+    {
+      "order": 46,
+      "index": 93,
+      "sample_id": "69a2b0a855cf75ec632b",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0093_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000128.jpg",
+      "source_image_sha256": "c6d1e9deae7674d32cee8c0e8ba251e13cdfd25fa18270bfabe1f58580099e22",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/69a2b0a855cf75ec632b.json",
+      "record_sha256": "5c319cb7be7bf975b55525ca8651b79427edf00b016d2cd58ccacfc0d3a5a7e8",
+      "file": "overlays/sample_0093_mesh_overlay.jpg",
+      "sha256": "80c9e1f3123b5711a6ad74eb4db43e7eff20adec5a9114e5ca0d7b3dff84ea11",
+      "mesh_pixels": 20739,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.344391817947326e-05
+      ],
+      "detail_crop_xyxy": [
+        917,
+        391,
+        1424,
+        771
+      ]
+    },
+    {
+      "order": 47,
+      "index": 94,
+      "sample_id": "e90617ba8d0d03b044bd",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0094_right_ZY20210800003_H3_C1_N02_S86_s01_T1_f000170.jpg",
+      "source_image_sha256": "3fff19e845b0dc9c35ed2b41fd2048c9e0841a4a6cd3e139bedd15f9a76ceaf8",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/e90617ba8d0d03b044bd.json",
+      "record_sha256": "629da3edbf04002c966dc44428a9b2a10b8d8b314e865ea9f34f7fccc09d31a5",
+      "file": "overlays/sample_0094_mesh_overlay.jpg",
+      "sha256": "d9f1b7758350253c2e32b18857540e20c5cbf35bbfb5d78bcd3cfa86fafaeb60",
+      "mesh_pixels": 23169,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.625236414947722e-05
+      ],
+      "detail_crop_xyxy": [
+        867,
+        370,
+        1313,
+        704
+      ]
+    },
+    {
+      "order": 48,
+      "index": 97,
+      "sample_id": "d7f1a890b4a7691369c9",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0097_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000089.jpg",
+      "source_image_sha256": "2369b4f779200c3b79321104f1ed7c1b5219bd2882daa068faf1740e0672142d",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/d7f1a890b4a7691369c9.json",
+      "record_sha256": "afebe258e51ad336f4d6235d840c6cd1cce909ff9084c387c4a29eb05e268c6d",
+      "file": "overlays/sample_0097_mesh_overlay.jpg",
+      "sha256": "b9beba9dbe18a96953b380e89dc4248ee7f73abb47186b6c178a84046cea5eff",
+      "mesh_pixels": 13641,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.687584846076788e-05
+      ],
+      "detail_crop_xyxy": [
+        922,
+        546,
+        1314,
+        840
+      ]
+    },
+    {
+      "order": 49,
+      "index": 99,
+      "sample_id": "53f97a59e37eadf4ae36",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0099_right_ZY20210800003_H3_C2_N11_S215_s03_T5_f000168.jpg",
+      "source_image_sha256": "c0b08430049e7f0dbbd269bf9c2c7f7e18766032a82d1575e4bc4baf2664664b",
+      "record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/53f97a59e37eadf4ae36.json",
+      "record_sha256": "e8a88b9cdb91ab5c5198ca568640db50573ed3f08a60ec7235f92610f9d3cc27",
+      "file": "overlays/sample_0099_mesh_overlay.jpg",
+      "sha256": "52973723c322675061b784d81828969ed1b6ca40189aedb4fa2ee13368d747aa",
+      "mesh_pixels": 18445,
+      "hand_sides": [
+        "right"
+      ],
+      "projection_max_abs_errors_px": [
+        6.845027678537008e-05
+      ],
+      "detail_crop_xyxy": [
+        903,
+        610,
+        1325,
+        926
+      ]
+    }
+  ],
+  "montages": [
+    {
+      "file": "mesh_overlay_50_no_text.jpg",
+      "size_px": [
+        3200,
+        4800
+      ],
+      "sha256": "fea7340b179610dac6b9199069df25de1c07ce662947c842cf505db51ba12535"
+    },
+    {
+      "file": "mesh_overlay_50_no_text.png",
+      "size_px": [
+        3200,
+        4800
+      ],
+      "sha256": "2c5c0e678894a20303b711923285c76f627b3046a72254746616b4d9ac89d6c2"
+    },
+    {
+      "file": "mesh_overlay_50_full_frame_no_text.jpg",
+      "size_px": [
+        3200,
+        3600
+      ],
+      "sha256": "23d9b0d3a84d6ca27c6c329c50ccc44f7194ae3c866e90926a9060b10ca5375c"
+    },
+    {
+      "file": "mesh_overlay_50_full_frame_no_text.png",
+      "size_px": [
+        3200,
+        3600
+      ],
+      "sha256": "28abad6613e6dd2cdfa7c3f196a081e1622752d5f746a1b50e05e63a141e55d3"
+    }
+  ]
+}
