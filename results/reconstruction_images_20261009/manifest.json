@@ -1,0 +1,225 @@
+{
+  "model_inference_performed": false,
+  "geometry": "Unmodified saved camera-space vertices, 778 vertices / 1538 original faces per hand",
+  "rendering": "Opaque shaded mesh; right=blue, left=orange; no scene/object occlusion model",
+  "selection": "First detected record at or after indices 0,20,40,60,80, plus existing two-hand smoke sample",
+  "faces_source": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/workflow_smoke_02/meshes/873519995f6debef9aa8_0.obj",
+  "faces_source_sha256": "e96ff5d0e26c6674140019a9529b473c98a051889b0695e9bfd01abb8dfe6cf3",
+  "script_sha256": "08451cd0b2f30361a2749c3d94f317ab806646891d96cb56949bb2892d080d83",
+  "results": [
+    {
+      "sample_id": "7095ec389449fffd7a9d",
+      "model_label": "EgoHand3D fine-tuned",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0000_right_ZY20210800001_H1_C1_N19_S100_s02_T1_f000000.jpg",
+      "source_image_sha256": "bd0c1a36eb3ec1d3e03cf57d178c02f407d95b320f8c61d635b1e20f149937fd",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/7095ec389449fffd7a9d.json",
+      "prediction_record_sha256": "aba09bb2b96976e7b14dc0927b5962ee2638671948641c8a089fc429681ab8e9",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/run_config.json",
+      "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+      "hand_sides": [
+        "right"
+      ],
+      "mesh_pixels": 17876,
+      "projection_max_abs_errors_px": [
+        7.699784032411117e-05
+      ],
+      "comparison_crop_xyxy": [
+        1138,
+        756,
+        1393,
+        1080
+      ],
+      "files": {
+        "input": "finetuned_sample_0000_input.jpg",
+        "overlay": "finetuned_sample_0000_mesh_overlay.jpg",
+        "mesh_only": "finetuned_sample_0000_mesh_only.png",
+        "comparison": "finetuned_sample_0000_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "bd0c1a36eb3ec1d3e03cf57d178c02f407d95b320f8c61d635b1e20f149937fd",
+        "overlay": "f193ac6cf44937b218316d8a033930bfe32ada871dda6bce68dde5f563470394",
+        "mesh_only": "1e38dbe8e86add1dce192bff62b8d0429ab15d3932a3df0aa62c5a4c036d274a",
+        "comparison": "57b7ce043ed091330b628b6c1a9343f3d07f4b8f4b4d8974204487f6d67303cc"
+      }
+    },
+    {
+      "sample_id": "0822c45047bfd2ec5649",
+      "model_label": "EgoHand3D fine-tuned",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0021_right_ZY20210800001_H1_C7_N11_S270_s03_T1_f000055.jpg",
+      "source_image_sha256": "5facb0db91eb9a7f074bcea2bfe4747b36c1b62496690312073ead35bb12232c",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/0822c45047bfd2ec5649.json",
+      "prediction_record_sha256": "6af77e4532ab3799b9001b1b62a44fd7e96020d80e8d064b2025da955412e4b3",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/run_config.json",
+      "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+      "hand_sides": [
+        "right"
+      ],
+      "mesh_pixels": 9552,
+      "projection_max_abs_errors_px": [
+        3.9858231275502476e-05
+      ],
+      "comparison_crop_xyxy": [
+        793,
+        624,
+        1006,
+        866
+      ],
+      "files": {
+        "input": "finetuned_sample_0021_input.jpg",
+        "overlay": "finetuned_sample_0021_mesh_overlay.jpg",
+        "mesh_only": "finetuned_sample_0021_mesh_only.png",
+        "comparison": "finetuned_sample_0021_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "5facb0db91eb9a7f074bcea2bfe4747b36c1b62496690312073ead35bb12232c",
+        "overlay": "cd606b264c0bba88120a36c9060b4afafa1386fd0d06c9e42f668536a07341e9",
+        "mesh_only": "5ea4af95db031de2036e72b91fd51f5eee06582ce5d2dddb69b110f85c38cd58",
+        "comparison": "37a58221968b01847d84be59f7a89ab0403a65fa28764218fb027f1f0c202cfd"
+      }
+    },
+    {
+      "sample_id": "943665096f5defbc30b3",
+      "model_label": "EgoHand3D fine-tuned",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0041_right_ZY20210800001_H1_C20_N18_S286_s01_T1_f000059.jpg",
+      "source_image_sha256": "9e86597fb46acfb7076adc2926028f3e61b4cd0bd266d3597bf4968f85b689f6",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/943665096f5defbc30b3.json",
+      "prediction_record_sha256": "bc4636a697a7840326c099129c05ce7069ecffdfe75e67d89bcdbb881d060e4e",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/run_config.json",
+      "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "mesh_pixels": 29006,
+      "projection_max_abs_errors_px": [
+        6.664141415058111e-05,
+        4.9633102207735647e-05
+      ],
+      "comparison_crop_xyxy": [
+        498,
+        577,
+        1344,
+        1066
+      ],
+      "files": {
+        "input": "finetuned_sample_0041_input.jpg",
+        "overlay": "finetuned_sample_0041_mesh_overlay.jpg",
+        "mesh_only": "finetuned_sample_0041_mesh_only.png",
+        "comparison": "finetuned_sample_0041_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "9e86597fb46acfb7076adc2926028f3e61b4cd0bd266d3597bf4968f85b689f6",
+        "overlay": "016aef0d43a8b0727fe65538e6183031bd4354e5dd6e5099a77ab136e44ac334",
+        "mesh_only": "f16790504fc6f14f237ce7d36411b6e96a6f6fc9abdab971aacc13c806f6b1fe",
+        "comparison": "c6d0e374f6401c5978abce0afb13cc1068129ac8dc3729306f5bf283f4c46488"
+      }
+    },
+    {
+      "sample_id": "f0e90327ceda2e00e78b",
+      "model_label": "EgoHand3D fine-tuned",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0060_right_ZY20210800002_H2_C5_N11_S121_s01_T3_f000000.jpg",
+      "source_image_sha256": "bf317dc28bb9fa6fdbeebcfe7928169a724320f487e7a5561f1d3b9afb574508",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/f0e90327ceda2e00e78b.json",
+      "prediction_record_sha256": "63419a1a66fe0f8db227f33f2a5c89d6982e8cd3ab44675188416376fb1e4d4e",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/run_config.json",
+      "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+      "hand_sides": [
+        "right"
+      ],
+      "mesh_pixels": 17156,
+      "projection_max_abs_errors_px": [
+        5.5852855439297855e-05
+      ],
+      "comparison_crop_xyxy": [
+        924,
+        572,
+        1189,
+        897
+      ],
+      "files": {
+        "input": "finetuned_sample_0060_input.jpg",
+        "overlay": "finetuned_sample_0060_mesh_overlay.jpg",
+        "mesh_only": "finetuned_sample_0060_mesh_only.png",
+        "comparison": "finetuned_sample_0060_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "bf317dc28bb9fa6fdbeebcfe7928169a724320f487e7a5561f1d3b9afb574508",
+        "overlay": "4e460370c2a0366aa50a4285e9294a01064c3da894b508489b1daa9013962bfc",
+        "mesh_only": "9d6ecc810010ea50b6def50bfc92dba1d41d2b2744426e29979e149721961f5a",
+        "comparison": "7603aad7db49a680f38e8fb1e9b86b1813efb0e5d389e7a6a3ec788cfcc837f7"
+      }
+    },
+    {
+      "sample_id": "3c076b42ca607f86dad6",
+      "model_label": "EgoHand3D fine-tuned",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/WiLoR/hoi4d_samples2/images/sample_0081_right_ZY20210800002_H2_C14_N11_S161_s03_T1_f000059.jpg",
+      "source_image_sha256": "43134f65e566c3e0a27802974c724518f455a3572958430d082d73f843034206",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/records/3c076b42ca607f86dad6.json",
+      "prediction_record_sha256": "02a3de5b378b9d3a60bc2dbef971f61723d88e844a04531b9603fe55e5d00461",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/validation_20261001/hoi4d_finetuned/run_config.json",
+      "run_config_sha256": "bab60a41dab60762361cc3e7a4046da2865bab60e0de4d0dc7c153eb645120d8",
+      "hand_sides": [
+        "right"
+      ],
+      "mesh_pixels": 18767,
+      "projection_max_abs_errors_px": [
+        4.201630679290247e-05
+      ],
+      "comparison_crop_xyxy": [
+        795,
+        685,
+        1013,
+        1016
+      ],
+      "files": {
+        "input": "finetuned_sample_0081_input.jpg",
+        "overlay": "finetuned_sample_0081_mesh_overlay.jpg",
+        "mesh_only": "finetuned_sample_0081_mesh_only.png",
+        "comparison": "finetuned_sample_0081_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "43134f65e566c3e0a27802974c724518f455a3572958430d082d73f843034206",
+        "overlay": "56a467603d2838733072d7e2f748a902767bd35e44837461191ba844f31dd719",
+        "mesh_only": "c6d50d8b3c13a876ae7a00bb0e9dca438341923de5434de543bfff9f74569ced",
+        "comparison": "13ec2e7e6bde99f60a0ff8c976a6af334e63e170ed9bb2eb732df75c07fce552"
+      }
+    },
+    {
+      "sample_id": "873519995f6debef9aa8",
+      "model_label": "WiLoR initial weights",
+      "source_image": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/examples/egocentric_sequence/inputs/cam0/cam0_frame_000100.jpg",
+      "source_image_sha256": "716a4598a411116b8801c563227352dce018c062a805c4a9d53bf9208ec45252",
+      "prediction_record": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/workflow_smoke_02/records/873519995f6debef9aa8.json",
+      "prediction_record_sha256": "65421314e0f34e619ae0f7e5b8547d926fc342c6909355df8afd67c162ee7b82",
+      "run_config": "/vepfs-mlp2/mlp-public/huyaoqing/EgoHand3D/outputs/workflow_smoke_02/run_config.json",
+      "run_config_sha256": "e3b936ec59b764a8aabce8bceb7c4a48896eac4bd866900cb21c7bba2eff6234",
+      "hand_sides": [
+        "right",
+        "left"
+      ],
+      "mesh_pixels": 28695,
+      "projection_max_abs_errors_px": [
+        4.886817646365671e-05,
+        3.088715288868116e-05
+      ],
+      "comparison_crop_xyxy": [
+        487,
+        127,
+        1073,
+        502
+      ],
+      "files": {
+        "input": "initial_two_hands_input.jpg",
+        "overlay": "initial_two_hands_mesh_overlay.jpg",
+        "mesh_only": "initial_two_hands_mesh_only.png",
+        "comparison": "initial_two_hands_comparison.jpg"
+      },
+      "output_sha256": {
+        "input": "716a4598a411116b8801c563227352dce018c062a805c4a9d53bf9208ec45252",
+        "overlay": "5c01f6c6c3c505977744bb6e5f0c13e196242b9a9dd29602bb277b38542f8dc1",
+        "mesh_only": "a0226374e6ea20521762f31407848a37ecb65977eee3848d114fe159c5dd0ed3",
+        "comparison": "dae0b47cb5e3eb2533e5b391696044ae0a46dfdb210cfcfb27f6607de503f48f"
+      }
+    }
+  ]
+}

@@ -9,6 +9,8 @@ EgoHand3D 沿用 [WiLoR](https://github.com/rolpotamias/WiLoR) 的重建网络�
 
 ## 先看结果
 
+[**手部三维网格重建图片（2026-10-09）**](results/reconstruction_images_20261009/README.md)：5 组第一视角微调结果和 1 组初始模型双手样例，包含原图、网格叠加图与放大对照图。直接渲染已有预测，没有重新推理。
+
 2026-10-01 重新运行同一批 100 张 HOI4D 样例、同一检测器与匹配协议：
 
 | 指标 | 初始 WiLoR | 第一视角微调权重 |
