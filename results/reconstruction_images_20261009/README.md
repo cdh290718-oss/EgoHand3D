@@ -8,6 +8,17 @@
 
 图片叠加没有处理场景物体对手部的遮挡；用于展示预测网格，精度结论请参阅[已有评估报告](../validation_20261001/comparison/report.md)。
 
+## 六图拼接大图
+
+六张已有三维网格叠加图按 2 行 3 列排列，右下角为初始模型结果，其余为第一视角微调结果。
+
+![六张三维网格叠加图的手部放大拼图](mesh_overlay_montage_detail.jpg)
+
+- **手部放大版（2496 × 1630）**：[PNG](mesh_overlay_montage_detail.png) / [JPG](mesh_overlay_montage_detail.jpg)，适合说明书中展示手部细节。
+- **完整画面版（3968 × 1844）**：[PNG](mesh_overlay_montage.png) / [JPG](mesh_overlay_montage.jpg)，保留六张原图的完整视野。
+
+仅对原有图片做排版、等比例缩放及按已有区域裁剪，没有重新推理或修改预测网格。来源及校验值见 [montage_manifest.json](montage_manifest.json)。
+
 ## 1. 第一视角微调模型 · finetuned_sample_0000
 
 ![第一视角微调模型：原图与三维网格对照](finetuned_sample_0000_comparison.jpg)

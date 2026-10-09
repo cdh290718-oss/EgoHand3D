@@ -1,0 +1,110 @@
+{
+  "layout": "2 rows x 3 columns",
+  "operation": "Arrange existing mesh overlays; no inference, no geometry changes",
+  "sources": [
+    {
+      "file": "finetuned_sample_0000_mesh_overlay.jpg",
+      "sha256": "f193ac6cf44937b218316d8a033930bfe32ada871dda6bce68dde5f563470394",
+      "detail_crop_xyxy": [
+        1138,
+        756,
+        1393,
+        1080
+      ],
+      "model": "EgoHand3D fine-tuned"
+    },
+    {
+      "file": "finetuned_sample_0021_mesh_overlay.jpg",
+      "sha256": "cd606b264c0bba88120a36c9060b4afafa1386fd0d06c9e42f668536a07341e9",
+      "detail_crop_xyxy": [
+        793,
+        624,
+        1006,
+        866
+      ],
+      "model": "EgoHand3D fine-tuned"
+    },
+    {
+      "file": "finetuned_sample_0041_mesh_overlay.jpg",
+      "sha256": "016aef0d43a8b0727fe65538e6183031bd4354e5dd6e5099a77ab136e44ac334",
+      "detail_crop_xyxy": [
+        498,
+        577,
+        1344,
+        1066
+      ],
+      "model": "EgoHand3D fine-tuned"
+    },
+    {
+      "file": "finetuned_sample_0060_mesh_overlay.jpg",
+      "sha256": "4e460370c2a0366aa50a4285e9294a01064c3da894b508489b1daa9013962bfc",
+      "detail_crop_xyxy": [
+        924,
+        572,
+        1189,
+        897
+      ],
+      "model": "EgoHand3D fine-tuned"
+    },
+    {
+      "file": "finetuned_sample_0081_mesh_overlay.jpg",
+      "sha256": "56a467603d2838733072d7e2f748a902767bd35e44837461191ba844f31dd719",
+      "detail_crop_xyxy": [
+        795,
+        685,
+        1013,
+        1016
+      ],
+      "model": "EgoHand3D fine-tuned"
+    },
+    {
+      "file": "initial_two_hands_mesh_overlay.jpg",
+      "sha256": "5c01f6c6c3c505977744bb6e5f0c13e196242b9a9dd29602bb277b38542f8dc1",
+      "detail_crop_xyxy": [
+        487,
+        127,
+        1073,
+        502
+      ],
+      "model": "WiLoR initial weights"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "mesh_overlay_montage.png",
+      "size_px": [
+        3968,
+        1844
+      ],
+      "kind": "full frame",
+      "sha256": "8ceaf97f9dcf4642d0dcdd183c9b57cbd05aedaa73d30e94ca36842165f0e737"
+    },
+    {
+      "file": "mesh_overlay_montage.jpg",
+      "size_px": [
+        3968,
+        1844
+      ],
+      "kind": "full frame",
+      "sha256": "8693484e430231564fd535fd6bd890a5638f65375e34c28b8b736ed74c923d33"
+    },
+    {
+      "file": "mesh_overlay_montage_detail.png",
+      "size_px": [
+        2496,
+        1630
+      ],
+      "kind": "saved crop detail",
+      "sha256": "52048cf30ab93b5c141d1e1ee5aeeaa91d60e3009561e076d3f30f06e0e350c2"
+    },
+    {
+      "file": "mesh_overlay_montage_detail.jpg",
+      "size_px": [
+        2496,
+        1630
+      ],
+      "kind": "saved crop detail",
+      "sha256": "1f893775a90ed7573b6bdb6da5b0d98f934c08e1cc2fc093fa149374ce04275d"
+    }
+  ]
+}
